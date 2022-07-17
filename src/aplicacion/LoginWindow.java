@@ -82,8 +82,6 @@ public class LoginWindow extends javax.swing.JFrame {
             }
         });
 
-        PasswordField.setText("jPasswordField1");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -97,7 +95,7 @@ public class LoginWindow extends javax.swing.JFrame {
                     .addComponent(PasswordField))
                 .addGap(24, 24, 24))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(145, Short.MAX_VALUE)
                 .addComponent(Conectarse, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(132, 132, 132))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,12 +148,14 @@ public class LoginWindow extends javax.swing.JFrame {
         try{
         sql = getConexion(UserNameBar.getText(),PasswordField.getText()).createStatement();
         System.out.println("Login Succesful!");
+        AppLayout Mainmenu = new AppLayout();
+        Mainmenu.setVisible(true);
+        Mainmenu.sql = this.sql;
+         this.dispose();
         }catch(SQLException ex){
-        System.out.println(ex);
-   
+            System.out.println(ex);
         }
-        
-         
+             
     }//GEN-LAST:event_ConectarseActionPerformed
 
     
@@ -210,6 +210,7 @@ public class LoginWindow extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(conexion);
             return con;
         }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "User or Password Incorrect");
             System.out.println(ex);
             return null;
         }
