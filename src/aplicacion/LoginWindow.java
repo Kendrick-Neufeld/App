@@ -201,7 +201,7 @@ public class LoginWindow extends javax.swing.JFrame {
         
         
         String conexion = "jdbc:sqlserver://localhost:1433;"
-                + "database=conexion;"
+                + "database=App;"
                 + "encrypt=true;trustServerCertificate=true;"
                 + "user=" + User + ";"
                 + "password=" + Password + ";"

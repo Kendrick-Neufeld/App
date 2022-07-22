@@ -107,6 +107,10 @@ public class TableSelect extends javax.swing.JFrame {
             case 10:
                 break;
             case 11:
+                InsertMarca insertmarca = new InsertMarca();
+                insertmarca.sql = this.sql;
+                insertmarca.setVisible(true);
+                this.dispose();
                 break;
             case 12:
                 break;
