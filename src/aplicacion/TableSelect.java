@@ -76,33 +76,60 @@ public class TableSelect extends javax.swing.JFrame {
         int IdTableSelect = Tabla.getSelectedIndex();
         switch(IdTableSelect){
             case 0:
-                InsertEmpleado insertemp = new InsertEmpleado();
-                insertemp.sql = this.sql;
-                insertemp.setVisible(true);
+                InsertEmpleado insEmp = new InsertEmpleado();
+                insEmp.sql = this.sql;
+                insEmp.setVisible(true);
                 this.dispose();
                 break;
-            case 1:                
+
+            case 1:
+                InsertSuplidor insSup = new InsertSuplidor();
+               
+                insSup.setVisible(true);
+                this.dispose();
                 break;
             case 2:
+                InsertDispositivo insDispo= new InsertDispositivo();
+               
+                insDispo.setVisible(true);
+                this.dispose();
                 break;
             case 3:
+                InsertModelo insMod= new InsertModelo();
+               
+                insMod.setVisible(true);
+                this.dispose();
                 break;    
             case 4:
-                InsertMarca insertmarca = new InsertMarca();
-                insertmarca.sql = this.sql;
-                insertmarca.setVisible(true);
+                InsertMarca insMarca = new InsertMarca();
+                insMarca.sql = this.sql;
+                insMarca.setVisible(true);
                 this.dispose();
                 break;
             case 5: 
+                InsertAccesorio insAcc = new InsertAccesorio();
+               
+                insAcc.setVisible(true);
+                this.dispose();     
                 break;
             case 6:
+                InsertFactura insFactura = new InsertFactura();
+               
+                insFactura.setVisible(true);
+                this.dispose();
                 break;
             case 7:
+                InsertAccSuplidor insAccSup = new InsertAccSuplidor();
+               
+                insAccSup.setVisible(true);
+                this.dispose();
                 break;
             case 8:
+                InsertDispSuplidor insDispSup = new InsertDispSuplidor();
+               
+                insDispSup.setVisible(true);
+                this.dispose();
                 break;
-            case 9:
-                break; 
             default :
                 break;    
         }
