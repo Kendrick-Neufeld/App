@@ -148,7 +148,7 @@ public class LoginWindow extends javax.swing.JFrame {
         try{
         sql = getConexion(UserNameBar.getText(),PasswordField.getText()).createStatement();
         System.out.println("Login Succesful!");
-        AppLayout Mainmenu = new AppLayout();
+        MainMenu Mainmenu = new MainMenu();
         Mainmenu.setVisible(true);
         Mainmenu.sql = this.sql;
          this.dispose();

@@ -27,85 +27,66 @@ public class InsertDispSuply extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        dispoSupFormBG = new javax.swing.JPanel();
+        confirmButton = new javax.swing.JButton();
+        accSupLabel = new javax.swing.JLabel();
+        dispoIDLabel = new javax.swing.JLabel();
+        dispoIDTextField = new javax.swing.JTextField();
+        supIDLabel = new javax.swing.JLabel();
+        supIDTextField = new javax.swing.JTextField();
+        quantityLabel = new javax.swing.JLabel();
+        priceTextField = new javax.swing.JTextField();
+        priceLabel = new javax.swing.JLabel();
+        quantityTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        dispoSupFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        dispoSupFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
+        confirmButton.setText("Confirm");
+        dispoSupFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        jTextField1.setText("jTextField1");
+        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
+        accSupLabel.setText("Device Supplier");
+        dispoSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jLabel3.setText("jLabel3");
+        dispoIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        dispoIDLabel.setForeground(new java.awt.Color(27, 47, 59));
+        dispoIDLabel.setText("Device ID");
+        dispoSupFormBG.add(dispoIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        dispoSupFormBG.add(dispoIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
-        jTextField2.setText("jTextField2");
+        supIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        supIDLabel.setForeground(new java.awt.Color(27, 47, 59));
+        supIDLabel.setText("Supplier ID");
+        dispoSupFormBG.add(supIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        dispoSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
-        jLabel4.setText("jLabel4");
+        quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        quantityLabel.setForeground(new java.awt.Color(27, 47, 59));
+        quantityLabel.setText("Qt.");
+        dispoSupFormBG.add(quantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        dispoSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jTextField3.setText("jTextField3");
-
-        jLabel5.setText("jLabel5");
-
-        jTextField4.setText("jTextField4");
-
-        jButton1.setText("jButton1");
+        priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        priceLabel.setForeground(new java.awt.Color(27, 47, 59));
+        priceLabel.setText("Price");
+        dispoSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        dispoSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(317, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addContainerGap())
+                .addComponent(dispoSupFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(19, 19, 19))
+            .addComponent(dispoSupFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -147,15 +128,16 @@ public class InsertDispSuply extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel accSupLabel;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel dispoIDLabel;
+    private javax.swing.JTextField dispoIDTextField;
+    private javax.swing.JPanel dispoSupFormBG;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JTextField priceTextField;
+    private javax.swing.JLabel quantityLabel;
+    private javax.swing.JTextField quantityTextField;
+    private javax.swing.JLabel supIDLabel;
+    private javax.swing.JTextField supIDTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,181 +36,132 @@ public class InsertEmpleado extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        empFormBG = new javax.swing.JPanel();
+        femSexRadioButton = new javax.swing.JRadioButton();
+        mascSexRadioButton = new javax.swing.JRadioButton();
+        otherSexRadioButton = new javax.swing.JRadioButton();
+        depTallerRadioButton = new javax.swing.JRadioButton();
+        depVentasRadioButton = new javax.swing.JRadioButton();
+        empLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        empNombreTextField = new javax.swing.JTextField();
+        apellidoLabel = new javax.swing.JLabel();
+        empApellidoTextField = new javax.swing.JTextField();
+        cityLabel = new javax.swing.JLabel();
+        empSectoTextField = new javax.swing.JTextField();
+        sectorLabel = new javax.swing.JLabel();
+        empCiudadTextField = new javax.swing.JTextField();
+        depLabel = new javax.swing.JLabel();
+        empPaisTextField = new javax.swing.JTextField();
+        numberLabel = new javax.swing.JLabel();
+        empNumTelefonoTextField = new javax.swing.JTextField();
+        confirmButton = new javax.swing.JButton();
+        salaryLabel = new javax.swing.JLabel();
+        empSalarioTextField = new javax.swing.JTextField();
+        sexLabel = new javax.swing.JLabel();
+        countryLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        empFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        empFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
+        buttonGroup1.add(femSexRadioButton);
+        femSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
+        femSexRadioButton.setText("F");
+        empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
-        jTextField1.setText("jTextField1");
+        buttonGroup1.add(mascSexRadioButton);
+        mascSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
+        mascSexRadioButton.setText("M");
+        empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
-        jLabel3.setText("jLabel3");
+        buttonGroup1.add(otherSexRadioButton);
+        otherSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
+        otherSexRadioButton.setText("Other");
+        empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
 
-        jTextField2.setText("jTextField2");
+        buttonGroup2.add(depTallerRadioButton);
+        depTallerRadioButton.setForeground(new java.awt.Color(27, 47, 59));
+        depTallerRadioButton.setText("Taller");
+        empFormBG.add(depTallerRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, -1));
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("jRadioButton1");
+        buttonGroup2.add(depVentasRadioButton);
+        depVentasRadioButton.setForeground(new java.awt.Color(27, 47, 59));
+        depVentasRadioButton.setText("Ventas");
+        empFormBG.add(depVentasRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("jRadioButton2");
+        empLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        empLabel.setForeground(new java.awt.Color(27, 47, 59));
+        empLabel.setText("Employee");
+        empFormBG.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        buttonGroup1.add(jRadioButton3);
-        jRadioButton3.setText("jRadioButton3");
+        nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
+        nombreLabel.setText("Name");
+        empFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
-        jLabel4.setText("jLabel4");
+        apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
+        apellidoLabel.setText("Second Name");
+        empFormBG.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
-        jLabel5.setText("jLabel5");
+        cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cityLabel.setForeground(new java.awt.Color(27, 47, 59));
+        cityLabel.setText("City");
+        empFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        empFormBG.add(empSectoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jTextField3.setText("jTextField3");
+        sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
+        sectorLabel.setText("Sector");
+        empFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jLabel6.setText("jLabel6");
+        depLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        depLabel.setForeground(new java.awt.Color(27, 47, 59));
+        depLabel.setText("Department");
+        empFormBG.add(depLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
+        empFormBG.add(empPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
-        jTextField4.setText("jTextField4");
+        numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        numberLabel.setForeground(new java.awt.Color(27, 47, 59));
+        numberLabel.setText("Phone No.");
+        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
 
-        jLabel7.setText("jLabel7");
+        confirmButton.setText("Confirm");
+        empFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        jTextField5.setText("jTextField5");
+        salaryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        salaryLabel.setForeground(new java.awt.Color(27, 47, 59));
+        salaryLabel.setText("Salary");
+        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, -1));
 
-        jLabel8.setText("jLabel8");
+        sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        sexLabel.setForeground(new java.awt.Color(27, 47, 59));
+        sexLabel.setText("Sexo");
+        empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
 
-        jTextField6.setText("jTextField6");
-
-        jLabel9.setText("jLabel9");
-
-        jTextField7.setText("jTextField7");
-
-        jButton1.setText("Confirm");
-
-        jLabel10.setText("jLabel10");
-
-        buttonGroup2.add(jRadioButton4);
-        jRadioButton4.setText("jRadioButton4");
-
-        buttonGroup2.add(jRadioButton5);
-        jRadioButton5.setText("jRadioButton5");
+        countryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        countryLabel.setForeground(new java.awt.Color(27, 47, 59));
+        countryLabel.setText("Country");
+        empFormBG.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField3)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField4)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField7))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioButton1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jRadioButton3))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addContainerGap(33, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jRadioButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jRadioButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+            .addComponent(empFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton5))
-                        .addContainerGap(31, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(empFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,32 +203,33 @@ public class InsertEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel apellidoLabel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel countryLabel;
+    private javax.swing.JLabel depLabel;
+    private javax.swing.JRadioButton depTallerRadioButton;
+    private javax.swing.JRadioButton depVentasRadioButton;
+    private javax.swing.JTextField empApellidoTextField;
+    private javax.swing.JTextField empCiudadTextField;
+    private javax.swing.JPanel empFormBG;
+    private javax.swing.JLabel empLabel;
+    private javax.swing.JTextField empNombreTextField;
+    private javax.swing.JTextField empNumTelefonoTextField;
+    private javax.swing.JTextField empPaisTextField;
+    private javax.swing.JTextField empSalarioTextField;
+    private javax.swing.JTextField empSectoTextField;
+    private javax.swing.JRadioButton femSexRadioButton;
+    private javax.swing.JRadioButton mascSexRadioButton;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel numberLabel;
+    private javax.swing.JRadioButton otherSexRadioButton;
+    private javax.swing.JLabel salaryLabel;
+    private javax.swing.JLabel sectorLabel;
+    private javax.swing.JLabel sexLabel;
     // End of variables declaration//GEN-END:variables
 }

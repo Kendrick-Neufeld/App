@@ -32,50 +32,46 @@ public class TableSelect extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         Tabla = new javax.swing.JComboBox<>();
+        continueButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("Select");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Empleado", "Cliente", "Factura", "Factura_dispositivo", "Factura_accesorio", "Producto", "Suplidor", "Producto_suplidor", "Dispositivo", "Accesorio", "Modelo", "Marca" }));
+        Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply" }));
         Tabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TablaActionPerformed(evt);
             }
         });
+        jPanel1.add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 210, 50));
+
+        continueButton.setText("Continue");
+        continueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                continueButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(continueButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 130, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(304, 304, 304)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tabla, 0, 140, Short.MAX_VALUE))
-                .addContainerGap(306, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
-                .addComponent(Tabla, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
         // TODO add your handling code here:
         int IdTableSelect = Tabla.getSelectedIndex();
         switch(IdTableSelect){
@@ -85,16 +81,19 @@ public class TableSelect extends javax.swing.JFrame {
                 insertemp.setVisible(true);
                 this.dispose();
                 break;
-            case 1:
-                
+            case 1:                
                 break;
             case 2:
                 break;
             case 3:
                 break;    
             case 4:
+                InsertMarca insertmarca = new InsertMarca();
+                insertmarca.sql = this.sql;
+                insertmarca.setVisible(true);
+                this.dispose();
                 break;
-            case 5:
+            case 5: 
                 break;
             case 6:
                 break;
@@ -103,23 +102,11 @@ public class TableSelect extends javax.swing.JFrame {
             case 8:
                 break;
             case 9:
-                break;
-            case 10:
-                break;
-            case 11:
-                InsertMarca insertmarca = new InsertMarca();
-                insertmarca.sql = this.sql;
-                insertmarca.setVisible(true);
-                this.dispose();
-                break;
-            case 12:
-                break;
-            case 13:
-                break;    
+                break; 
             default :
                 break;    
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_continueButtonActionPerformed
 
     private void TablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TablaActionPerformed
         // TODO add your handling code here:
@@ -163,6 +150,7 @@ public class TableSelect extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Tabla;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton continueButton;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

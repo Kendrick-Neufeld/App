@@ -27,121 +27,80 @@ public class InsertSuplidor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        supFormBG = new javax.swing.JPanel();
+        supLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        supNombreTextField = new javax.swing.JTextField();
+        calleLabel = new javax.swing.JLabel();
+        supCalleTextField = new javax.swing.JTextField();
+        cityLabel = new javax.swing.JLabel();
+        supSectorTextField = new javax.swing.JTextField();
+        sectorLabel = new javax.swing.JLabel();
+        supCiudadTextField = new javax.swing.JTextField();
+        countryLabel = new javax.swing.JLabel();
+        supPaisTextField = new javax.swing.JTextField();
+        numberLabel = new javax.swing.JLabel();
+        supNumTelefonoTextField = new javax.swing.JTextField();
+        confirmButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        supFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        supFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
+        supLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        supLabel.setForeground(new java.awt.Color(27, 47, 59));
+        supLabel.setText("Supplier");
+        supFormBG.add(supLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jTextField1.setText("jTextField1");
+        nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
+        nombreLabel.setText("Name");
+        supFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        supFormBG.add(supNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
-        jLabel3.setText("jLabel3");
+        calleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        calleLabel.setForeground(new java.awt.Color(27, 47, 59));
+        calleLabel.setText("Street");
+        supFormBG.add(calleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        supFormBG.add(supCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
-        jTextField2.setText("jTextField2");
+        cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cityLabel.setForeground(new java.awt.Color(27, 47, 59));
+        cityLabel.setText("City");
+        supFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        supFormBG.add(supSectorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jLabel4.setText("jLabel4");
+        sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
+        sectorLabel.setText("Sector");
+        supFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        supFormBG.add(supCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jTextField3.setText("jTextField3");
+        countryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        countryLabel.setForeground(new java.awt.Color(27, 47, 59));
+        countryLabel.setText("Country");
+        supFormBG.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        supFormBG.add(supPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
-        jLabel5.setText("jLabel5");
+        numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        numberLabel.setForeground(new java.awt.Color(27, 47, 59));
+        numberLabel.setText("Phone No.");
+        supFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        supFormBG.add(supNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
 
-        jTextField4.setText("jTextField4");
-
-        jLabel6.setText("jLabel6");
-
-        jTextField5.setText("jTextField5");
-
-        jLabel7.setText("jLabel7");
-
-        jTextField6.setText("jTextField6");
-
-        jButton1.setText("jButton1");
+        confirmButton.setText("Confirm");
+        supFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(549, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(39, 39, 39))
+            .addComponent(supFormBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(30, 30, 30))
+            .addComponent(supFormBG, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
         );
 
         pack();
@@ -183,19 +142,20 @@ public class InsertSuplidor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel calleLabel;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JLabel countryLabel;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel numberLabel;
+    private javax.swing.JLabel sectorLabel;
+    private javax.swing.JTextField supCalleTextField;
+    private javax.swing.JTextField supCiudadTextField;
+    private javax.swing.JPanel supFormBG;
+    private javax.swing.JLabel supLabel;
+    private javax.swing.JTextField supNombreTextField;
+    private javax.swing.JTextField supNumTelefonoTextField;
+    private javax.swing.JTextField supPaisTextField;
+    private javax.swing.JTextField supSectorTextField;
     // End of variables declaration//GEN-END:variables
 }

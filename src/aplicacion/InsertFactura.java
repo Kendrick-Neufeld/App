@@ -27,138 +27,92 @@ public class InsertFactura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        facturaFormBG = new javax.swing.JPanel();
+        tipoProdSelect = new javax.swing.JComboBox<>();
+        itemIdTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        itemsToPurchaseTextArea = new javax.swing.JTextArea();
+        addButton = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
+        facturaLabel = new javax.swing.JLabel();
+        purchaseLabel = new javax.swing.JLabel();
+        cliNombreTextField = new javax.swing.JTextField();
+        cliApellidoTextField = new javax.swing.JTextField();
+        cliApellidoLabel = new javax.swing.JLabel();
+        cliNombreLabel = new javax.swing.JLabel();
+        itemIdLabel = new javax.swing.JLabel();
+        modIDLabel2 = new javax.swing.JLabel();
+        numberLabel = new javax.swing.JLabel();
+        cliNumTelefonoTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        facturaFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        facturaFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
+        tipoProdSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dispo", "Acc" }));
+        facturaFormBG.add(tipoProdSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, -1));
+        facturaFormBG.add(itemIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 130, -1));
 
-        jTextField1.setText("jTextField1");
+        itemsToPurchaseTextArea.setColumns(20);
+        itemsToPurchaseTextArea.setRows(5);
+        jScrollPane1.setViewportView(itemsToPurchaseTextArea);
 
-        jLabel3.setText("jLabel3");
+        facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 300, 150));
 
-        jTextField2.setText("jTextField2");
+        addButton.setText("Add");
+        facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 80, -1));
 
-        jLabel4.setText("jLabel4");
+        confirmButton.setText("Confirm");
+        facturaFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        jTextField3.setText("jTextField3");
+        facturaLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        facturaLabel.setForeground(new java.awt.Color(27, 47, 59));
+        facturaLabel.setText("Receipt");
+        facturaFormBG.add(facturaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dispositivo", "Accesorio" }));
+        purchaseLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        purchaseLabel.setForeground(new java.awt.Color(27, 47, 59));
+        purchaseLabel.setText("Purchase");
+        facturaFormBG.add(purchaseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
+        facturaFormBG.add(cliNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+        facturaFormBG.add(cliApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
-        jTextField4.setText("jTextField4");
+        cliApellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cliApellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
+        cliApellidoLabel.setText("Client Second Name");
+        facturaFormBG.add(cliApellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        jLabel5.setText("jLabel5");
+        cliNombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cliNombreLabel.setForeground(new java.awt.Color(27, 47, 59));
+        cliNombreLabel.setText("Client Name");
+        facturaFormBG.add(cliNombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel6.setText("jLabel6");
+        itemIdLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        itemIdLabel.setForeground(new java.awt.Color(27, 47, 59));
+        itemIdLabel.setText("Item ID");
+        facturaFormBG.add(itemIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("15 - Xiaomi note 11 15 $15000\n");
-        jScrollPane1.setViewportView(jTextArea1);
+        modIDLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        modIDLabel2.setForeground(new java.awt.Color(27, 47, 59));
+        modIDLabel2.setText("Type");
+        facturaFormBG.add(modIDLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
-        jLabel7.setText("jLabel7");
-
-        jButton1.setText("jButton1");
-
-        jButton2.setText("jButton2");
+        numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        numberLabel.setForeground(new java.awt.Color(27, 47, 59));
+        numberLabel.setText("Client Phone No.");
+        facturaFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        facturaFormBG.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel5)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
-                                .addComponent(jButton2)
-                                .addGap(37, 37, 37))))))
+            .addComponent(facturaFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel5)
-                        .addComponent(jLabel6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(16, 16, 16)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(89, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2)
-                        .addGap(69, 69, 69))))
+            .addComponent(facturaFormBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -201,21 +155,22 @@ public class InsertFactura extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JButton addButton;
+    private javax.swing.JLabel cliApellidoLabel;
+    private javax.swing.JTextField cliApellidoTextField;
+    private javax.swing.JLabel cliNombreLabel;
+    private javax.swing.JTextField cliNombreTextField;
+    private javax.swing.JTextField cliNumTelefonoTextField;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JPanel facturaFormBG;
+    private javax.swing.JLabel facturaLabel;
+    private javax.swing.JLabel itemIdLabel;
+    private javax.swing.JTextField itemIdTextField;
+    private javax.swing.JTextArea itemsToPurchaseTextArea;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel modIDLabel2;
+    private javax.swing.JLabel numberLabel;
+    private javax.swing.JLabel purchaseLabel;
+    private javax.swing.JComboBox<String> tipoProdSelect;
     // End of variables declaration//GEN-END:variables
 }

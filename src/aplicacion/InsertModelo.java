@@ -27,101 +27,72 @@ public class InsertModelo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        modFormBG = new javax.swing.JPanel();
+        ModeloLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
+        modNombreTextField = new javax.swing.JTextField();
+        colorLabel = new javax.swing.JLabel();
+        modColorTextField = new javax.swing.JTextField();
+        sizeLabel = new javax.swing.JLabel();
+        modCapacidadTextField = new javax.swing.JTextField();
+        capacidadLabel = new javax.swing.JLabel();
+        modTamanoTextField = new javax.swing.JTextField();
+        brandIdLabel = new javax.swing.JLabel();
+        brandIdTextField = new javax.swing.JTextField();
+        confirmButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        modFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        modFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setText("jLabel2");
+        ModeloLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ModeloLabel.setForeground(new java.awt.Color(27, 47, 59));
+        ModeloLabel.setText("Model");
+        modFormBG.add(ModeloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        jTextField1.setText("jTextField1");
+        nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
+        nombreLabel.setText("Name");
+        modFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        modFormBG.add(modNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
-        jLabel3.setText("jLabel3");
+        colorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        colorLabel.setForeground(new java.awt.Color(27, 47, 59));
+        colorLabel.setText("Color");
+        modFormBG.add(colorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        modFormBG.add(modColorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
-        jLabel4.setText("jLabel4");
+        sizeLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        sizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        sizeLabel.setText("Size");
+        modFormBG.add(sizeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        modFormBG.add(modCapacidadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jTextField2.setText("jTextField2");
+        capacidadLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        capacidadLabel.setForeground(new java.awt.Color(27, 47, 59));
+        capacidadLabel.setText("Capacity");
+        modFormBG.add(capacidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        modFormBG.add(modTamanoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jLabel5.setText("jLabel5");
+        brandIdLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        brandIdLabel.setForeground(new java.awt.Color(27, 47, 59));
+        brandIdLabel.setText("Brand ID");
+        modFormBG.add(brandIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
-        jTextField3.setText("jTextField3");
-
-        jTextField4.setText("jTextField4");
-
-        jLabel6.setText("jLabel6");
-
-        jTextField5.setText("jTextField5");
-
-        jButton1.setText("jButton1");
+        confirmButton.setText("Confirm");
+        modFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))))
-                .addContainerGap(592, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(48, 48, 48))
+            .addComponent(modFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(jLabel4)
-                .addGap(1, 1, 1)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addContainerGap(39, Short.MAX_VALUE))
+            .addComponent(modFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -163,17 +134,18 @@ public class InsertModelo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel ModeloLabel;
+    private javax.swing.JLabel brandIdLabel;
+    private javax.swing.JTextField brandIdTextField;
+    private javax.swing.JLabel capacidadLabel;
+    private javax.swing.JLabel colorLabel;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JTextField modCapacidadTextField;
+    private javax.swing.JTextField modColorTextField;
+    private javax.swing.JPanel modFormBG;
+    private javax.swing.JTextField modNombreTextField;
+    private javax.swing.JTextField modTamanoTextField;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel sizeLabel;
     // End of variables declaration//GEN-END:variables
 }
