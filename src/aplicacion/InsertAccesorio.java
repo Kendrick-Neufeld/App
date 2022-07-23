@@ -5,6 +5,9 @@
  */
 package aplicacion;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -14,6 +17,8 @@ public class InsertAccesorio extends javax.swing.JFrame {
     /**
      * Creates new form InsertAccesorio
      */
+    
+    public Statement sql;
     public InsertAccesorio() {
         initComponents();
     }
@@ -36,6 +41,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
         priceTextField = new javax.swing.JTextField();
         priceLabel = new javax.swing.JLabel();
         quantityTextField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,6 +49,11 @@ public class InsertAccesorio extends javax.swing.JFrame {
         AccFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
         AccFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
         accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -68,6 +79,14 @@ public class InsertAccesorio extends javax.swing.JFrame {
         AccFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
         AccFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        AccFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 50, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,6 +102,37 @@ public class InsertAccesorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        if(accNombreTextField.getText() != "" && priceTextField.getText() != "" && quantityTextField.getText() != ""){
+            String Query = "insert into Accesorio (AccNombre, AccPrecio, Cantidad) values ('" 
+            + accNombreTextField.getText() + "','" + priceTextField.getText() + "','" + quantityTextField.getText() + "')";
+            try {
+                sql.executeQuery(Query);               
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            accNombreTextField.setText("");
+            priceTextField.setText("");
+            quantityTextField.setText("");
+            JOptionPane.showMessageDialog(null, "Data succesfully added");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please Insert Data First");
+        }
+        
+        
+        
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TableSelect selectTable = new TableSelect();
+                selectTable.sql = this.sql;
+                selectTable.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +175,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
     private javax.swing.JTextField accNombreTextField;
     private javax.swing.JLabel accSupLabel;
     private javax.swing.JButton confirmButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JTextField priceTextField;
     private javax.swing.JLabel quantityLabel;

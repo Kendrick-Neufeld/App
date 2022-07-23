@@ -6,6 +6,7 @@
 package aplicacion;
 
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -52,14 +53,15 @@ public class InsertEmpleado extends javax.swing.JFrame {
         sectorLabel = new javax.swing.JLabel();
         empCiudadTextField = new javax.swing.JTextField();
         depLabel = new javax.swing.JLabel();
-        empPaisTextField = new javax.swing.JTextField();
         numberLabel = new javax.swing.JLabel();
         empNumTelefonoTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
         salaryLabel = new javax.swing.JLabel();
         empSalarioTextField = new javax.swing.JTextField();
         sexLabel = new javax.swing.JLabel();
-        countryLabel = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        CalleLabel = new javax.swing.JLabel();
+        empCalleTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,17 +71,17 @@ public class InsertEmpleado extends javax.swing.JFrame {
         buttonGroup1.add(femSexRadioButton);
         femSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         femSexRadioButton.setText("F");
-        empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
+        empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
 
         buttonGroup1.add(mascSexRadioButton);
         mascSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         mascSexRadioButton.setText("M");
-        empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
+        empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
         buttonGroup1.add(otherSexRadioButton);
         otherSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         otherSexRadioButton.setText("Other");
-        empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, -1, -1));
+        empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
 
         buttonGroup2.add(depTallerRadioButton);
         depTallerRadioButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -124,7 +126,6 @@ public class InsertEmpleado extends javax.swing.JFrame {
         depLabel.setForeground(new java.awt.Color(27, 47, 59));
         depLabel.setText("Department");
         empFormBG.add(depLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
-        empFormBG.add(empPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -133,6 +134,11 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
 
         confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
         empFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
         salaryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -144,28 +150,109 @@ public class InsertEmpleado extends javax.swing.JFrame {
         sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sexLabel.setForeground(new java.awt.Color(27, 47, 59));
         sexLabel.setText("Sexo");
-        empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
+        empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
-        countryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        countryLabel.setForeground(new java.awt.Color(27, 47, 59));
-        countryLabel.setText("Country");
-        empFormBG.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        empFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
+
+        CalleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        CalleLabel.setForeground(new java.awt.Color(27, 47, 59));
+        CalleLabel.setText("Street");
+        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
+        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 130, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(empFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(empFormBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(empFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         TableSelect selectTable = new TableSelect();
+                selectTable.sql = this.sql;
+                selectTable.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        if(        empApellidoTextField.getText() != "" 
+                && empCiudadTextField.getText() != "" 
+                && empNombreTextField.getText() != "" 
+                && empNumTelefonoTextField.getText() != ""
+                && empSectoTextField.getText() != ""
+                && empSalarioTextField.getText() != ""
+                && empCalleTextField.getText() != ""
+                && (femSexRadioButton.isSelected() == true 
+                || mascSexRadioButton.isSelected() == true 
+                || otherSexRadioButton.isSelected() == true)
+                && (depTallerRadioButton.isSelected() == true
+                || depVentasRadioButton.isSelected() == true)){
+            
+            String empSex = "";
+            if(femSexRadioButton.isSelected() == true ){
+                empSex = "femenino";
+            }
+            else if(mascSexRadioButton.isSelected() == true){
+                empSex = "masculino";
+            }
+            else{
+                empSex = "otro";
+            }
+            String departamento = "";
+            if(depTallerRadioButton.isSelected() == true){
+                departamento = "taller";
+            }
+            else{
+                departamento = "ventas";
+            }
+            String Query = "insert into Empleado (EmpNombre,EmpApellido,"
+                    + "EmpSexo,EmpSalario,EmpCalle,EmpSector,EmpCiudad,EmpNúmTeléfono,Departamento)"
+                    + " values ('" + empNombreTextField.getText() + "','"
+                    + empApellidoTextField.getText() + "','" 
+                    + empSex + "','" 
+                    + empSalarioTextField.getText() + "','" 
+                    + empCalleTextField.getText() + "','" 
+                    + empSectoTextField.getText() + "','" 
+                    + empCiudadTextField.getText() + "','" 
+                    + empNumTelefonoTextField.getText() + "','"                    
+                    + departamento + "')";
+            try {
+                sql.executeQuery(Query);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            empNombreTextField.setText("");
+            empApellidoTextField.setText("");
+            empSalarioTextField.setText("");
+            empCalleTextField.setText("");
+            empSectoTextField.setText("");
+            empCiudadTextField.setText("");
+            empNumTelefonoTextField.setText("");
+            buttonGroup1.clearSelection();
+            buttonGroup2.clearSelection();
+            JOptionPane.showMessageDialog(null, "Data succesfully added");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please Insert Data First");
+        }
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,6 +290,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CalleLabel;
     private javax.swing.JLabel apellidoLabel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -210,20 +298,20 @@ public class InsertEmpleado extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JLabel cityLabel;
     private javax.swing.JButton confirmButton;
-    private javax.swing.JLabel countryLabel;
     private javax.swing.JLabel depLabel;
     private javax.swing.JRadioButton depTallerRadioButton;
     private javax.swing.JRadioButton depVentasRadioButton;
     private javax.swing.JTextField empApellidoTextField;
+    private javax.swing.JTextField empCalleTextField;
     private javax.swing.JTextField empCiudadTextField;
     private javax.swing.JPanel empFormBG;
     private javax.swing.JLabel empLabel;
     private javax.swing.JTextField empNombreTextField;
     private javax.swing.JTextField empNumTelefonoTextField;
-    private javax.swing.JTextField empPaisTextField;
     private javax.swing.JTextField empSalarioTextField;
     private javax.swing.JTextField empSectoTextField;
     private javax.swing.JRadioButton femSexRadioButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JRadioButton mascSexRadioButton;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel numberLabel;

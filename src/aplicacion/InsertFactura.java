@@ -5,6 +5,8 @@
  */
 package aplicacion;
 
+import java.sql.*;
+
 /**
  *
  * @author Usuario
@@ -14,6 +16,7 @@ public class InsertFactura extends javax.swing.JFrame {
     /**
      * Creates new form InsertClient
      */
+    public Statement sql;
     public InsertFactura() {
         initComponents();
     }
@@ -44,6 +47,7 @@ public class InsertFactura extends javax.swing.JFrame {
         modIDLabel2 = new javax.swing.JLabel();
         numberLabel = new javax.swing.JLabel();
         cliNumTelefonoTextField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +108,14 @@ public class InsertFactura extends javax.swing.JFrame {
         facturaFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
         facturaFormBG.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        facturaFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,6 +129,14 @@ public class InsertFactura extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         TableSelect selectTable = new TableSelect();
+                selectTable.sql = this.sql;
+                selectTable.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +187,7 @@ public class InsertFactura extends javax.swing.JFrame {
     private javax.swing.JLabel itemIdLabel;
     private javax.swing.JTextField itemIdTextField;
     private javax.swing.JTextArea itemsToPurchaseTextArea;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel modIDLabel2;
     private javax.swing.JLabel numberLabel;

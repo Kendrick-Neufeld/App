@@ -5,6 +5,9 @@
  */
 package aplicacion;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario
@@ -14,6 +17,7 @@ public class InsertModelo extends javax.swing.JFrame {
     /**
      * Creates new form InsertModelo
      */
+    public Statement sql;
     public InsertModelo() {
         initComponents();
     }
@@ -40,6 +44,7 @@ public class InsertModelo extends javax.swing.JFrame {
         brandIdLabel = new javax.swing.JLabel();
         brandIdTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,7 +87,20 @@ public class InsertModelo extends javax.swing.JFrame {
         modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
         confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
         modFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        modFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +115,44 @@ public class InsertModelo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         TableSelect selectTable = new TableSelect();
+                selectTable.sql = this.sql;
+                selectTable.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        if(        brandIdTextField.getText() != "" 
+                && modCapacidadTextField.getText() != "" 
+                && modColorTextField.getText() != ""
+                && modNombreTextField.getText() != ""
+                && modTamanoTextField.getText() != ""){
+            String Query = "insert into Modelo (ModNombre, ModColor, ModCapacidad, ModTamaño, MarcaID) values ('" 
+                    + modNombreTextField.getText() + "','" 
+                    + modColorTextField.getText() + "','" 
+                    + modCapacidadTextField.getText() + "','" 
+                    + modTamanoTextField.getText() + "','" 
+                    + brandIdTextField.getText() + "')";
+            try {
+                sql.executeQuery(Query);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            modNombreTextField.setText("");
+            modColorTextField.setText("");
+            modCapacidadTextField.setText("");
+            modTamanoTextField.setText("");
+            brandIdTextField.setText("");
+            JOptionPane.showMessageDialog(null, "Data succesfully added");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please Insert Data First");
+        }
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,6 +196,7 @@ public class InsertModelo extends javax.swing.JFrame {
     private javax.swing.JLabel capacidadLabel;
     private javax.swing.JLabel colorLabel;
     private javax.swing.JButton confirmButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JTextField modCapacidadTextField;
     private javax.swing.JTextField modColorTextField;
     private javax.swing.JPanel modFormBG;

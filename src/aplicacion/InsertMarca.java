@@ -39,6 +39,7 @@ public class InsertMarca extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         MarcaNombre = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +65,14 @@ public class InsertMarca extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -87,6 +96,8 @@ public class InsertMarca extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
+            MarcaNombre.setText("");
+            JOptionPane.showMessageDialog(null, "Data succesfully added");
         }
         else{
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
@@ -95,6 +106,14 @@ public class InsertMarca extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         TableSelect selectTable = new TableSelect();
+                selectTable.sql = this.sql;
+                selectTable.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,6 +153,7 @@ public class InsertMarca extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField MarcaNombre;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

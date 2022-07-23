@@ -84,19 +84,19 @@ public class TableSelect extends javax.swing.JFrame {
 
             case 1:
                 InsertSuplidor insSup = new InsertSuplidor();
-               
+                insSup.sql = this.sql;
                 insSup.setVisible(true);
                 this.dispose();
                 break;
             case 2:
                 InsertDispositivo insDispo= new InsertDispositivo();
-               
+                insDispo.sql = this.sql;
                 insDispo.setVisible(true);
                 this.dispose();
                 break;
             case 3:
                 InsertModelo insMod= new InsertModelo();
-               
+                insMod.sql = this.sql;
                 insMod.setVisible(true);
                 this.dispose();
                 break;    
@@ -108,29 +108,30 @@ public class TableSelect extends javax.swing.JFrame {
                 break;
             case 5: 
                 InsertAccesorio insAcc = new InsertAccesorio();
-               
+                insAcc.sql = this.sql;
                 insAcc.setVisible(true);
                 this.dispose();     
                 break;
             case 6:
                 InsertFactura insFactura = new InsertFactura();
-               
+                insFactura.sql = this.sql;
                 insFactura.setVisible(true);
                 this.dispose();
                 break;
             case 7:
                 InsertAccSuplidor insAccSup = new InsertAccSuplidor();
-               
+                insAccSup.sql = this.sql;
                 insAccSup.setVisible(true);
                 this.dispose();
                 break;
             case 8:
                 InsertDispSuplidor insDispSup = new InsertDispSuplidor();
-               
+                insDispSup.sql = this.sql;
                 insDispSup.setVisible(true);
                 this.dispose();
                 break;
             default :
+                System.out.println("Hubo un error en la seleccion de tablas.");
                 break;    
         }
     }//GEN-LAST:event_continueButtonActionPerformed
