@@ -51,7 +51,7 @@ public class MainMenu extends javax.swing.JFrame {
         mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         catalog.setText("Catalog");
-        mainMenuBG.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 170, 110));
+        mainMenuBG.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 145, 95));
 
         insert.setText("Insert");
         insert.addActionListener(new java.awt.event.ActionListener() {
@@ -59,20 +59,20 @@ public class MainMenu extends javax.swing.JFrame {
                 insertActionPerformed(evt);
             }
         });
-        mainMenuBG.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 170, 110));
+        mainMenuBG.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 145, 95));
 
         edit.setText("Edit");
-        mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 170, 110));
+        mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 145, 95));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE)
+            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

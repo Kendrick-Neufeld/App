@@ -44,7 +44,7 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         priceTextField = new javax.swing.JTextField();
         priceLabel = new javax.swing.JLabel();
         quantityTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,13 +94,13 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         accSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
         accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        accSupFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
+        accSupFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,13 +142,13 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_accIDTextFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
          TableSelect selectTable = new TableSelect();
                 selectTable.sql = this.sql;
                 selectTable.setVisible(true);
                 this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,8 +191,8 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
     private javax.swing.JTextField accIDTextField;
     private javax.swing.JPanel accSupFormBG;
     private javax.swing.JLabel accSupLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JButton confirmButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JTextField priceTextField;
     private javax.swing.JLabel quantityLabel;

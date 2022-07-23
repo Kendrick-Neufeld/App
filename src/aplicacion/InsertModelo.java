@@ -45,6 +45,7 @@ public class InsertModelo extends javax.swing.JFrame {
         brandIdTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +103,14 @@ public class InsertModelo extends javax.swing.JFrame {
         });
         modFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        modFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,6 +163,14 @@ public class InsertModelo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmButtonActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        TableSelect selectTable = new TableSelect();
+        selectTable.sql = this.sql;
+        selectTable.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -191,6 +208,7 @@ public class InsertModelo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ModeloLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel brandIdLabel;
     private javax.swing.JTextField brandIdTextField;
     private javax.swing.JLabel capacidadLabel;

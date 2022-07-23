@@ -41,7 +41,7 @@ public class InsertDispositivo extends javax.swing.JFrame {
         priceTextField = new javax.swing.JTextField();
         priceLabel = new javax.swing.JLabel();
         quantityTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,13 +79,13 @@ public class InsertDispositivo extends javax.swing.JFrame {
         jPanel1.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
         jPanel1.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -102,14 +102,6 @@ public class InsertDispositivo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         TableSelect selectTable = new TableSelect();
-                selectTable.sql = this.sql;
-                selectTable.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
@@ -130,6 +122,14 @@ public class InsertDispositivo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
         }
     }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        TableSelect selectTable = new TableSelect();
+        selectTable.sql = this.sql;
+        selectTable.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,8 +169,8 @@ public class InsertDispositivo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accSupLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JButton confirmButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel modIDLabel;
     private javax.swing.JTextField modIdTextField;

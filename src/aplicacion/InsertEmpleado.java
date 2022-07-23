@@ -59,9 +59,9 @@ public class InsertEmpleado extends javax.swing.JFrame {
         salaryLabel = new javax.swing.JLabel();
         empSalarioTextField = new javax.swing.JTextField();
         sexLabel = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         CalleLabel = new javax.swing.JLabel();
         empCalleTextField = new javax.swing.JTextField();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,19 +152,19 @@ public class InsertEmpleado extends javax.swing.JFrame {
         sexLabel.setText("Sexo");
         empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        empFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 10, -1, -1));
-
         CalleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         CalleLabel.setForeground(new java.awt.Color(27, 47, 59));
         CalleLabel.setText("Street");
         empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
         empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 130, -1));
+
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        empFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -181,14 +181,6 @@ public class InsertEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         TableSelect selectTable = new TableSelect();
-                selectTable.sql = this.sql;
-                selectTable.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
@@ -254,6 +246,14 @@ public class InsertEmpleado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_confirmButtonActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        TableSelect selectTable = new TableSelect();
+        selectTable.sql = this.sql;
+        selectTable.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -292,6 +292,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CalleLabel;
     private javax.swing.JLabel apellidoLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -311,7 +312,6 @@ public class InsertEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField empSalarioTextField;
     private javax.swing.JTextField empSectoTextField;
     private javax.swing.JRadioButton femSexRadioButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JRadioButton mascSexRadioButton;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel numberLabel;

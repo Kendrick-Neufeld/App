@@ -47,7 +47,7 @@ public class InsertFactura extends javax.swing.JFrame {
         modIDLabel2 = new javax.swing.JLabel();
         numberLabel = new javax.swing.JLabel();
         cliNumTelefonoTextField = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,13 +108,13 @@ public class InsertFactura extends javax.swing.JFrame {
         facturaFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
         facturaFormBG.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        backButton.setText("Back");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                backButtonActionPerformed(evt);
             }
         });
-        facturaFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
+        facturaFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,13 +130,13 @@ public class InsertFactura extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-         TableSelect selectTable = new TableSelect();
-                selectTable.sql = this.sql;
-                selectTable.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+        TableSelect selectTable = new TableSelect();
+        selectTable.sql = this.sql;
+        selectTable.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,6 +176,7 @@ public class InsertFactura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel cliApellidoLabel;
     private javax.swing.JTextField cliApellidoTextField;
     private javax.swing.JLabel cliNombreLabel;
@@ -187,7 +188,6 @@ public class InsertFactura extends javax.swing.JFrame {
     private javax.swing.JLabel itemIdLabel;
     private javax.swing.JTextField itemIdTextField;
     private javax.swing.JTextArea itemsToPurchaseTextArea;
-    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel modIDLabel2;
     private javax.swing.JLabel numberLabel;
