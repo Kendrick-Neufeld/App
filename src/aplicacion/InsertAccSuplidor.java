@@ -37,14 +37,14 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         confirmButton = new javax.swing.JButton();
         accSupLabel = new javax.swing.JLabel();
         accIDLabel = new javax.swing.JLabel();
-        accIDTextField = new javax.swing.JTextField();
         supIDLabel = new javax.swing.JLabel();
-        supIDTextField = new javax.swing.JTextField();
         quantityLabel = new javax.swing.JLabel();
-        priceTextField = new javax.swing.JTextField();
         priceLabel = new javax.swing.JLabel();
-        quantityTextField = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
+        quantityTextField = new javax.swing.JTextField();
+        accIDTextField = new javax.swing.JTextField();
+        supIDTextField = new javax.swing.JTextField();
+        priceTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,45 +69,20 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         accIDLabel.setText("Accessory ID");
         accSupFormBG.add(accIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        accIDTextField.setBackground(new java.awt.Color(194, 200, 203));
-        accIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        accIDTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
-        accIDTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                accIDTextFieldActionPerformed(evt);
-            }
-        });
-        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, 22));
-
         supIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         supIDLabel.setForeground(new java.awt.Color(27, 47, 59));
         supIDLabel.setText("Supplier ID");
         accSupFormBG.add(supIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        supIDTextField.setBackground(new java.awt.Color(194, 200, 203));
-        supIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        supIDTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
-        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 22));
 
         quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         quantityLabel.setForeground(new java.awt.Color(27, 47, 59));
         quantityLabel.setText("Qt.");
         accSupFormBG.add(quantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        priceTextField.setBackground(new java.awt.Color(194, 200, 203));
-        priceTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        priceTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
-        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 22));
-
         priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(27, 47, 59));
         priceLabel.setText("Price");
         accSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 40, -1));
-
-        quantityTextField.setBackground(new java.awt.Color(194, 200, 203));
-        quantityTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        quantityTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
-        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, 22));
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +91,10 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
             }
         });
         accSupFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
+        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, 22));
+        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, 22));
+        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 22));
+        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 22));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -152,10 +131,6 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
         }
     }//GEN-LAST:event_confirmButtonActionPerformed
-
-    private void accIDTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accIDTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_accIDTextFieldActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
