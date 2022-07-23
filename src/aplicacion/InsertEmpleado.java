@@ -6,6 +6,7 @@
 package aplicacion;
 
 import java.sql.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -68,26 +69,31 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empFormBG.setBackground(new java.awt.Color(247, 247, 247));
         empFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        femSexRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup1.add(femSexRadioButton);
         femSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         femSexRadioButton.setText("F");
         empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
 
+        mascSexRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup1.add(mascSexRadioButton);
         mascSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         mascSexRadioButton.setText("M");
         empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
 
+        otherSexRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup1.add(otherSexRadioButton);
         otherSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         otherSexRadioButton.setText("Other");
         empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
 
+        depTallerRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup2.add(depTallerRadioButton);
         depTallerRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         depTallerRadioButton.setText("Taller");
         empFormBG.add(depTallerRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, -1));
 
+        depVentasRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup2.add(depVentasRadioButton);
         depVentasRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         depVentasRadioButton.setText("Ventas");
@@ -101,13 +107,13 @@ public class InsertEmpleado extends javax.swing.JFrame {
         nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
         nombreLabel.setText("Name");
-        empFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        empFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 40, -1));
         empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
         apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
         apellidoLabel.setText("Second Name");
-        empFormBG.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        empFormBG.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
         empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
 
         cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -119,7 +125,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
         sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
         sectorLabel.setText("Sector");
-        empFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        empFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 40, -1));
         empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
 
         depLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -130,10 +136,23 @@ public class InsertEmpleado extends javax.swing.JFrame {
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
         numberLabel.setText("Phone No.");
-        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 60, -1));
         empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
+        confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        confirmButton.setForeground(new java.awt.Color(27, 47, 59));
+        confirmButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         confirmButton.setText("Confirm");
+        confirmButton.setBorder(null);
+        confirmButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        confirmButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                confirmButtonMouseExited(evt);
+            }
+        });
         confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirmButtonActionPerformed(evt);
@@ -144,7 +163,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
         salaryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         salaryLabel.setForeground(new java.awt.Color(27, 47, 59));
         salaryLabel.setText("Salary");
-        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 40, -1));
         empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
 
         sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -155,10 +174,23 @@ public class InsertEmpleado extends javax.swing.JFrame {
         CalleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         CalleLabel.setForeground(new java.awt.Color(27, 47, 59));
         CalleLabel.setText("Street");
-        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 40, -1));
         empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, -1));
 
+        backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(27, 47, 59));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+        });
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -253,6 +285,26 @@ public class InsertEmpleado extends javax.swing.JFrame {
         selectTable.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseEntered
+
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseExited
+
+    private void confirmButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        confirmButton.setIcon(image);
+    }//GEN-LAST:event_confirmButtonMouseEntered
+
+    private void confirmButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        confirmButton.setIcon(image);
+    }//GEN-LAST:event_confirmButtonMouseExited
 
     /**
      * @param args the command line arguments
