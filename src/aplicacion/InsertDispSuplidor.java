@@ -59,7 +59,7 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         });
         dispoSupFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         accSupLabel.setText("Device Supplier");
         dispoSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));

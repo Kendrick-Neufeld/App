@@ -84,7 +84,7 @@ public class InsertCliente extends javax.swing.JFrame {
         jPanel1.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
         jPanel1.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
-        empLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        empLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         empLabel.setForeground(new java.awt.Color(27, 47, 59));
         empLabel.setText("Client");
         jPanel1.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));

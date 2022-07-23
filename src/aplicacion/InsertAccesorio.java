@@ -56,7 +56,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
         });
         AccFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         accSupLabel.setText("Accessory");
         AccFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
@@ -64,7 +64,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
         accNombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         accNombreLabel.setForeground(new java.awt.Color(27, 47, 59));
         accNombreLabel.setText("Name");
-        AccFormBG.add(accNombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        AccFormBG.add(accNombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 60, -1));
         AccFormBG.add(accNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
         quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -76,7 +76,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
         priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(27, 47, 59));
         priceLabel.setText("Price");
-        AccFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        AccFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 50, -1));
         AccFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
         backButton.setText("Back");

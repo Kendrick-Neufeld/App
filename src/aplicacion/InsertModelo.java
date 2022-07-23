@@ -51,7 +51,7 @@ public class InsertModelo extends javax.swing.JFrame {
         modFormBG.setBackground(new java.awt.Color(247, 247, 247));
         modFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ModeloLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        ModeloLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         ModeloLabel.setForeground(new java.awt.Color(27, 47, 59));
         ModeloLabel.setText("Model");
         modFormBG.add(ModeloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));

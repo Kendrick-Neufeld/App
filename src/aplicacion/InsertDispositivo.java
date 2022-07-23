@@ -56,10 +56,10 @@ public class InsertDispositivo extends javax.swing.JFrame {
         });
         jPanel1.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         accSupLabel.setText("Device");
-        jPanel1.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        jPanel1.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, -1));
 
         modIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         modIDLabel.setForeground(new java.awt.Color(27, 47, 59));

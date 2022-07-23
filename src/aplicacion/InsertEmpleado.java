@@ -93,7 +93,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
         depVentasRadioButton.setText("Ventas");
         empFormBG.add(depVentasRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
 
-        empLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        empLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         empLabel.setForeground(new java.awt.Color(27, 47, 59));
         empLabel.setText("Employee");
         empFormBG.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
@@ -130,8 +130,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
         numberLabel.setText("Phone No.");
-        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
-        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
+        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
+        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
 
         confirmButton.setText("Confirm");
         confirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -144,8 +144,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         salaryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         salaryLabel.setForeground(new java.awt.Color(27, 47, 59));
         salaryLabel.setText("Salary");
-        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
-        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, -1));
+        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
+        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
 
         sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sexLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -155,8 +155,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         CalleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         CalleLabel.setForeground(new java.awt.Color(27, 47, 59));
         CalleLabel.setText("Street");
-        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, -1, -1));
-        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 130, -1));
+        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
+        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, -1));
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {

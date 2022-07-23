@@ -59,40 +59,55 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         });
         accSupFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        accSupLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         accSupLabel.setText("Accessory Supplier");
-        accSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        accSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 220, -1));
 
         accIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         accIDLabel.setForeground(new java.awt.Color(27, 47, 59));
         accIDLabel.setText("Accessory ID");
         accSupFormBG.add(accIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
+        accIDTextField.setBackground(new java.awt.Color(194, 200, 203));
+        accIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        accIDTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
         accIDTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 accIDTextFieldActionPerformed(evt);
             }
         });
-        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, 22));
 
         supIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         supIDLabel.setForeground(new java.awt.Color(27, 47, 59));
         supIDLabel.setText("Supplier ID");
         accSupFormBG.add(supIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+
+        supIDTextField.setBackground(new java.awt.Color(194, 200, 203));
+        supIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        supIDTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
+        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, 22));
 
         quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         quantityLabel.setForeground(new java.awt.Color(27, 47, 59));
         quantityLabel.setText("Qt.");
         accSupFormBG.add(quantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+
+        priceTextField.setBackground(new java.awt.Color(194, 200, 203));
+        priceTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        priceTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
+        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, 22));
 
         priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(27, 47, 59));
         priceLabel.setText("Price");
-        accSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        accSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 40, -1));
+
+        quantityTextField.setBackground(new java.awt.Color(194, 200, 203));
+        quantityTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        quantityTextField.setSelectionColor(new java.awt.Color(247, 247, 247));
+        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, 22));
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {

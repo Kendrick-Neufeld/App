@@ -53,7 +53,7 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supFormBG.setBackground(new java.awt.Color(247, 247, 247));
         supFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        supLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        supLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         supLabel.setForeground(new java.awt.Color(27, 47, 59));
         supLabel.setText("Supplier");
         supFormBG.add(supLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
