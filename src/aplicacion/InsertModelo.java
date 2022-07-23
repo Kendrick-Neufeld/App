@@ -44,7 +44,6 @@ public class InsertModelo extends javax.swing.JFrame {
         brandIdLabel = new javax.swing.JLabel();
         brandIdTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,14 +94,6 @@ public class InsertModelo extends javax.swing.JFrame {
         });
         modFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        modFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
-
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,14 +115,6 @@ public class InsertModelo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         TableSelect selectTable = new TableSelect();
-                selectTable.sql = this.sql;
-                selectTable.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
@@ -214,7 +197,6 @@ public class InsertModelo extends javax.swing.JFrame {
     private javax.swing.JLabel capacidadLabel;
     private javax.swing.JLabel colorLabel;
     private javax.swing.JButton confirmButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JTextField modCapacidadTextField;
     private javax.swing.JTextField modColorTextField;
     private javax.swing.JPanel modFormBG;

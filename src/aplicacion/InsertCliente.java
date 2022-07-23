@@ -14,14 +14,14 @@ import javax.swing.JOptionPane;
  *
  * @author Usuario
  */
-public class InsertMarca extends javax.swing.JFrame {
+public class InsertCliente extends javax.swing.JFrame {
 
     /**
      * Creates new form InsertMarca
      */
     
     public Statement sql;
-    public InsertMarca() {
+    public InsertCliente() {
         initComponents();
     }
 
@@ -35,27 +35,20 @@ public class InsertMarca extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        marcaNombreTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        nombreLabel = new javax.swing.JLabel();
+        cliNombreTextField = new javax.swing.JTextField();
+        apellidoLabel = new javax.swing.JLabel();
+        cliApellidoTextField = new javax.swing.JTextField();
+        numberLabel = new javax.swing.JLabel();
+        cliNumTelefonoTextField = new javax.swing.JTextField();
+        empLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(27, 47, 59));
-        jLabel1.setText("Brand");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(27, 47, 59));
-        jLabel2.setText("Brand Name");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-        jPanel1.add(marcaNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
         confirmButton.setText("Confirm");
         confirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -73,6 +66,29 @@ public class InsertMarca extends javax.swing.JFrame {
         });
         jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
+        nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
+        nombreLabel.setText("Name");
+        jPanel1.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 40, -1));
+        jPanel1.add(cliNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+
+        apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
+        apellidoLabel.setText("Second Name");
+        jPanel1.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
+        jPanel1.add(cliApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+
+        numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        numberLabel.setForeground(new java.awt.Color(27, 47, 59));
+        numberLabel.setText("Phone No.");
+        jPanel1.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        jPanel1.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+
+        empLabel.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        empLabel.setForeground(new java.awt.Color(27, 47, 59));
+        empLabel.setText("Client");
+        jPanel1.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,14 +105,21 @@ public class InsertMarca extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
-        if(marcaNombreTextField.getText() != ""){
-            String Query = "insert into Marca (MarcaNombre) values ('" + marcaNombreTextField.getText() + "')" ;
+        if(cliNombreTextField.getText() != "" 
+                && cliApellidoTextField.getText() != ""
+                && cliNumTelefonoTextField.getText() != ""){
+            String Query = "insert into Cliente (CliNombre, CliApellido, CliNumTelefono) "
+                    + "values ('" + cliNombreTextField.getText() + "','"
+                    + cliApellidoTextField.getText() + "','"
+                    +cliNumTelefonoTextField.getText() +"')" ;
             try {
                 sql.executeQuery(Query);
             } catch (SQLException ex) {
                 System.out.println(ex);
             }
-            marcaNombreTextField.setText("");
+            cliNombreTextField.setText("");
+            cliApellidoTextField.setText("");
+            cliNumTelefonoTextField.setText("");
             JOptionPane.showMessageDialog(null, "Data succesfully added");
         }
         else{
@@ -132,30 +155,35 @@ public class InsertMarca extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InsertMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InsertMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InsertMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InsertMarca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InsertCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InsertMarca().setVisible(true);
+                new InsertCliente().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel apellidoLabel;
     private javax.swing.JButton backButton;
+    private javax.swing.JTextField cliApellidoTextField;
+    private javax.swing.JTextField cliNombreTextField;
+    private javax.swing.JTextField cliNumTelefonoTextField;
     private javax.swing.JButton confirmButton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel empLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField marcaNombreTextField;
+    private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel numberLabel;
     // End of variables declaration//GEN-END:variables
 }

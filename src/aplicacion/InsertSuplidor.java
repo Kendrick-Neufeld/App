@@ -46,7 +46,6 @@ public class InsertSuplidor extends javax.swing.JFrame {
         numberLabel = new javax.swing.JLabel();
         supNumTelefonoTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,14 +102,6 @@ public class InsertSuplidor extends javax.swing.JFrame {
         });
         supFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        supFormBG.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
-
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,14 +123,6 @@ public class InsertSuplidor extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         TableSelect selectTable = new TableSelect();
-                selectTable.sql = this.sql;
-                selectTable.setVisible(true);
-                this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
@@ -224,7 +207,6 @@ public class InsertSuplidor extends javax.swing.JFrame {
     private javax.swing.JLabel cityLabel;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel countryLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel numberLabel;
     private javax.swing.JLabel sectorLabel;

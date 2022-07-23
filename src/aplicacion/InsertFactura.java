@@ -39,14 +39,10 @@ public class InsertFactura extends javax.swing.JFrame {
         confirmButton = new javax.swing.JButton();
         facturaLabel = new javax.swing.JLabel();
         purchaseLabel = new javax.swing.JLabel();
-        cliNombreTextField = new javax.swing.JTextField();
-        cliApellidoTextField = new javax.swing.JTextField();
-        cliApellidoLabel = new javax.swing.JLabel();
-        cliNombreLabel = new javax.swing.JLabel();
+        cliIdTextField = new javax.swing.JTextField();
+        cliIDLabel = new javax.swing.JLabel();
         itemIdLabel = new javax.swing.JLabel();
         modIDLabel2 = new javax.swing.JLabel();
-        numberLabel = new javax.swing.JLabel();
-        cliNumTelefonoTextField = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,17 +51,17 @@ public class InsertFactura extends javax.swing.JFrame {
         facturaFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tipoProdSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dispo", "Acc" }));
-        facturaFormBG.add(tipoProdSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 70, -1));
-        facturaFormBG.add(itemIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 130, -1));
+        facturaFormBG.add(tipoProdSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+        facturaFormBG.add(itemIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
 
         itemsToPurchaseTextArea.setColumns(20);
         itemsToPurchaseTextArea.setRows(5);
         jScrollPane1.setViewportView(itemsToPurchaseTextArea);
 
-        facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 300, 150));
+        facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 230, 160));
 
         addButton.setText("Add");
-        facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 80, -1));
+        facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 80, -1));
 
         confirmButton.setText("Confirm");
         facturaFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
@@ -78,35 +74,23 @@ public class InsertFactura extends javax.swing.JFrame {
         purchaseLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         purchaseLabel.setForeground(new java.awt.Color(27, 47, 59));
         purchaseLabel.setText("Purchase");
-        facturaFormBG.add(purchaseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, -1, -1));
-        facturaFormBG.add(cliNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
-        facturaFormBG.add(cliApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+        facturaFormBG.add(purchaseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 60, -1));
+        facturaFormBG.add(cliIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
 
-        cliApellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        cliApellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
-        cliApellidoLabel.setText("Client Second Name");
-        facturaFormBG.add(cliApellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        cliNombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        cliNombreLabel.setForeground(new java.awt.Color(27, 47, 59));
-        cliNombreLabel.setText("Client Name");
-        facturaFormBG.add(cliNombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        cliIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        cliIDLabel.setForeground(new java.awt.Color(27, 47, 59));
+        cliIDLabel.setText("Client ID");
+        facturaFormBG.add(cliIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         itemIdLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         itemIdLabel.setForeground(new java.awt.Color(27, 47, 59));
         itemIdLabel.setText("Item ID");
-        facturaFormBG.add(itemIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, -1, -1));
+        facturaFormBG.add(itemIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         modIDLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         modIDLabel2.setForeground(new java.awt.Color(27, 47, 59));
         modIDLabel2.setText("Type");
-        facturaFormBG.add(modIDLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
-
-        numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        numberLabel.setForeground(new java.awt.Color(27, 47, 59));
-        numberLabel.setText("Client Phone No.");
-        facturaFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        facturaFormBG.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+        facturaFormBG.add(modIDLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +98,7 @@ public class InsertFactura extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        facturaFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, 110, 40));
+        facturaFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -177,11 +161,8 @@ public class InsertFactura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton backButton;
-    private javax.swing.JLabel cliApellidoLabel;
-    private javax.swing.JTextField cliApellidoTextField;
-    private javax.swing.JLabel cliNombreLabel;
-    private javax.swing.JTextField cliNombreTextField;
-    private javax.swing.JTextField cliNumTelefonoTextField;
+    private javax.swing.JLabel cliIDLabel;
+    private javax.swing.JTextField cliIdTextField;
     private javax.swing.JButton confirmButton;
     private javax.swing.JPanel facturaFormBG;
     private javax.swing.JLabel facturaLabel;
@@ -190,7 +171,6 @@ public class InsertFactura extends javax.swing.JFrame {
     private javax.swing.JTextArea itemsToPurchaseTextArea;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel modIDLabel2;
-    private javax.swing.JLabel numberLabel;
     private javax.swing.JLabel purchaseLabel;
     private javax.swing.JComboBox<String> tipoProdSelect;
     // End of variables declaration//GEN-END:variables
