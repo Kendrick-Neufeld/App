@@ -5,7 +5,9 @@
  */
 package aplicacion;
 
+import java.awt.*;
 import java.sql.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -15,11 +17,13 @@ public class MainMenu extends javax.swing.JFrame {
 
     
      public Statement sql;
+     int xMouse, yMouse;
     /**
      * Creates new form AppLayout
      */
     public MainMenu() {
         initComponents();
+        rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
     }
 
     /**
@@ -38,6 +42,15 @@ public class MainMenu extends javax.swing.JFrame {
         catalog = new javax.swing.JButton();
         insert = new javax.swing.JButton();
         edit = new javax.swing.JButton();
+        blueStripe = new javax.swing.JPanel();
+        redStripe = new javax.swing.JPanel();
+        logoLabel = new javax.swing.JLabel();
+        headerPanel = new javax.swing.JPanel();
+        windowActions = new javax.swing.JPanel();
+        minimizeButton = new javax.swing.JPanel();
+        minimizeLabel = new javax.swing.JLabel();
+        exitButton = new javax.swing.JPanel();
+        exitLabel = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -46,33 +59,213 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu6.setText("jMenu6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         mainMenuBG.setBackground(new java.awt.Color(247, 247, 247));
         mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        catalog.setForeground(new java.awt.Color(27, 47, 59));
+        catalog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         catalog.setText("Catalog");
-        mainMenuBG.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, 145, 95));
+        catalog.setBorder(null);
+        catalog.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        catalog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                catalogMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                catalogMouseExited(evt);
+            }
+        });
+        mainMenuBG.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 165, 105));
 
+        insert.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        insert.setForeground(new java.awt.Color(27, 47, 59));
+        insert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         insert.setText("Insert");
+        insert.setBorder(null);
+        insert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        insert.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                insertMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                insertMouseExited(evt);
+            }
+        });
         insert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertActionPerformed(evt);
             }
         });
-        mainMenuBG.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 120, 145, 95));
+        mainMenuBG.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 165, 105));
 
+        edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        edit.setForeground(new java.awt.Color(27, 47, 59));
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         edit.setText("Edit");
-        mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 120, 145, 95));
+        edit.setBorder(null);
+        edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                editMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                editMouseExited(evt);
+            }
+        });
+        mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 165, 105));
+
+        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+
+        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
+        blueStripe.setLayout(blueStripeLayout);
+        blueStripeLayout.setHorizontalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 740, Short.MAX_VALUE)
+        );
+        blueStripeLayout.setVerticalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 740, 30));
+
+        redStripe.setBackground(new java.awt.Color(211, 22, 34));
+
+        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
+        redStripe.setLayout(redStripeLayout);
+        redStripeLayout.setHorizontalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 740, Short.MAX_VALUE)
+        );
+        redStripeLayout.setVerticalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        mainMenuBG.add(redStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 385, 740, 10));
+        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 200, 100));
+
+        headerPanel.setBackground(new java.awt.Color(194, 200, 203));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
+
+        windowActions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimizeLabel.setText("—");
+        minimizeLabel.setToolTipText("");
+        minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout minimizeButtonLayout = new javax.swing.GroupLayout(minimizeButton);
+        minimizeButton.setLayout(minimizeButtonLayout);
+        minimizeButtonLayout.setHorizontalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(minimizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        minimizeButtonLayout.setVerticalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minimizeButtonLayout.createSequentialGroup()
+                .addComponent(minimizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        windowActions.add(minimizeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        exitButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        exitLabel.setBackground(new java.awt.Color(247, 247, 247));
+        exitLabel.setFont(new java.awt.Font("Roboto", 1, 19)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(27, 47, 59));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setText("X");
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitButtonLayout = new javax.swing.GroupLayout(exitButton);
+        exitButton.setLayout(exitButtonLayout);
+        exitButtonLayout.setHorizontalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exitButtonLayout.setVerticalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        windowActions.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, -1));
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 660, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainMenuBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -89,6 +282,73 @@ public class MainMenu extends javax.swing.JFrame {
             System.out.println(e);
         }
     }//GEN-LAST:event_insertActionPerformed
+
+    private void catalogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        catalog.setIcon(image);
+    }//GEN-LAST:event_catalogMouseEntered
+
+    private void catalogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        catalog.setIcon(image);
+    }//GEN-LAST:event_catalogMouseExited
+
+    private void insertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        insert.setIcon(image);
+    }//GEN-LAST:event_insertMouseEntered
+
+    private void insertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        insert.setIcon(image);
+    }//GEN-LAST:event_insertMouseExited
+
+    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        edit.setIcon(image);
+    }//GEN-LAST:event_editMouseEntered
+
+    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        edit.setIcon(image);
+    }//GEN-LAST:event_editMouseExited
+
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146,147,149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194,200,203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
+
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211,22,34));
+        exitLabel.setForeground(new Color(247,247,247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194,200,203));
+        exitLabel.setForeground(new Color(27,47,59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
 
     /**
      * @param args the command line arguments
@@ -128,12 +388,21 @@ public class MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton edit;
+    private javax.swing.JPanel exitButton;
+    private javax.swing.JLabel exitLabel;
+    private javax.swing.JPanel headerPanel;
     private javax.swing.JButton insert;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel mainMenuBG;
+    private javax.swing.JPanel minimizeButton;
+    private javax.swing.JLabel minimizeLabel;
+    private javax.swing.JPanel redStripe;
+    private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }

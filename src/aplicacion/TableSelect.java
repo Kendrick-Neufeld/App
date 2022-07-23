@@ -5,7 +5,9 @@
  */
 package aplicacion;
 
+import java.awt.*;
 import java.sql.*;
+import javax.swing.*;
 
 /**
  *
@@ -18,9 +20,11 @@ public class TableSelect extends javax.swing.JFrame {
      */
     
     public Statement sql;
+    int xMouse, yMouse;
     
     public TableSelect() {
         initComponents();
+        rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
     }
 
     /**
@@ -34,45 +38,228 @@ public class TableSelect extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Tabla = new javax.swing.JComboBox<>();
-        continueButton = new javax.swing.JButton();
+        connectButton = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        windowActions = new javax.swing.JPanel();
+        minimizeButton = new javax.swing.JPanel();
+        minimizeLabel = new javax.swing.JLabel();
+        exitButton = new javax.swing.JPanel();
+        exitLabel = new javax.swing.JLabel();
+        blueStripe = new javax.swing.JPanel();
+        redStripe = new javax.swing.JPanel();
+        logoLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Tabla.setBackground(new java.awt.Color(194, 200, 203));
+        Tabla.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tabla.setForeground(new java.awt.Color(146, 147, 149));
         Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply" }));
+        Tabla.setBorder(null);
+        Tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Tabla.setOpaque(true);
         Tabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TablaActionPerformed(evt);
             }
         });
-        jPanel1.add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 210, 50));
+        jPanel1.add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, 210, 50));
 
-        continueButton.setText("Continue");
-        continueButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                continueButtonActionPerformed(evt);
+        connectButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        connectButton.setForeground(new java.awt.Color(27, 47, 59));
+        connectButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor3.png"))); // NOI18N
+        connectButton.setText("Continue");
+        connectButton.setBorder(null);
+        connectButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        connectButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                connectButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                connectButtonMouseExited(evt);
             }
         });
-        jPanel1.add(continueButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 230, 130, 40));
+        connectButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                connectButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(connectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 110, 50));
+
+        headerPanel.setBackground(new java.awt.Color(194, 200, 203));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
+
+        windowActions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimizeLabel.setText("—");
+        minimizeLabel.setToolTipText("");
+        minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout minimizeButtonLayout = new javax.swing.GroupLayout(minimizeButton);
+        minimizeButton.setLayout(minimizeButtonLayout);
+        minimizeButtonLayout.setHorizontalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(minimizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        minimizeButtonLayout.setVerticalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minimizeButtonLayout.createSequentialGroup()
+                .addComponent(minimizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        windowActions.add(minimizeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        exitButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        exitLabel.setBackground(new java.awt.Color(247, 247, 247));
+        exitLabel.setFont(new java.awt.Font("Roboto", 1, 19)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(27, 47, 59));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setText("X");
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitButtonLayout = new javax.swing.GroupLayout(exitButton);
+        exitButton.setLayout(exitButtonLayout);
+        exitButtonLayout.setHorizontalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exitButtonLayout.setVerticalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        windowActions.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, -1));
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 660, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+
+        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+
+        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
+        blueStripe.setLayout(blueStripeLayout);
+        blueStripeLayout.setHorizontalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 740, Short.MAX_VALUE)
+        );
+        blueStripeLayout.setVerticalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 740, 30));
+
+        redStripe.setBackground(new java.awt.Color(211, 22, 34));
+
+        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
+        redStripe.setLayout(redStripeLayout);
+        redStripeLayout.setHorizontalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 740, Short.MAX_VALUE)
+        );
+        redStripeLayout.setVerticalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(redStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 385, 740, 10));
+        jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 200, 100));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void continueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_continueButtonActionPerformed
+    private void TablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TablaActionPerformed
         // TODO add your handling code here:
+        
+    }//GEN-LAST:event_TablaActionPerformed
+
+    private void connectButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_connectButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor4.png");
+        connectButton.setIcon(image);
+    }//GEN-LAST:event_connectButtonMouseEntered
+
+    private void connectButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_connectButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor3.png");
+        connectButton.setIcon(image);
+    }//GEN-LAST:event_connectButtonMouseExited
+
+    private void connectButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectButtonActionPerformed
         int IdTableSelect = Tabla.getSelectedIndex();
         switch(IdTableSelect){
             case 0:
@@ -134,12 +321,44 @@ public class TableSelect extends javax.swing.JFrame {
                 System.out.println("Hubo un error en la seleccion de tablas.");
                 break;    
         }
-    }//GEN-LAST:event_continueButtonActionPerformed
+    }//GEN-LAST:event_connectButtonActionPerformed
 
-    private void TablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TablaActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_TablaActionPerformed
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211,22,34));
+        exitLabel.setForeground(new Color(247,247,247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194,200,203));
+        exitLabel.setForeground(new Color(27,47,59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146,147,149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194,200,203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
 
     /**
      * @param args the command line arguments
@@ -178,7 +397,18 @@ public class TableSelect extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Tabla;
-    private javax.swing.JButton continueButton;
+    private javax.swing.JPanel blueStripe;
+    private javax.swing.JButton connectButton;
+    private javax.swing.JPanel exitButton;
+    private javax.swing.JPanel exitButton2;
+    private javax.swing.JLabel exitLabel;
+    private javax.swing.JLabel exitLabel2;
+    private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel logoLabel;
+    private javax.swing.JPanel minimizeButton;
+    private javax.swing.JLabel minimizeLabel;
+    private javax.swing.JPanel redStripe;
+    private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }
