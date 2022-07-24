@@ -30,7 +30,7 @@ public class LoginWindow extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
         rsscalelabel.RSScaleLabel.setScaleLabel(userIcon, "src/aplicacion/Imagenes/user.png" );
         rsscalelabel.RSScaleLabel.setScaleLabel(pwIcon, "src/aplicacion/Imagenes/pw.png" );
-        
+        logoLabel.requestFocusInWindow();
     }
 
     /**
@@ -87,6 +87,7 @@ public class LoginWindow extends javax.swing.JFrame {
         userTextField.setForeground(new java.awt.Color(146, 147, 149));
         userTextField.setText("Username");
         userTextField.setBorder(null);
+        userTextField.setVerifyInputWhenFocusTarget(false);
         userTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 userTextFieldMousePressed(evt);
@@ -438,6 +439,7 @@ public class LoginWindow extends javax.swing.JFrame {
                 + "user=" + User + ";"
                 + "password=" + Password + ";"
                 + "loginTimeout=30;";
+        
         try{
             Connection con = DriverManager.getConnection(conexion);
             return con;

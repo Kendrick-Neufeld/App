@@ -64,6 +64,9 @@ public class InsertDispositivo extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 confirmButtonMouseExited(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                confirmButtonMousePressed(evt);
+            }
         });
         confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +110,9 @@ public class InsertDispositivo extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
             }
         });
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -236,6 +242,16 @@ public class InsertDispositivo extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
         confirmButton.setIcon(image);
     }//GEN-LAST:event_confirmButtonMouseExited
+
+    private void confirmButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        confirmButton.setIcon(image);
+    }//GEN-LAST:event_confirmButtonMousePressed
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMousePressed
 
     /**
      * @param args the command line arguments

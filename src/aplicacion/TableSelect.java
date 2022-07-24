@@ -59,7 +59,7 @@ public class TableSelect extends javax.swing.JFrame {
 
         Tabla.setBackground(new java.awt.Color(194, 200, 203));
         Tabla.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        Tabla.setForeground(new java.awt.Color(146, 147, 149));
+        Tabla.setForeground(new java.awt.Color(27, 47, 59));
         Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
         Tabla.setBorder(null);
         Tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

@@ -172,13 +172,14 @@ public class MainMenu extends javax.swing.JFrame {
         minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
 
         minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
-        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
         minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
         minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         minimizeLabel.setText("—");
         minimizeLabel.setToolTipText("");
         minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 minimizeLabelMouseClicked(evt);
