@@ -241,6 +241,11 @@ public class TableSelect extends javax.swing.JFrame {
                 catalogMouseExited(evt);
             }
         });
+        catalog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catalogActionPerformed(evt);
+            }
+        });
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -307,7 +312,7 @@ public class TableSelect extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(49, 49, 49))
+                .addGap(52, 52, 52))
         );
         blueStripeLayout.setVerticalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -491,9 +496,9 @@ public class TableSelect extends javax.swing.JFrame {
     }//GEN-LAST:event_editActionPerformed
 
     private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        MainMenu Mainmenu = new MainMenu();
-        Mainmenu.setVisible(true);
-        Mainmenu.sql = this.sql;
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+        mainMenu.sql = this.sql;
         this.dispose();
     }//GEN-LAST:event_menuActionPerformed
 
@@ -506,6 +511,13 @@ public class TableSelect extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         menu.setIcon(image);
     }//GEN-LAST:event_menuMouseExited
+
+    private void catalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogActionPerformed
+        Catalog cat = new Catalog();
+        cat.sql = this.sql;
+        cat.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_catalogActionPerformed
 
     /**
      * @param args the command line arguments

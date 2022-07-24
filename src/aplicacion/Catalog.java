@@ -1,29 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package aplicacion;
 
-import java.awt.*;
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
 
-/**
- *
- * @author Usuario
- */
-public class MainMenu extends javax.swing.JFrame {
+public class Catalog extends javax.swing.JFrame {
 
-    
-     public Statement sql;
-     int xMouse, yMouse;
     /**
-     * Creates new form AppLayout
+     * Creates new form Catalog
      */
-    public MainMenu() {
+    public Statement sql;
+    int xMouse, yMouse;
+    public Catalog() {
         initComponents();
-        rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
         setLocationRelativeTo(null);
     }
 
@@ -36,39 +25,25 @@ public class MainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        mainMenuBG = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         blueStripe = new javax.swing.JPanel();
         redStripe = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        catalog = new javax.swing.JButton();
         menu = new javax.swing.JButton();
-        insert = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
         headerPanel = new javax.swing.JPanel();
         windowActions = new javax.swing.JPanel();
         minimizeButton = new javax.swing.JPanel();
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
-        logOutButton = new javax.swing.JButton();
-        logoLabel = new javax.swing.JLabel();
-
-        jMenu1.setText("jMenu1");
-
-        jMenu2.setText("jMenu2");
-
-        jMenu6.setText("jMenu6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
 
-        mainMenuBG.setBackground(new java.awt.Color(247, 247, 247));
-        mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
 
@@ -85,74 +60,27 @@ public class MainMenu extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
-        jLabel1.setText("Home");
-
-        catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        catalog.setForeground(new java.awt.Color(247, 247, 247));
-        catalog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
-        catalog.setText("Catalog");
-        catalog.setBorder(null);
-        catalog.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        catalog.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                catalogMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                catalogMouseExited(evt);
-            }
-        });
-        catalog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                catalogActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Catalog");
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
-        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor6.png"))); // NOI18N
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
         menu.setText("Menu");
         menu.setBorder(null);
         menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        insert.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        insert.setForeground(new java.awt.Color(247, 247, 247));
-        insert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
-        insert.setText("Insert");
-        insert.setBorder(null);
-        insert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        insert.addMouseListener(new java.awt.event.MouseAdapter() {
+        menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                insertMouseEntered(evt);
+                menuMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                insertMouseExited(evt);
+                menuMouseExited(evt);
             }
         });
-        insert.addActionListener(new java.awt.event.ActionListener() {
+        menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insertActionPerformed(evt);
-            }
-        });
-
-        edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        edit.setForeground(new java.awt.Color(247, 247, 247));
-        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
-        edit.setText("Database");
-        edit.setBorder(null);
-        edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        edit.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                editMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                editMouseExited(evt);
-            }
-        });
-        edit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editActionPerformed(evt);
+                menuActionPerformed(evt);
             }
         });
 
@@ -162,19 +90,15 @@ public class MainMenu extends javax.swing.JFrame {
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(blueStripeLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(9, 9, 9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
         );
         blueStripeLayout.setVerticalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,16 +109,10 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(437, Short.MAX_VALUE))
         );
 
-        mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
+        jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -301,85 +219,25 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
-
-        logOutButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        logOutButton.setForeground(new java.awt.Color(27, 47, 59));
-        logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
-        logOutButton.setText("Logout");
-        logOutButton.setBorder(null);
-        logOutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logOutButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                logOutButtonMouseExited(evt);
-            }
-        });
-        logOutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logOutButtonActionPerformed(evt);
-            }
-        });
-        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 310, 170, 50));
-        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 75, 380, 200));
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
-        // TODO add your handling code here:
-        try{
-        TableSelect selectTable = new TableSelect();
-        selectTable.sql = this.sql;
-        selectTable.setVisible(true);
-        this.dispose();
-        } catch(Exception e){
-            System.out.println(e);
-        }
-    }//GEN-LAST:event_insertActionPerformed
-
-    private void catalogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        catalog.setIcon(image);
-    }//GEN-LAST:event_catalogMouseEntered
-
-    private void catalogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        catalog.setIcon(image);
-    }//GEN-LAST:event_catalogMouseExited
-
-    private void insertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        insert.setIcon(image);
-    }//GEN-LAST:event_insertMouseEntered
-
-    private void insertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        insert.setIcon(image);
-    }//GEN-LAST:event_insertMouseExited
-
-    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        edit.setIcon(image);
-    }//GEN-LAST:event_editMouseEntered
-
-    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        edit.setIcon(image);
-    }//GEN-LAST:event_editMouseExited
 
     private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
         this.setExtendedState(TableSelect.ICONIFIED);
@@ -418,34 +276,22 @@ public class MainMenu extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
 
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_editActionPerformed
+    private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseEntered
 
-    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
-        logOutButton.setIcon(image);
-    }//GEN-LAST:event_logOutButtonMouseEntered
+    private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseExited
 
-    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
-        logOutButton.setIcon(image);
-    }//GEN-LAST:event_logOutButtonMouseExited
-
-    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
-        LoginWindow loginW = new LoginWindow();
-        loginW.sql = this.sql;
-        loginW.setVisible(true);
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+        mainMenu.sql = this.sql;
         this.dispose();
-    }//GEN-LAST:event_logOutButtonActionPerformed
-
-    private void catalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogActionPerformed
-        Catalog cat = new Catalog();
-        cat.sql = this.sql;
-        cat.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_catalogActionPerformed
+    }//GEN-LAST:event_menuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -464,41 +310,31 @@ public class MainMenu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Catalog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Catalog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Catalog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Catalog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                new MainMenu().setVisible(true);
+                new Catalog().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blueStripe;
-    private javax.swing.JButton catalog;
-    private javax.swing.JButton edit;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
-    private javax.swing.JButton insert;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JButton logOutButton;
-    private javax.swing.JLabel logoLabel;
-    private javax.swing.JPanel mainMenuBG;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
