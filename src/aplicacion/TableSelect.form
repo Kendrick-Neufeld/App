@@ -59,7 +59,7 @@
               <Color blue="95" green="93" red="92" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="9">
+              <StringArray count="10">
                 <StringItem index="0" value="Employee"/>
                 <StringItem index="1" value="Supplier"/>
                 <StringItem index="2" value="Device"/>
@@ -69,6 +69,7 @@
                 <StringItem index="6" value="Receipt"/>
                 <StringItem index="7" value="Accessory Supply"/>
                 <StringItem index="8" value="Device Supply"/>
+                <StringItem index="9" value="Client"/>
               </StringArray>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -77,7 +78,6 @@
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Hand Cursor"/>
             </Property>
-            <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TablaActionPerformed"/>

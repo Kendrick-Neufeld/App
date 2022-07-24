@@ -106,7 +106,7 @@ public class MainMenu extends javax.swing.JFrame {
         edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         edit.setForeground(new java.awt.Color(27, 47, 59));
         edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
-        edit.setText("Edit");
+        edit.setText("Database");
         edit.setBorder(null);
         edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         edit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -115,6 +115,11 @@ public class MainMenu extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 editMouseExited(evt);
+            }
+        });
+        edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editActionPerformed(evt);
             }
         });
         mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 165, 105));
@@ -349,6 +354,11 @@ public class MainMenu extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_editActionPerformed
 
     /**
      * @param args the command line arguments

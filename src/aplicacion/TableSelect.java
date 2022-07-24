@@ -60,10 +60,9 @@ public class TableSelect extends javax.swing.JFrame {
         Tabla.setBackground(new java.awt.Color(194, 200, 203));
         Tabla.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         Tabla.setForeground(new java.awt.Color(146, 147, 149));
-        Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply" }));
+        Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
         Tabla.setBorder(null);
         Tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Tabla.setOpaque(true);
         Tabla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TablaActionPerformed(evt);
@@ -317,6 +316,12 @@ public class TableSelect extends javax.swing.JFrame {
                 insDispSup.setVisible(true);
                 this.dispose();
                 break;
+            case 9:
+                InsertCliente insCliente = new InsertCliente();
+                insCliente.sql = this.sql;
+                insCliente.setVisible(true);
+                this.dispose();
+                break;
             default :
                 System.out.println("Hubo un error en la seleccion de tablas.");
                 break;    
@@ -400,9 +405,7 @@ public class TableSelect extends javax.swing.JFrame {
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton connectButton;
     private javax.swing.JPanel exitButton;
-    private javax.swing.JPanel exitButton2;
     private javax.swing.JLabel exitLabel;
-    private javax.swing.JLabel exitLabel2;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel logoLabel;

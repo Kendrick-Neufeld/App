@@ -135,7 +135,7 @@ public class InsertCliente extends javax.swing.JFrame {
         if(cliNombreTextField.getText() != "" 
                 && cliApellidoTextField.getText() != ""
                 && cliNumTelefonoTextField.getText() != ""){
-            String Query = "insert into Cliente (CliNombre, CliApellido, CliNumTelefono) "
+            String Query = "insert into Cliente (CliNombre, CliApellido, CliTelefono) "
                     + "values ('" + cliNombreTextField.getText() + "','"
                     + cliApellidoTextField.getText() + "','"
                     +cliNumTelefonoTextField.getText() +"')" ;

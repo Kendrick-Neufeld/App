@@ -6,7 +6,12 @@
 package aplicacion;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,8 +23,19 @@ public class InsertFactura extends javax.swing.JFrame {
      * Creates new form InsertClient
      */
     public Statement sql;
+    int Itemnumdisp; 
+    int ItemnumAcc;
+    int[] DispoComp;
+    int[] AccComp;
+    
+    
+    
     public InsertFactura() {
         initComponents();
+        Itemnumdisp = 0;
+        ItemnumAcc = 0;
+        DispoComp = new int[60];
+        AccComp = new int[60];
     }
 
     /**
@@ -62,6 +78,11 @@ public class InsertFactura extends javax.swing.JFrame {
         facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 230, 160));
 
         addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
         facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 80, -1));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -76,6 +97,11 @@ public class InsertFactura extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 confirmButtonMouseExited(evt);
+            }
+        });
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
             }
         });
         facturaFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
@@ -168,6 +194,132 @@ public class InsertFactura extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
         confirmButton.setIcon(image);
     }//GEN-LAST:event_confirmButtonMouseExited
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+        if(cliIdTextField.getText() != "" && itemsToPurchaseTextArea.getText() != ""){
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            Date date = new Date();
+            String currentdate = sdf.format(date);
+            String Query = "insert into Factura (ClientID,Fcompra) values ('" + cliIdTextField.getText() + "','" +
+                    currentdate + "')";
+            try {
+                sql.executeQuery(Query);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            
+            String noFactura = "";
+            String selectFact = "Select NoFactura from Factura where Fcompra = '" + currentdate + "'";
+            Statement stmt = null;
+            ResultSet factura = null;
+            try {
+            stmt = sql.getConnection().createStatement();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+            try {
+            factura = stmt.executeQuery(selectFact);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+            try {
+                while(factura.next()){
+                noFactura = factura.getString(1);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InsertFactura.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if(DispoComp[0] != 0){
+                for(int i =0; i < Itemnumdisp;i++){
+                    String facturadisp = "insert into Factura_dispositivo (NoFactura,DispoID) values ("
+                            + noFactura + ", " + DispoComp[i] + ")";
+                    try {
+                        sql.executeQuery(facturadisp);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(InsertFactura.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    
+                }
+                
+                
+            }
+            
+            if(AccComp[0] != 0){
+                for(int i =0; i < ItemnumAcc;i++){
+                    String facturaAcc = "insert into Factura_accesorio (NoFactura,AccID) values ("
+                            + noFactura + ", " + AccComp[i] + ")";
+                    try {
+                        sql.executeQuery(facturaAcc);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(InsertFactura.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                
+            }
+            cliIdTextField.setText("");
+            ItemnumAcc = 0;
+            Itemnumdisp = 0;
+            itemsToPurchaseTextArea.setText("");
+            JOptionPane.showMessageDialog(null, "Data succesfully added");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Please Insert Data First");
+        }
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+        String addItem = "";
+        ResultSet name = null;
+        String ItemName = "";
+        String ItemPrice = "";
+        Statement stmt = null;
+        try {
+            stmt = sql.getConnection().createStatement();
+        } catch (SQLException ex) {
+            System.out.println(ex);;
+        }
+        if(tipoProdSelect.getSelectedIndex() == 0){
+            DispoComp[Itemnumdisp] = Integer.parseInt(itemIdTextField.getText());
+            Itemnumdisp++;
+            addItem =   "Select e.ModNombre, s.DispPrecio From Modelo e, Dispositivo s "
+                      + "Where e.ModID = (Select i.ModID from Dispositivo i "
+                      + "Where i.DispoID = " + itemIdTextField.getText() + " )";
+                    try {
+            name = stmt.executeQuery(addItem);
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+            try {
+                while(name.next()){
+                ItemName = name.getString(1);
+                ItemPrice = name.getString(2);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(InsertFactura.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            AccComp[ItemnumAcc] = Integer.parseInt(itemIdTextField.getText());
+            ItemnumAcc++;
+            addItem = "Select AccNombre, AccPrecio From Accesorio "
+                      + "Where AccID = " + itemIdTextField.getText();
+            try {
+            name = sql.executeQuery(addItem);
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                }
+            try {
+                while(name.next()){
+                 ItemName = name.getString(1);
+                 ItemPrice = name.getString(2);}
+            } catch (SQLException ex) {
+                System.out.println(ex);
+                }
+        }
+        itemsToPurchaseTextArea.setText(itemsToPurchaseTextArea.getText() + ItemName + " " + ItemPrice + "\n");
+        
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments

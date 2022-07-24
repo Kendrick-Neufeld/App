@@ -6,6 +6,8 @@
 package aplicacion;
 
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -133,6 +135,62 @@ public class InsertAccesorio extends javax.swing.JFrame {
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
         if(accNombreTextField.getText() != "" && priceTextField.getText() != "" && quantityTextField.getText() != ""){
+            String Itemname = "";
+            int ItemPrice = 0;
+            Statement stmt = null;
+            ResultSet name = null;
+            String query = "";
+            String ItemId = "";
+            try {
+            stmt = sql.getConnection().createStatement();
+            } catch (SQLException ex) {
+            System.out.println(ex);;
+            }
+            query = "Select AccNombre,AccPrecio,AccID from Accesorio where AccNombre = '" + accNombreTextField.getText()+ "'" + ""
+                    + " And AccPrecio = " + priceTextField.getText(); 
+            try {
+                name = stmt.executeQuery(query);
+            } catch (SQLException ex) {
+                Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            try {
+                while(name.next()){
+                Itemname = name.getString(1);
+                ItemPrice = name.getInt(2);
+                ItemId = name.getString(3);
+                }
+                System.out.println(Itemname);
+                System.out.println(ItemPrice);
+                System.out.println(Integer.parseInt(priceTextField.getText()));
+                System.out.println(accNombreTextField.getText());
+            } catch (SQLException ex) {
+                Logger.getLogger(InsertFactura.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if(accNombreTextField.getText().equalsIgnoreCase(Itemname) && Integer.parseInt(priceTextField.getText()) == ItemPrice){
+                
+                int cantidad = 0;
+                String selectcantidad = "Select Cantidad from Accesorio where AccID = " + ItemId;
+                try {
+                    name = stmt.executeQuery(selectcantidad);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    while(name.next()){
+                    cantidad = name.getInt(1);}
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                cantidad = cantidad + Integer.parseInt(quantityTextField.getText());
+                String update = "Update Accesorio set Cantidad = " + cantidad+ " where AccID = " + ItemId;
+                try {
+                    sql.executeQuery(update);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            else{
             String Query = "insert into Accesorio (AccNombre, AccPrecio, Cantidad) values ('" 
             + accNombreTextField.getText() + "','" + priceTextField.getText() + "','" + quantityTextField.getText() + "')";
             try {
@@ -144,6 +202,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
             priceTextField.setText("");
             quantityTextField.setText("");
             JOptionPane.showMessageDialog(null, "Data succesfully added");
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
