@@ -55,13 +55,22 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
+        blueStripe = new javax.swing.JPanel();
+        redStripe = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        catalog = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
+        insert = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         dispoSupFormBG.setBackground(new java.awt.Color(247, 247, 247));
+        dispoSupFormBG.setPreferredSize(new java.awt.Dimension(740, 500));
         dispoSupFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -86,36 +95,52 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
                 confirmButtonActionPerformed(evt);
             }
         });
-        dispoSupFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, 110, 40));
+        dispoSupFormBG.add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 420, 110, 40));
 
         accSupLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         accSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         accSupLabel.setText("Device Supplier");
-        dispoSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        dispoSupFormBG.add(accSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 60, -1, -1));
 
         dispoIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         dispoIDLabel.setForeground(new java.awt.Color(27, 47, 59));
         dispoIDLabel.setText("Device ID");
-        dispoSupFormBG.add(dispoIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
-        dispoSupFormBG.add(dispoIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 130, -1));
+        dispoSupFormBG.add(dispoIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, -1, -1));
+
+        dispoIDTextField.setBackground(new java.awt.Color(194, 200, 203));
+        dispoIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        dispoIDTextField.setForeground(new java.awt.Color(27, 47, 59));
+        dispoSupFormBG.add(dispoIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
 
         supIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         supIDLabel.setForeground(new java.awt.Color(27, 47, 59));
         supIDLabel.setText("Supplier ID");
-        dispoSupFormBG.add(supIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
-        dispoSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
+        dispoSupFormBG.add(supIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, -1, -1));
+
+        supIDTextField.setBackground(new java.awt.Color(194, 200, 203));
+        supIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        supIDTextField.setForeground(new java.awt.Color(27, 47, 59));
+        dispoSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
 
         quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         quantityLabel.setForeground(new java.awt.Color(27, 47, 59));
         quantityLabel.setText("Qt.");
-        dispoSupFormBG.add(quantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        dispoSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
+        dispoSupFormBG.add(quantityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+
+        priceTextField.setBackground(new java.awt.Color(194, 200, 203));
+        priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        priceTextField.setForeground(new java.awt.Color(27, 47, 59));
+        dispoSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
 
         priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(27, 47, 59));
         priceLabel.setText("Price");
-        dispoSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 50, -1));
-        dispoSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 130, -1));
+        dispoSupFormBG.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 50, -1));
+
+        quantityTextField.setBackground(new java.awt.Color(194, 200, 203));
+        quantityTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        quantityTextField.setForeground(new java.awt.Color(27, 47, 59));
+        dispoSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
 
         backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         backButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -139,7 +164,7 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        dispoSupFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
+        dispoSupFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 110, 40));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -248,6 +273,132 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
 
         dispoSupFormBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
+        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+
+        redStripe.setBackground(new java.awt.Color(211, 22, 34));
+
+        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
+        redStripe.setLayout(redStripeLayout);
+        redStripeLayout.setHorizontalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 97, Short.MAX_VALUE)
+        );
+        redStripeLayout.setVerticalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
+        jLabel1.setText("Insert");
+
+        catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        catalog.setForeground(new java.awt.Color(247, 247, 247));
+        catalog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        catalog.setText("Catalog");
+        catalog.setBorder(null);
+        catalog.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        catalog.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                catalogMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                catalogMouseExited(evt);
+            }
+        });
+        catalog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                catalogActionPerformed(evt);
+            }
+        });
+
+        menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        menu.setForeground(new java.awt.Color(247, 247, 247));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        menu.setText("Menu");
+        menu.setBorder(null);
+        menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+        menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuActionPerformed(evt);
+            }
+        });
+
+        insert.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        insert.setForeground(new java.awt.Color(247, 247, 247));
+        insert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor6.png"))); // NOI18N
+        insert.setText("Insert");
+        insert.setBorder(null);
+        insert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        edit.setForeground(new java.awt.Color(247, 247, 247));
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        edit.setText("Database");
+        edit.setBorder(null);
+        edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        edit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                editMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                editMouseExited(evt);
+            }
+        });
+        edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
+        blueStripe.setLayout(blueStripeLayout);
+        blueStripeLayout.setHorizontalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(52, 52, 52))
+        );
+        blueStripeLayout.setVerticalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(267, Short.MAX_VALUE))
+        );
+
+        dispoSupFormBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,7 +409,7 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dispoSupFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(dispoSupFormBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -361,6 +512,54 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
 
+    private void catalogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        catalog.setIcon(image);
+    }//GEN-LAST:event_catalogMouseEntered
+
+    private void catalogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        catalog.setIcon(image);
+    }//GEN-LAST:event_catalogMouseExited
+
+    private void catalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogActionPerformed
+        Catalog cat = new Catalog();
+        cat.sql = this.sql;
+        cat.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_catalogActionPerformed
+
+    private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseEntered
+
+    private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseExited
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+        mainMenu.sql = this.sql;
+        this.dispose();
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        edit.setIcon(image);
+    }//GEN-LAST:event_editMouseEntered
+
+    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        edit.setIcon(image);
+    }//GEN-LAST:event_editMouseExited
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -400,19 +599,26 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel accSupLabel;
     private javax.swing.JButton backButton;
+    private javax.swing.JPanel blueStripe;
+    private javax.swing.JButton catalog;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel dispoIDLabel;
     private javax.swing.JTextField dispoIDTextField;
     private javax.swing.JPanel dispoSupFormBG;
+    private javax.swing.JButton edit;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JButton insert;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JTextField priceTextField;
     private javax.swing.JLabel quantityLabel;
     private javax.swing.JTextField quantityTextField;
+    private javax.swing.JPanel redStripe;
     private javax.swing.JLabel supIDLabel;
     private javax.swing.JTextField supIDTextField;
     private javax.swing.JPanel windowActions;
