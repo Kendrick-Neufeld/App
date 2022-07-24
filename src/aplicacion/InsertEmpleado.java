@@ -5,6 +5,7 @@
  */
 package aplicacion;
 
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -20,6 +21,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
      */
     
     public Statement sql;
+    int xMouse, yMouse;
     
     public InsertEmpleado() {
         initComponents();
@@ -64,8 +66,17 @@ public class InsertEmpleado extends javax.swing.JFrame {
         CalleLabel = new javax.swing.JLabel();
         empCalleTextField = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        windowActions = new javax.swing.JPanel();
+        minimizeButton = new javax.swing.JPanel();
+        minimizeLabel = new javax.swing.JLabel();
+        exitButton = new javax.swing.JPanel();
+        exitLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         empFormBG.setBackground(new java.awt.Color(247, 247, 247));
         empFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,71 +85,71 @@ public class InsertEmpleado extends javax.swing.JFrame {
         buttonGroup1.add(femSexRadioButton);
         femSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         femSexRadioButton.setText("F");
-        empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
+        empFormBG.add(femSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
 
         mascSexRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup1.add(mascSexRadioButton);
         mascSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         mascSexRadioButton.setText("M");
-        empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, -1, -1));
+        empFormBG.add(mascSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, -1, -1));
 
         otherSexRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup1.add(otherSexRadioButton);
         otherSexRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         otherSexRadioButton.setText("Other");
-        empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 140, -1, -1));
+        empFormBG.add(otherSexRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, -1, -1));
 
         depTallerRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup2.add(depTallerRadioButton);
         depTallerRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         depTallerRadioButton.setText("Taller");
-        empFormBG.add(depTallerRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, -1));
+        empFormBG.add(depTallerRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 100, -1, -1));
 
         depVentasRadioButton.setBackground(new java.awt.Color(247, 247, 247));
         buttonGroup2.add(depVentasRadioButton);
         depVentasRadioButton.setForeground(new java.awt.Color(27, 47, 59));
         depVentasRadioButton.setText("Ventas");
-        empFormBG.add(depVentasRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
+        empFormBG.add(depVentasRadioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, -1, -1));
 
         empLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         empLabel.setForeground(new java.awt.Color(27, 47, 59));
         empLabel.setText("Employee");
-        empFormBG.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        empFormBG.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
         nombreLabel.setText("Name");
-        empFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 40, -1));
-        empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+        empFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 40, -1));
+        empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 130, -1));
 
         apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
         apellidoLabel.setText("Second Name");
-        empFormBG.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 80, -1));
-        empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+        empFormBG.add(apellidoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 80, -1));
+        empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
 
         cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cityLabel.setForeground(new java.awt.Color(27, 47, 59));
         cityLabel.setText("City");
-        empFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-        empFormBG.add(empSectoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+        empFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        empFormBG.add(empSectoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
         sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
         sectorLabel.setText("Sector");
-        empFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 40, -1));
-        empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        empFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 40, -1));
+        empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 130, -1));
 
         depLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         depLabel.setForeground(new java.awt.Color(27, 47, 59));
         depLabel.setText("Department");
-        empFormBG.add(depLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, -1, -1));
+        empFormBG.add(depLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, -1, -1));
 
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
         numberLabel.setText("Phone No.");
-        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 60, -1));
-        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
+        empFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 60, -1));
+        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 130, -1));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -167,19 +178,19 @@ public class InsertEmpleado extends javax.swing.JFrame {
         salaryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         salaryLabel.setForeground(new java.awt.Color(27, 47, 59));
         salaryLabel.setText("Salary");
-        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, 40, -1));
-        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
+        empFormBG.add(salaryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 40, -1));
+        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 130, -1));
 
         sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sexLabel.setForeground(new java.awt.Color(27, 47, 59));
         sexLabel.setText("Sexo");
-        empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, -1, -1));
+        empFormBG.add(sexLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, -1, -1));
 
         CalleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         CalleLabel.setForeground(new java.awt.Color(27, 47, 59));
         CalleLabel.setText("Street");
-        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 40, -1));
-        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 130, -1));
+        empFormBG.add(CalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 40, -1));
+        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 130, -1));
 
         backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         backButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -204,6 +215,113 @@ public class InsertEmpleado extends javax.swing.JFrame {
             }
         });
         empFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
+
+        headerPanel.setBackground(new java.awt.Color(194, 200, 203));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
+
+        windowActions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimizeLabel.setText("—");
+        minimizeLabel.setToolTipText("");
+        minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout minimizeButtonLayout = new javax.swing.GroupLayout(minimizeButton);
+        minimizeButton.setLayout(minimizeButtonLayout);
+        minimizeButtonLayout.setHorizontalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(minimizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        minimizeButtonLayout.setVerticalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minimizeButtonLayout.createSequentialGroup()
+                .addComponent(minimizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        windowActions.add(minimizeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        exitButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        exitLabel.setBackground(new java.awt.Color(247, 247, 247));
+        exitLabel.setFont(new java.awt.Font("Roboto", 1, 19)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(27, 47, 59));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setText("X");
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitButtonLayout = new javax.swing.GroupLayout(exitButton);
+        exitButton.setLayout(exitButtonLayout);
+        exitButtonLayout.setHorizontalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exitButtonLayout.setVerticalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        windowActions.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, -1));
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 660, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        empFormBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -323,6 +441,43 @@ public class InsertEmpleado extends javax.swing.JFrame {
         backButton.setIcon(image);
     }//GEN-LAST:event_backButtonMousePressed
 
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146,147,149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194,200,203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
+
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211,22,34));
+        exitLabel.setForeground(new Color(247,247,247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194,200,203));
+        exitLabel.setForeground(new Color(27,47,59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -380,13 +535,19 @@ public class InsertEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField empNumTelefonoTextField;
     private javax.swing.JTextField empSalarioTextField;
     private javax.swing.JTextField empSectoTextField;
+    private javax.swing.JPanel exitButton;
+    private javax.swing.JLabel exitLabel;
     private javax.swing.JRadioButton femSexRadioButton;
+    private javax.swing.JPanel headerPanel;
     private javax.swing.JRadioButton mascSexRadioButton;
+    private javax.swing.JPanel minimizeButton;
+    private javax.swing.JLabel minimizeLabel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel numberLabel;
     private javax.swing.JRadioButton otherSexRadioButton;
     private javax.swing.JLabel salaryLabel;
     private javax.swing.JLabel sectorLabel;
     private javax.swing.JLabel sexLabel;
+    private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }

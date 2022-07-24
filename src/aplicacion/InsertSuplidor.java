@@ -5,6 +5,7 @@
  */
 package aplicacion;
 
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -19,6 +20,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
      * Creates new form InsertSuplidor
      */
     public Statement sql;
+    int xMouse, yMouse;
+    
     public InsertSuplidor() {
         initComponents();
         setLocationRelativeTo(null);
@@ -49,8 +52,17 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supNumTelefonoTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        windowActions = new javax.swing.JPanel();
+        minimizeButton = new javax.swing.JPanel();
+        minimizeLabel = new javax.swing.JLabel();
+        exitButton = new javax.swing.JPanel();
+        exitLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         supFormBG.setBackground(new java.awt.Color(247, 247, 247));
         supFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,43 +70,43 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         supLabel.setForeground(new java.awt.Color(27, 47, 59));
         supLabel.setText("Supplier");
-        supFormBG.add(supLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        supFormBG.add(supLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
         nombreLabel.setText("Name");
-        supFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-        supFormBG.add(supNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+        supFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        supFormBG.add(supNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 130, -1));
 
         calleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         calleLabel.setForeground(new java.awt.Color(27, 47, 59));
         calleLabel.setText("Street");
-        supFormBG.add(calleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        supFormBG.add(supCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+        supFormBG.add(calleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        supFormBG.add(supCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
 
         cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cityLabel.setForeground(new java.awt.Color(27, 47, 59));
         cityLabel.setText("City");
-        supFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-        supFormBG.add(supSectorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+        supFormBG.add(cityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        supFormBG.add(supSectorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
         sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
         sectorLabel.setText("Sector");
-        supFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        supFormBG.add(supCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        supFormBG.add(sectorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        supFormBG.add(supCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 130, -1));
 
         countryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         countryLabel.setForeground(new java.awt.Color(27, 47, 59));
         countryLabel.setText("Country");
-        supFormBG.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
-        supFormBG.add(supPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
+        supFormBG.add(countryLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
+        supFormBG.add(supPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 130, -1));
 
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
         numberLabel.setText("Phone No.");
-        supFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 110, -1, -1));
-        supFormBG.add(supNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, 130, -1));
+        supFormBG.add(numberLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 130, -1, -1));
+        supFormBG.add(supNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 130, -1));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -144,11 +156,118 @@ public class InsertSuplidor extends javax.swing.JFrame {
         });
         supFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
 
+        headerPanel.setBackground(new java.awt.Color(194, 200, 203));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
+
+        windowActions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimizeLabel.setText("—");
+        minimizeLabel.setToolTipText("");
+        minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout minimizeButtonLayout = new javax.swing.GroupLayout(minimizeButton);
+        minimizeButton.setLayout(minimizeButtonLayout);
+        minimizeButtonLayout.setHorizontalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(minimizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        minimizeButtonLayout.setVerticalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minimizeButtonLayout.createSequentialGroup()
+                .addComponent(minimizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        windowActions.add(minimizeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        exitButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        exitLabel.setBackground(new java.awt.Color(247, 247, 247));
+        exitLabel.setFont(new java.awt.Font("Roboto", 1, 19)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(27, 47, 59));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setText("X");
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitButtonLayout = new javax.swing.GroupLayout(exitButton);
+        exitButton.setLayout(exitButtonLayout);
+        exitButtonLayout.setHorizontalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exitButtonLayout.setVerticalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        windowActions.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, -1));
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 660, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        supFormBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(supFormBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+            .addComponent(supFormBG, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,6 +349,43 @@ public class InsertSuplidor extends javax.swing.JFrame {
         backButton.setIcon(image);
     }//GEN-LAST:event_backButtonMousePressed
 
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146,147,149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194,200,203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
+
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211,22,34));
+        exitLabel.setForeground(new Color(247,247,247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194,200,203));
+        exitLabel.setForeground(new Color(27,47,59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -271,6 +427,11 @@ public class InsertSuplidor extends javax.swing.JFrame {
     private javax.swing.JLabel cityLabel;
     private javax.swing.JButton confirmButton;
     private javax.swing.JLabel countryLabel;
+    private javax.swing.JPanel exitButton;
+    private javax.swing.JLabel exitLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JPanel minimizeButton;
+    private javax.swing.JLabel minimizeLabel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel numberLabel;
     private javax.swing.JLabel sectorLabel;
@@ -282,5 +443,6 @@ public class InsertSuplidor extends javax.swing.JFrame {
     private javax.swing.JTextField supNumTelefonoTextField;
     private javax.swing.JTextField supPaisTextField;
     private javax.swing.JTextField supSectorTextField;
+    private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }

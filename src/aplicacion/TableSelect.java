@@ -225,7 +225,7 @@ public class TableSelect extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
-        jLabel1.setText("App");
+        jLabel1.setText("Insert");
 
         catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         catalog.setForeground(new java.awt.Color(247, 247, 247));
@@ -268,11 +268,6 @@ public class TableSelect extends javax.swing.JFrame {
         insert.setText("Insert");
         insert.setBorder(null);
         insert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        insert.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                insertActionPerformed(evt);
-            }
-        });
 
         edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         edit.setForeground(new java.awt.Color(247, 247, 247));
@@ -298,10 +293,6 @@ public class TableSelect extends javax.swing.JFrame {
         blueStripe.setLayout(blueStripeLayout);
         blueStripeLayout.setHorizontalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,10 +300,14 @@ public class TableSelect extends javax.swing.JFrame {
                     .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62))
+                .addComponent(jLabel1)
+                .addGap(57, 57, 57))
         );
         blueStripeLayout.setVerticalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,18 +474,6 @@ public class TableSelect extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         catalog.setIcon(image);
     }//GEN-LAST:event_catalogMouseExited
-
-    private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
-        // TODO add your handling code here:
-        try{
-            TableSelect selectTable = new TableSelect();
-            selectTable.sql = this.sql;
-            selectTable.setVisible(true);
-            this.dispose();
-        } catch(Exception e){
-            System.out.println(e);
-        }
-    }//GEN-LAST:event_insertActionPerformed
 
     private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");

@@ -5,6 +5,7 @@
  */
 package aplicacion;
 
+import java.awt.Color;
 import java.sql.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -19,6 +20,8 @@ public class InsertModelo extends javax.swing.JFrame {
      * Creates new form InsertModelo
      */
     public Statement sql;
+    int xMouse, yMouse;
+    
     public InsertModelo() {
         initComponents();
         setLocationRelativeTo(null);
@@ -47,8 +50,17 @@ public class InsertModelo extends javax.swing.JFrame {
         brandIdTextField = new javax.swing.JTextField();
         confirmButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
+        headerPanel = new javax.swing.JPanel();
+        windowActions = new javax.swing.JPanel();
+        minimizeButton = new javax.swing.JPanel();
+        minimizeLabel = new javax.swing.JLabel();
+        exitButton = new javax.swing.JPanel();
+        exitLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+        setUndecorated(true);
+        setResizable(false);
 
         modFormBG.setBackground(new java.awt.Color(247, 247, 247));
         modFormBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -56,37 +68,37 @@ public class InsertModelo extends javax.swing.JFrame {
         ModeloLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         ModeloLabel.setForeground(new java.awt.Color(27, 47, 59));
         ModeloLabel.setText("Model");
-        modFormBG.add(ModeloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        modFormBG.add(ModeloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         nombreLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         nombreLabel.setForeground(new java.awt.Color(27, 47, 59));
         nombreLabel.setText("Name");
-        modFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
-        modFormBG.add(modNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 130, -1));
+        modFormBG.add(nombreLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        modFormBG.add(modNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 130, -1));
 
         colorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         colorLabel.setForeground(new java.awt.Color(27, 47, 59));
         colorLabel.setText("Color");
-        modFormBG.add(colorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-        modFormBG.add(modColorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 130, -1));
+        modFormBG.add(colorLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        modFormBG.add(modColorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 130, -1));
 
         sizeLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sizeLabel.setForeground(new java.awt.Color(27, 47, 59));
         sizeLabel.setText("Size");
-        modFormBG.add(sizeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-        modFormBG.add(modCapacidadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 130, -1));
+        modFormBG.add(sizeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
+        modFormBG.add(modCapacidadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 130, -1));
 
         capacidadLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         capacidadLabel.setForeground(new java.awt.Color(27, 47, 59));
         capacidadLabel.setText("Capacity");
-        modFormBG.add(capacidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-        modFormBG.add(modTamanoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 130, -1));
+        modFormBG.add(capacidadLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        modFormBG.add(modTamanoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 130, -1));
 
         brandIdLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         brandIdLabel.setForeground(new java.awt.Color(27, 47, 59));
         brandIdLabel.setText("Brand ID");
-        modFormBG.add(brandIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, -1, -1));
-        modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, 130, -1));
+        modFormBG.add(brandIdLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 80, -1, -1));
+        modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 130, -1));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -135,6 +147,113 @@ public class InsertModelo extends javax.swing.JFrame {
             }
         });
         modFormBG.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 110, 40));
+
+        headerPanel.setBackground(new java.awt.Color(194, 200, 203));
+        headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                headerPanelMouseDragged(evt);
+            }
+        });
+        headerPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                headerPanelMousePressed(evt);
+            }
+        });
+
+        windowActions.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
+        minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimizeLabel.setText("—");
+        minimizeLabel.setToolTipText("");
+        minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                minimizeLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout minimizeButtonLayout = new javax.swing.GroupLayout(minimizeButton);
+        minimizeButton.setLayout(minimizeButtonLayout);
+        minimizeButtonLayout.setHorizontalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(minimizeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+        minimizeButtonLayout.setVerticalGroup(
+            minimizeButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, minimizeButtonLayout.createSequentialGroup()
+                .addComponent(minimizeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        windowActions.add(minimizeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+
+        exitButton.setBackground(new java.awt.Color(194, 200, 203));
+
+        exitLabel.setBackground(new java.awt.Color(247, 247, 247));
+        exitLabel.setFont(new java.awt.Font("Roboto", 1, 19)); // NOI18N
+        exitLabel.setForeground(new java.awt.Color(27, 47, 59));
+        exitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        exitLabel.setText("X");
+        exitLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        exitLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        exitLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitLabelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exitLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exitLabelMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout exitButtonLayout = new javax.swing.GroupLayout(exitButton);
+        exitButton.setLayout(exitButtonLayout);
+        exitButtonLayout.setHorizontalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(exitButtonLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(exitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        exitButtonLayout.setVerticalGroup(
+            exitButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitButtonLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(exitLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        windowActions.add(exitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 40, -1));
+
+        javax.swing.GroupLayout headerPanelLayout = new javax.swing.GroupLayout(headerPanel);
+        headerPanel.setLayout(headerPanelLayout);
+        headerPanelLayout.setHorizontalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 660, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        headerPanelLayout.setVerticalGroup(
+            headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        modFormBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -218,6 +337,43 @@ public class InsertModelo extends javax.swing.JFrame {
         backButton.setIcon(image);
     }//GEN-LAST:event_backButtonMousePressed
 
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146,147,149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194,200,203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
+
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211,22,34));
+        exitLabel.setForeground(new Color(247,247,247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194,200,203));
+        exitLabel.setForeground(new Color(27,47,59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +417,11 @@ public class InsertModelo extends javax.swing.JFrame {
     private javax.swing.JLabel capacidadLabel;
     private javax.swing.JLabel colorLabel;
     private javax.swing.JButton confirmButton;
+    private javax.swing.JPanel exitButton;
+    private javax.swing.JLabel exitLabel;
+    private javax.swing.JPanel headerPanel;
+    private javax.swing.JPanel minimizeButton;
+    private javax.swing.JLabel minimizeLabel;
     private javax.swing.JTextField modCapacidadTextField;
     private javax.swing.JTextField modColorTextField;
     private javax.swing.JPanel modFormBG;
@@ -268,5 +429,6 @@ public class InsertModelo extends javax.swing.JFrame {
     private javax.swing.JTextField modTamanoTextField;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel sizeLabel;
+    private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }
