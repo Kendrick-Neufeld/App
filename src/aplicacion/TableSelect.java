@@ -58,6 +58,7 @@ public class TableSelect extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1000, 400));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
@@ -332,7 +333,7 @@ public class TableSelect extends javax.swing.JFrame {
         );
 
         jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
-        jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 80, 380, 210));
+        jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 380, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

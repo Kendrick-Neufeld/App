@@ -316,7 +316,7 @@ public class MainMenu extends javax.swing.JFrame {
                 logOutButtonActionPerformed(evt);
             }
         });
-        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 170, 50));
+        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 310, 170, 50));
         mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 380, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
