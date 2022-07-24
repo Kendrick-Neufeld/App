@@ -53,7 +53,7 @@ public class InsertMarca extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         blueStripe = new javax.swing.JPanel();
         redStripe = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         catalog = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         insert = new javax.swing.JButton();
@@ -253,9 +253,9 @@ public class InsertMarca extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(247, 247, 247));
-        jLabel3.setText("Insert");
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
+        jLabel1.setText("Insert");
 
         catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         catalog.setForeground(new java.awt.Color(247, 247, 247));
@@ -341,14 +341,14 @@ public class InsertMarca extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
+                .addComponent(jLabel1)
                 .addGap(52, 52, 52))
         );
         blueStripeLayout.setVerticalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(blueStripeLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(jLabel3)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -518,7 +518,10 @@ public class InsertMarca extends javax.swing.JFrame {
     }//GEN-LAST:event_editMouseExited
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
+        Database dbView = new Database();
+        dbView.sql = this.sql;
+        dbView.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_editActionPerformed
 
     /**
@@ -568,7 +571,7 @@ public class InsertMarca extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton insert;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField marcaNombreTextField;
     private javax.swing.JButton menu;

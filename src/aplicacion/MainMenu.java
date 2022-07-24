@@ -46,7 +46,7 @@ public class MainMenu extends javax.swing.JFrame {
         catalog = new javax.swing.JButton();
         menu = new javax.swing.JButton();
         insert = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
+        dbase = new javax.swing.JButton();
         headerPanel = new javax.swing.JPanel();
         windowActions = new javax.swing.JPanel();
         minimizeButton = new javax.swing.JPanel();
@@ -136,23 +136,23 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        edit.setForeground(new java.awt.Color(247, 247, 247));
-        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
-        edit.setText("Database");
-        edit.setBorder(null);
-        edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        edit.addMouseListener(new java.awt.event.MouseAdapter() {
+        dbase.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        dbase.setForeground(new java.awt.Color(247, 247, 247));
+        dbase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        dbase.setText("Database");
+        dbase.setBorder(null);
+        dbase.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        dbase.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                editMouseEntered(evt);
+                dbaseMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                editMouseExited(evt);
+                dbaseMouseExited(evt);
             }
         });
-        edit.addActionListener(new java.awt.event.ActionListener() {
+        dbase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editActionPerformed(evt);
+                dbaseActionPerformed(evt);
             }
         });
 
@@ -163,7 +163,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dbase, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -190,7 +190,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dbase, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(267, Short.MAX_VALUE))
         );
 
@@ -371,15 +371,15 @@ public class MainMenu extends javax.swing.JFrame {
         insert.setIcon(image);
     }//GEN-LAST:event_insertMouseExited
 
-    private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
+    private void dbaseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dbaseMouseEntered
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        edit.setIcon(image);
-    }//GEN-LAST:event_editMouseEntered
+        dbase.setIcon(image);
+    }//GEN-LAST:event_dbaseMouseEntered
 
-    private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
+    private void dbaseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dbaseMouseExited
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        edit.setIcon(image);
-    }//GEN-LAST:event_editMouseExited
+        dbase.setIcon(image);
+    }//GEN-LAST:event_dbaseMouseExited
 
     private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
         this.setExtendedState(TableSelect.ICONIFIED);
@@ -418,10 +418,12 @@ public class MainMenu extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
 
-    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_editActionPerformed
+    private void dbaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbaseActionPerformed
+        Database dbView = new Database();
+        dbView.sql = this.sql;
+        dbView.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_dbaseActionPerformed
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
@@ -487,7 +489,7 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
-    private javax.swing.JButton edit;
+    private javax.swing.JButton dbase;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;

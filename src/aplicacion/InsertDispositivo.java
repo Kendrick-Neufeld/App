@@ -601,7 +601,10 @@ public class InsertDispositivo extends javax.swing.JFrame {
     }//GEN-LAST:event_editMouseExited
 
     private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
-        // TODO add your handling code here:
+        Database dbView = new Database();
+        dbView.sql = this.sql;
+        dbView.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_editActionPerformed
 
     /**

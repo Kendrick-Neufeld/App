@@ -94,7 +94,7 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="edit" min="-2" pref="170" max="-2" attributes="0"/>
+                          <Component id="dbase" min="-2" pref="170" max="-2" attributes="0"/>
                           <Component id="insert" min="-2" pref="170" max="-2" attributes="0"/>
                           <Component id="menu" min="-2" pref="170" max="-2" attributes="0"/>
                           <Component id="catalog" min="-2" pref="170" max="-2" attributes="0"/>
@@ -126,7 +126,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="insert" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="edit" min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="dbase" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace pref="267" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -228,7 +228,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="insertActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="edit">
+            <Component class="javax.swing.JButton" name="dbase">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Roboto" size="16" style="1"/>
@@ -246,9 +246,9 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="editMouseExited"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editActionPerformed"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dbaseMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dbaseMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dbaseActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
