@@ -39,18 +39,21 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         mainMenuBG = new javax.swing.JPanel();
-        catalog = new javax.swing.JButton();
-        insert = new javax.swing.JButton();
-        edit = new javax.swing.JButton();
         blueStripe = new javax.swing.JPanel();
         redStripe = new javax.swing.JPanel();
-        logoLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        catalog = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
+        insert = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
         headerPanel = new javax.swing.JPanel();
         windowActions = new javax.swing.JPanel();
         minimizeButton = new javax.swing.JPanel();
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
+        logOutButton = new javax.swing.JButton();
+        logoLabel = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -66,9 +69,28 @@ public class MainMenu extends javax.swing.JFrame {
         mainMenuBG.setBackground(new java.awt.Color(247, 247, 247));
         mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+
+        redStripe.setBackground(new java.awt.Color(211, 22, 34));
+
+        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
+        redStripe.setLayout(redStripeLayout);
+        redStripeLayout.setHorizontalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 97, Short.MAX_VALUE)
+        );
+        redStripeLayout.setVerticalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
+        jLabel1.setText("App");
+
         catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        catalog.setForeground(new java.awt.Color(27, 47, 59));
-        catalog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        catalog.setForeground(new java.awt.Color(247, 247, 247));
+        catalog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
         catalog.setText("Catalog");
         catalog.setBorder(null);
         catalog.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -80,11 +102,17 @@ public class MainMenu extends javax.swing.JFrame {
                 catalogMouseExited(evt);
             }
         });
-        mainMenuBG.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 165, 105));
+
+        menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        menu.setForeground(new java.awt.Color(247, 247, 247));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor6.png"))); // NOI18N
+        menu.setText("Menu");
+        menu.setBorder(null);
+        menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         insert.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        insert.setForeground(new java.awt.Color(27, 47, 59));
-        insert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        insert.setForeground(new java.awt.Color(247, 247, 247));
+        insert.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
         insert.setText("Insert");
         insert.setBorder(null);
         insert.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -101,11 +129,10 @@ public class MainMenu extends javax.swing.JFrame {
                 insertActionPerformed(evt);
             }
         });
-        mainMenuBG.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 165, 105));
 
         edit.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        edit.setForeground(new java.awt.Color(27, 47, 59));
-        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        edit.setForeground(new java.awt.Color(247, 247, 247));
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
         edit.setText("Database");
         edit.setBorder(null);
         edit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -122,38 +149,46 @@ public class MainMenu extends javax.swing.JFrame {
                 editActionPerformed(evt);
             }
         });
-        mainMenuBG.add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 200, 165, 105));
-
-        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
 
         javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
         blueStripe.setLayout(blueStripeLayout);
         blueStripeLayout.setHorizontalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
         blueStripeLayout.setVerticalGroup(
             blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
-        mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 740, 30));
-
-        redStripe.setBackground(new java.awt.Color(211, 22, 34));
-
-        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
-        redStripe.setLayout(redStripeLayout);
-        redStripeLayout.setHorizontalGroup(
-            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 740, Short.MAX_VALUE)
-        );
-        redStripeLayout.setVerticalGroup(
-            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        mainMenuBG.add(redStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 385, 740, 10));
-        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 60, 200, 100));
+        mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -172,14 +207,13 @@ public class MainMenu extends javax.swing.JFrame {
         minimizeButton.setBackground(new java.awt.Color(194, 200, 203));
 
         minimizeLabel.setBackground(new java.awt.Color(247, 247, 247));
-        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
+        minimizeLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         minimizeLabel.setForeground(new java.awt.Color(27, 47, 59));
         minimizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         minimizeLabel.setText("—");
         minimizeLabel.setToolTipText("");
         minimizeLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         minimizeLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        minimizeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         minimizeLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 minimizeLabelMouseClicked(evt);
@@ -251,7 +285,7 @@ public class MainMenu extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 660, Short.MAX_VALUE)
+                .addGap(0, 920, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -261,7 +295,29 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
+
+        logOutButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        logOutButton.setForeground(new java.awt.Color(27, 47, 59));
+        logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        logOutButton.setText("Logout");
+        logOutButton.setBorder(null);
+        logOutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logOutButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logOutButtonMouseExited(evt);
+            }
+        });
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
+        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 340, 170, 50));
+        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 380, 210));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -271,7 +327,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -290,32 +346,32 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_insertActionPerformed
 
     private void catalogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         catalog.setIcon(image);
     }//GEN-LAST:event_catalogMouseEntered
 
     private void catalogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_catalogMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         catalog.setIcon(image);
     }//GEN-LAST:event_catalogMouseExited
 
     private void insertMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         insert.setIcon(image);
     }//GEN-LAST:event_insertMouseEntered
 
     private void insertMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         insert.setIcon(image);
     }//GEN-LAST:event_insertMouseExited
 
     private void editMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         edit.setIcon(image);
     }//GEN-LAST:event_editMouseEntered
 
     private void editMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         edit.setIcon(image);
     }//GEN-LAST:event_editMouseExited
 
@@ -360,6 +416,18 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_editActionPerformed
+
+    private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logOutButtonMouseEntered
+
+    private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logOutButtonMouseExited
+
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logOutButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,11 +474,14 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton insert;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JButton logOutButton;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel mainMenuBG;
+    private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
