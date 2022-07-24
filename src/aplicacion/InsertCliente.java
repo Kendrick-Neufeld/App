@@ -24,6 +24,7 @@ public class InsertCliente extends javax.swing.JFrame {
     public Statement sql;
     public InsertCliente() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

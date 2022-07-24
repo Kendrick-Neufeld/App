@@ -21,6 +21,7 @@ public class InsertModelo extends javax.swing.JFrame {
     public Statement sql;
     public InsertModelo() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

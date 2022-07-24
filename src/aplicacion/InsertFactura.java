@@ -32,6 +32,8 @@ public class InsertFactura extends javax.swing.JFrame {
     
     public InsertFactura() {
         initComponents();
+        setLocationRelativeTo(null);
+        
         Itemnumdisp = 0;
         ItemnumAcc = 0;
         DispoComp = new int[60];

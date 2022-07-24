@@ -24,6 +24,7 @@ public class InsertMarca extends javax.swing.JFrame {
     public Statement sql;
     public InsertMarca() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -21,6 +21,7 @@ public class InsertSuplidor extends javax.swing.JFrame {
     public Statement sql;
     public InsertSuplidor() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

@@ -24,6 +24,7 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -317,7 +318,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 310, 170, 50));
-        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 380, 210));
+        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 75, 380, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -418,11 +419,13 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_editActionPerformed
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
-        // TODO add your handling code here:
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        logOutButton.setIcon(image);
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
-        // TODO add your handling code here:
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        logOutButton.setIcon(image);
     }//GEN-LAST:event_logOutButtonMouseExited
 
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed

@@ -24,6 +24,7 @@ public class InsertAccesorio extends javax.swing.JFrame {
     public Statement sql;
     public InsertAccesorio() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

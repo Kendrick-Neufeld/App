@@ -25,7 +25,7 @@ public class TableSelect extends javax.swing.JFrame {
     public TableSelect() {
         initComponents();
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
-        getContentPane().setBackground(new Color(255, 255, 255));
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -58,10 +58,10 @@ public class TableSelect extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1000, 400));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1000, 500));
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

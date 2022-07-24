@@ -24,6 +24,7 @@ public class InsertDispositivo extends javax.swing.JFrame {
     public Statement sql;
     public InsertDispositivo() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

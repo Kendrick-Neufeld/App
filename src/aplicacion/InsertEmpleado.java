@@ -23,6 +23,7 @@ public class InsertEmpleado extends javax.swing.JFrame {
     
     public InsertEmpleado() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**

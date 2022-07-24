@@ -441,7 +441,7 @@
         <Component class="javax.swing.JLabel" name="logoLabel">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="390" y="70" width="380" height="210"/>
+              <AbsoluteConstraints x="390" y="75" width="380" height="200"/>
             </Constraint>
           </Constraints>
         </Component>

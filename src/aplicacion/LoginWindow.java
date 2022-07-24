@@ -21,16 +21,17 @@ public class LoginWindow extends javax.swing.JFrame {
     
     public Statement sql;
     int xMouse, yMouse;
-    
     /**
      * Creates new form LoginWindow
      */
+    
     public LoginWindow() {
         initComponents();
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
         rsscalelabel.RSScaleLabel.setScaleLabel(userIcon, "src/aplicacion/Imagenes/user.png" );
         rsscalelabel.RSScaleLabel.setScaleLabel(pwIcon, "src/aplicacion/Imagenes/pw.png" );
-        logoLabel.requestFocusInWindow();
+        logoLabel.requestFocusInWindow();     
+        setLocationRelativeTo(null);
     }
 
     /**

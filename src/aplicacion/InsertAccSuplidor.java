@@ -24,6 +24,7 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
     
     public InsertAccSuplidor() {
         initComponents();   
+        setLocationRelativeTo(null);
     }
 
     /**
