@@ -91,13 +91,26 @@ public class InsertFactura extends javax.swing.JFrame {
 
         facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 230, 160));
 
+        addButton.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        addButton.setForeground(new java.awt.Color(27, 47, 59));
+        addButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
         addButton.setText("Add");
+        addButton.setBorder(null);
+        addButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addButtonMouseExited(evt);
+            }
+        });
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
-        facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 80, -1));
+        facturaFormBG.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 80, 20));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -494,6 +507,16 @@ public class InsertFactura extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
+
+    private void addButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        addButton.setIcon(image);
+    }//GEN-LAST:event_addButtonMouseEntered
+
+    private void addButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        addButton.setIcon(image);
+    }//GEN-LAST:event_addButtonMouseExited
 
     /**
      * @param args the command line arguments
