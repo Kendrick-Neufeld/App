@@ -26,16 +26,20 @@ public class Catalog extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        blueStripe = new javax.swing.JPanel();
-        redStripe = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        menu = new javax.swing.JButton();
         headerPanel = new javax.swing.JPanel();
         windowActions = new javax.swing.JPanel();
         minimizeButton = new javax.swing.JPanel();
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
+        blueStripe = new javax.swing.JPanel();
+        redStripe = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        viewAll = new javax.swing.JButton();
+        menu = new javax.swing.JButton();
+        addItem = new javax.swing.JButton();
+        celulares = new javax.swing.JButton();
+        accesorios = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -44,75 +48,6 @@ public class Catalog extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
-
-        redStripe.setBackground(new java.awt.Color(211, 22, 34));
-
-        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
-        redStripe.setLayout(redStripeLayout);
-        redStripeLayout.setHorizontalGroup(
-            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 97, Short.MAX_VALUE)
-        );
-        redStripeLayout.setVerticalGroup(
-            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 3, Short.MAX_VALUE)
-        );
-
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 22)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
-        jLabel1.setText("Catalog");
-
-        menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        menu.setForeground(new java.awt.Color(247, 247, 247));
-        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
-        menu.setText("Menu");
-        menu.setBorder(null);
-        menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        menu.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                menuMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                menuMouseExited(evt);
-            }
-        });
-        menu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
-        blueStripe.setLayout(blueStripeLayout);
-        blueStripeLayout.setHorizontalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(9, 9, 9)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        blueStripeLayout.setVerticalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(437, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -221,6 +156,160 @@ public class Catalog extends javax.swing.JFrame {
 
         jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
+        blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+
+        redStripe.setBackground(new java.awt.Color(211, 22, 34));
+
+        javax.swing.GroupLayout redStripeLayout = new javax.swing.GroupLayout(redStripe);
+        redStripe.setLayout(redStripeLayout);
+        redStripeLayout.setHorizontalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 97, Short.MAX_VALUE)
+        );
+        redStripeLayout.setVerticalGroup(
+            redStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(247, 247, 247));
+        jLabel1.setText("Catalog");
+
+        viewAll.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        viewAll.setForeground(new java.awt.Color(247, 247, 247));
+        viewAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor6.png"))); // NOI18N
+        viewAll.setText("All Items");
+        viewAll.setBorder(null);
+        viewAll.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        viewAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllActionPerformed(evt);
+            }
+        });
+
+        menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        menu.setForeground(new java.awt.Color(247, 247, 247));
+        menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        menu.setText("Menu");
+        menu.setBorder(null);
+        menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuMouseExited(evt);
+            }
+        });
+        menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuActionPerformed(evt);
+            }
+        });
+
+        addItem.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        addItem.setForeground(new java.awt.Color(247, 247, 247));
+        addItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        addItem.setText("Add");
+        addItem.setBorder(null);
+        addItem.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addItem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addItemMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addItemMouseExited(evt);
+            }
+        });
+        addItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemActionPerformed(evt);
+            }
+        });
+
+        celulares.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        celulares.setForeground(new java.awt.Color(247, 247, 247));
+        celulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        celulares.setText("Devices");
+        celulares.setBorder(null);
+        celulares.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        celulares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                celularesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                celularesMouseExited(evt);
+            }
+        });
+        celulares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celularesActionPerformed(evt);
+            }
+        });
+
+        accesorios.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        accesorios.setForeground(new java.awt.Color(247, 247, 247));
+        accesorios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        accesorios.setText("Accessories");
+        accesorios.setBorder(null);
+        accesorios.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        accesorios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                accesoriosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                accesoriosMouseExited(evt);
+            }
+        });
+        accesorios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                accesoriosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
+        blueStripe.setLayout(blueStripeLayout);
+        blueStripeLayout.setHorizontalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addItem, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(viewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(celulares, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(accesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        blueStripeLayout.setVerticalGroup(
+            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(blueStripeLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewAll, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(celulares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(accesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(addItem, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(211, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -276,6 +365,13 @@ public class Catalog extends javax.swing.JFrame {
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
 
+    private void viewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllActionPerformed
+        Catalog cat = new Catalog();
+        cat.sql = this.sql;
+        cat.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_viewAllActionPerformed
+
     private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         menu.setIcon(image);
@@ -292,6 +388,48 @@ public class Catalog extends javax.swing.JFrame {
         mainMenu.sql = this.sql;
         this.dispose();
     }//GEN-LAST:event_menuActionPerformed
+
+    private void addItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemActionPerformed
+        
+    }//GEN-LAST:event_addItemActionPerformed
+
+    private void celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celularesActionPerformed
+
+    private void accesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_accesoriosActionPerformed
+
+    private void addItemMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addItemMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        addItem.setIcon(image);
+    }//GEN-LAST:event_addItemMouseEntered
+
+    private void addItemMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addItemMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        addItem.setIcon(image);
+    }//GEN-LAST:event_addItemMouseExited
+
+    private void celularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        celulares.setIcon(image);
+    }//GEN-LAST:event_celularesMouseEntered
+
+    private void celularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        celulares.setIcon(image);
+    }//GEN-LAST:event_celularesMouseExited
+
+    private void accesoriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        accesorios.setIcon(image);
+    }//GEN-LAST:event_accesoriosMouseExited
+
+    private void accesoriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        accesorios.setIcon(image);
+    }//GEN-LAST:event_accesoriosMouseEntered
 
     /**
      * @param args the command line arguments
@@ -329,7 +467,10 @@ public class Catalog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton accesorios;
+    private javax.swing.JButton addItem;
     private javax.swing.JPanel blueStripe;
+    private javax.swing.JButton celulares;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
@@ -339,6 +480,7 @@ public class Catalog extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JButton viewAll;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }
