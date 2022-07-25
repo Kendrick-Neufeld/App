@@ -65,9 +65,11 @@ public class MainMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         mainMenuBG.setBackground(new java.awt.Color(247, 247, 247));
+        mainMenuBG.setPreferredSize(new java.awt.Dimension(740, 500));
         mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
@@ -291,7 +293,7 @@ public class MainMenu extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 920, Short.MAX_VALUE)
+                .addGap(0, 660, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -301,7 +303,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
+        mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
         logOutButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         logOutButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -322,14 +324,16 @@ public class MainMenu extends javax.swing.JFrame {
                 logOutButtonActionPerformed(evt);
             }
         });
-        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 310, 170, 50));
-        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 75, 380, 200));
+        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 170, 50));
+        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 100, 380, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainMenuBG, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(mainMenuBG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

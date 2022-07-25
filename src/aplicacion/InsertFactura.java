@@ -608,7 +608,7 @@ public class InsertFactura extends javax.swing.JFrame {
                 System.out.println(ex);
                 }
         }
-        itemsToPurchaseTextArea.setText(itemsToPurchaseTextArea.getText() + ItemName + " " + ItemPrice + "\n");
+        itemsToPurchaseTextArea.setText(itemsToPurchaseTextArea.getText() + ItemName + " -  $" + ItemPrice + "\n");
         
     }//GEN-LAST:event_addButtonActionPerformed
 

@@ -62,7 +62,7 @@ public class TableSelect extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
         jPanel1.setMinimumSize(new java.awt.Dimension(1000, 500));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1000, 500));
+        jPanel1.setPreferredSize(new java.awt.Dimension(740, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Tabla.setBackground(new java.awt.Color(194, 200, 203));
@@ -78,7 +78,7 @@ public class TableSelect extends javax.swing.JFrame {
                 TablaActionPerformed(evt);
             }
         });
-        jPanel1.add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 310, 270, 50));
+        jPanel1.add(Tabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 270, 50));
 
         connectButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         connectButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -99,7 +99,7 @@ public class TableSelect extends javax.swing.JFrame {
                 connectButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(connectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 380, 110, 50));
+        jPanel1.add(connectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, 110, 50));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -196,7 +196,7 @@ public class TableSelect extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 920, Short.MAX_VALUE)
+                .addGap(0, 660, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -206,7 +206,7 @@ public class TableSelect extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
 
@@ -333,13 +333,13 @@ public class TableSelect extends javax.swing.JFrame {
         );
 
         jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
-        jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 380, 210));
+        jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 100, 380, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

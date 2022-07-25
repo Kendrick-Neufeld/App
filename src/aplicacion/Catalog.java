@@ -11,6 +11,7 @@ public class Catalog extends javax.swing.JFrame {
      */
     public Statement sql;
     int xMouse, yMouse;
+    
     public Catalog() {
         initComponents();
         setLocationRelativeTo(null);
@@ -181,11 +182,6 @@ public class Catalog extends javax.swing.JFrame {
         viewAll.setText("All Items");
         viewAll.setBorder(null);
         viewAll.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        viewAll.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAllActionPerformed(evt);
-            }
-        });
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -364,13 +360,6 @@ public class Catalog extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_headerPanelMousePressed
-
-    private void viewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllActionPerformed
-        Catalog cat = new Catalog();
-        cat.sql = this.sql;
-        cat.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_viewAllActionPerformed
 
     private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");

@@ -21,7 +21,6 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
      */
     
     public Statement sql;
-    ImageIcon image = new ImageIcon();
     int xMouse, yMouse;
     
     public InsertAccSuplidor() {

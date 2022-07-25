@@ -480,9 +480,6 @@ public class InsertAccesorio extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
         }
-        
-        
-        
     }//GEN-LAST:event_confirmButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
