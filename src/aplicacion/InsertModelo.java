@@ -67,7 +67,6 @@ public class InsertModelo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         modFormBG.setBackground(new java.awt.Color(247, 247, 247));
@@ -87,7 +86,8 @@ public class InsertModelo extends javax.swing.JFrame {
         modNombreTextField.setBackground(new java.awt.Color(194, 200, 203));
         modNombreTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         modNombreTextField.setForeground(new java.awt.Color(27, 47, 59));
-        modFormBG.add(modNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        modNombreTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        modFormBG.add(modNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         colorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         colorLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -97,7 +97,8 @@ public class InsertModelo extends javax.swing.JFrame {
         modColorTextField.setBackground(new java.awt.Color(194, 200, 203));
         modColorTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         modColorTextField.setForeground(new java.awt.Color(27, 47, 59));
-        modFormBG.add(modColorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        modColorTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        modFormBG.add(modColorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         sizeLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sizeLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -107,7 +108,8 @@ public class InsertModelo extends javax.swing.JFrame {
         modCapacidadTextField.setBackground(new java.awt.Color(194, 200, 203));
         modCapacidadTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         modCapacidadTextField.setForeground(new java.awt.Color(27, 47, 59));
-        modFormBG.add(modCapacidadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        modCapacidadTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        modFormBG.add(modCapacidadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         capacidadLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         capacidadLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -117,7 +119,8 @@ public class InsertModelo extends javax.swing.JFrame {
         modTamanoTextField.setBackground(new java.awt.Color(194, 200, 203));
         modTamanoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         modTamanoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        modFormBG.add(modTamanoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
+        modTamanoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        modFormBG.add(modTamanoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, 25));
 
         brandIdLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         brandIdLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -127,7 +130,8 @@ public class InsertModelo extends javax.swing.JFrame {
         brandIdTextField.setBackground(new java.awt.Color(194, 200, 203));
         brandIdTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         brandIdTextField.setForeground(new java.awt.Color(27, 47, 59));
-        modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, -1));
+        brandIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        modFormBG.add(brandIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, 25));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));

@@ -83,7 +83,6 @@ public class InsertEmpleado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         empFormBG.setBackground(new java.awt.Color(247, 247, 247));
@@ -143,7 +142,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empNombreTextField.setBackground(new java.awt.Color(194, 200, 203));
         empNombreTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empNombreTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        empNombreTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -153,7 +153,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empApellidoTextField.setBackground(new java.awt.Color(194, 200, 203));
         empApellidoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empApellidoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        empApellidoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cityLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -163,7 +164,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empSectoTextField.setBackground(new java.awt.Color(194, 200, 203));
         empSectoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empSectoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empSectoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        empSectoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empSectoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -173,7 +175,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empCiudadTextField.setBackground(new java.awt.Color(194, 200, 203));
         empCiudadTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empCiudadTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
+        empCiudadTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, 25));
 
         depLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         depLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -188,7 +191,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empNumTelefonoTextField.setBackground(new java.awt.Color(194, 200, 203));
         empNumTelefonoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empNumTelefonoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, -1));
+        empNumTelefonoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, 25));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -222,7 +226,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empSalarioTextField.setBackground(new java.awt.Color(194, 200, 203));
         empSalarioTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empSalarioTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, -1));
+        empSalarioTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empSalarioTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, 25));
 
         sexLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sexLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -237,7 +242,8 @@ public class InsertEmpleado extends javax.swing.JFrame {
         empCalleTextField.setBackground(new java.awt.Color(194, 200, 203));
         empCalleTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         empCalleTextField.setForeground(new java.awt.Color(27, 47, 59));
-        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 130, -1));
+        empCalleTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        empFormBG.add(empCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 220, 130, 25));
 
         backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         backButton.setForeground(new java.awt.Color(27, 47, 59));

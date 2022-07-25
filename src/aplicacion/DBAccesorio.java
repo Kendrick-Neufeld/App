@@ -61,7 +61,8 @@ public class DBAccesorio extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tablas = new javax.swing.JTable();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        selectLabel = new javax.swing.JLabel();
+        accLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -309,6 +310,9 @@ public class DBAccesorio extends javax.swing.JFrame {
 
         jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
+        Tablas.setBackground(new java.awt.Color(194, 200, 203));
+        Tablas.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        Tablas.setForeground(new java.awt.Color(27, 47, 59));
         Tablas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, "", null, null},
@@ -332,11 +336,15 @@ public class DBAccesorio extends javax.swing.JFrame {
                 "ID", "Precio", "Nombre", "Cantidad"
             }
         ));
+        Tablas.setGridColor(new java.awt.Color(146, 147, 149));
         Tablas.setRowHeight(30);
         jScrollPane1.setViewportView(Tablas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 380, 320));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 530, 340));
 
+        jComboBox1.setBackground(new java.awt.Color(194, 200, 203));
+        jComboBox1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(27, 47, 59));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Device", "Employee", "Supplier", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
         jComboBox1.setSelectedIndex(5);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -344,10 +352,17 @@ public class DBAccesorio extends javax.swing.JFrame {
                 jComboBox1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 120, 40));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 180, 40));
 
-        jLabel2.setText("Device");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 110, 30));
+        selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        selectLabel.setForeground(new java.awt.Color(27, 47, 59));
+        selectLabel.setText("Select Table");
+        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, 100, 30));
+
+        accLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        accLabel.setForeground(new java.awt.Color(27, 47, 59));
+        accLabel.setText("Accesorio");
+        jPanel1.add(accLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -621,6 +636,7 @@ public class DBAccesorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablas;
+    private javax.swing.JLabel accLabel;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;
@@ -630,13 +646,13 @@ public class DBAccesorio extends javax.swing.JFrame {
     private javax.swing.JButton insert;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JLabel selectLabel;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }

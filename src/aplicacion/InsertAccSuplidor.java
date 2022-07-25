@@ -147,22 +147,26 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
         quantityTextField.setBackground(new java.awt.Color(194, 200, 203));
         quantityTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         quantityTextField.setForeground(new java.awt.Color(27, 47, 59));
-        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
+        quantityTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        accSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, 25));
 
         accIDTextField.setBackground(new java.awt.Color(194, 200, 203));
         accIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         accIDTextField.setForeground(new java.awt.Color(27, 47, 59));
-        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        accIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        accSupFormBG.add(accIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         supIDTextField.setBackground(new java.awt.Color(194, 200, 203));
         supIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supIDTextField.setForeground(new java.awt.Color(27, 47, 59));
-        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        supIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        accSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         priceTextField.setBackground(new java.awt.Color(194, 200, 203));
         priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         priceTextField.setForeground(new java.awt.Color(27, 47, 59));
-        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        priceTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        accSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         headerPanel.setBackground(new java.awt.Color(194, 200, 203));
         headerPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {

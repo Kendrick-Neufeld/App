@@ -70,7 +70,7 @@ public class TableSelect extends javax.swing.JFrame {
         Tabla.setForeground(new java.awt.Color(27, 47, 59));
         Tabla.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employee", "Supplier", "Device", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
         Tabla.setSelectedIndex(-1);
-        Tabla.setBorder(null);
+        Tabla.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Tabla.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Tabla.setLightWeightPopupEnabled(false);
         Tabla.addActionListener(new java.awt.event.ActionListener() {

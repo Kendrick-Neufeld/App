@@ -81,7 +81,8 @@ public class InsertMarca extends javax.swing.JFrame {
         marcaNombreTextField.setBackground(new java.awt.Color(194, 200, 203));
         marcaNombreTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         marcaNombreTextField.setForeground(new java.awt.Color(27, 47, 59));
-        jPanel1.add(marcaNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        marcaNombreTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        jPanel1.add(marcaNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));

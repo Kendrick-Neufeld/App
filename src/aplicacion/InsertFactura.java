@@ -83,7 +83,6 @@ public class InsertFactura extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         facturaFormBG.setBackground(new java.awt.Color(247, 247, 247));
@@ -96,18 +95,20 @@ public class InsertFactura extends javax.swing.JFrame {
         tipoProdSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Dispo", "Acc" }));
         tipoProdSelect.setSelectedIndex(-1);
         tipoProdSelect.setBorder(null);
-        facturaFormBG.add(tipoProdSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        facturaFormBG.add(tipoProdSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         itemIdTextField.setBackground(new java.awt.Color(194, 200, 203));
         itemIdTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         itemIdTextField.setForeground(new java.awt.Color(27, 47, 59));
-        facturaFormBG.add(itemIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        itemIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        facturaFormBG.add(itemIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         itemsToPurchaseTextArea.setBackground(new java.awt.Color(194, 200, 203));
         itemsToPurchaseTextArea.setColumns(20);
         itemsToPurchaseTextArea.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         itemsToPurchaseTextArea.setForeground(new java.awt.Color(27, 47, 59));
         itemsToPurchaseTextArea.setRows(5);
+        itemsToPurchaseTextArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jScrollPane1.setViewportView(itemsToPurchaseTextArea);
 
         facturaFormBG.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 230, 160));
@@ -170,7 +171,8 @@ public class InsertFactura extends javax.swing.JFrame {
         cliIdTextField.setBackground(new java.awt.Color(194, 200, 203));
         cliIdTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cliIdTextField.setForeground(new java.awt.Color(27, 47, 59));
-        facturaFormBG.add(cliIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        cliIdTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        facturaFormBG.add(cliIdTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         cliIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cliIDLabel.setForeground(new java.awt.Color(27, 47, 59));

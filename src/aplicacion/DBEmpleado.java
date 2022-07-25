@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.sql.*;
 import java.util.Vector;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,6 +23,7 @@ public class DBEmpleado extends javax.swing.JFrame {
      */
     public Statement sql;
     int xMouse, yMouse;
+    private DefaultTableCellRenderer cellRenderer;
     
     public DBEmpleado() {
         initComponents();
@@ -31,6 +33,22 @@ public class DBEmpleado extends javax.swing.JFrame {
     public DBEmpleado(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
+        Tablas.getColumnModel().getColumn(0).setPreferredWidth(40);
+        Tablas.getColumnModel().getColumn(0).setMaxWidth(40);
+        
+        for (int i = 1; i < 5; i++){
+            Tablas.getColumnModel().getColumn(i).setPreferredWidth(80);
+            Tablas.getColumnModel().getColumn(i).setMaxWidth(80);
+        }
+        
+        for(int i = 5; i <= 8; i++){
+            Tablas.getColumnModel().getColumn(i).setPreferredWidth(120);
+            Tablas.getColumnModel().getColumn(i).setMaxWidth(120);
+        }
+        
+        Tablas.getColumnModel().getColumn(9).setPreferredWidth(100);
+        Tablas.getColumnModel().getColumn(9).setMaxWidth(100);
+        
         this.sql = sql;
         CargarArticulo();
     }
@@ -61,8 +79,9 @@ public class DBEmpleado extends javax.swing.JFrame {
         exitLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tablas = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
+        empLabel = new javax.swing.JLabel();
+        selectLabel = new javax.swing.JLabel();
+        selectTableCombobox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -298,7 +317,7 @@ public class DBEmpleado extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 920, Short.MAX_VALUE)
+                .addGap(0, 1320, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -308,8 +327,11 @@ public class DBEmpleado extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, -1));
 
+        Tablas.setBackground(new java.awt.Color(194, 200, 203));
+        Tablas.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        Tablas.setForeground(new java.awt.Color(27, 47, 59));
         Tablas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, "", null, null, null, null, null, null, null, null},
@@ -336,26 +358,36 @@ public class DBEmpleado extends javax.swing.JFrame {
         Tablas.setRowHeight(30);
         jScrollPane1.setViewportView(Tablas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 620, 320));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 940, 320));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Device", "Employee", "Supplier", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
-        jComboBox1.setSelectedIndex(1);
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        empLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        empLabel.setForeground(new java.awt.Color(27, 47, 59));
+        empLabel.setText("Empleado");
+        jPanel1.add(empLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 230, 40));
+
+        selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        selectLabel.setForeground(new java.awt.Color(27, 47, 59));
+        selectLabel.setText("Select Table");
+        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 110, 100, 30));
+
+        selectTableCombobox.setBackground(new java.awt.Color(194, 200, 203));
+        selectTableCombobox.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        selectTableCombobox.setForeground(new java.awt.Color(27, 47, 59));
+        selectTableCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Device", "Employee", "Supplier", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
+        selectTableCombobox.setSelectedIndex(1);
+        selectTableCombobox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                selectTableComboboxActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 120, 40));
-
-        jLabel2.setText("Employee");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 110, 30));
+        jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 150, 180, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1400, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -468,74 +500,74 @@ public class DBEmpleado extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_menuActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void selectTableComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTableComboboxActionPerformed
         // TODO add your handling code here:
-        switch(jComboBox1.getSelectedIndex()){
+        switch(selectTableCombobox.getSelectedIndex()){
             case 0:
-                DBDevice dbdevice = new DBDevice(sql);
-                dbdevice.sql = this.sql;
-                dbdevice.setVisible(true);
-                this.dispose();
-                break;
+            DBDevice dbdevice = new DBDevice(sql);
+            dbdevice.sql = this.sql;
+            dbdevice.setVisible(true);
+            this.dispose();
+            break;
             case 1:
-                DBEmpleado dbempleado = new DBEmpleado(sql);
-                dbempleado.sql = this.sql;
-                dbempleado.setVisible(true);
-                this.dispose();
-                break;
+            DBEmpleado dbempleado = new DBEmpleado(sql);
+            dbempleado.sql = this.sql;
+            dbempleado.setVisible(true);
+            this.dispose();
+            break;
             case 2:
-                DBSuplidor dbsuplidor = new DBSuplidor(sql);
-                dbsuplidor.sql = this.sql;
-                dbsuplidor.setVisible(true);
-                this.dispose();
-                break;
+            DBSuplidor dbsuplidor = new DBSuplidor(sql);
+            dbsuplidor.sql = this.sql;
+            dbsuplidor.setVisible(true);
+            this.dispose();
+            break;
             case 3:
-                DBModelo dbmodelo = new DBModelo(sql);
-                dbmodelo.sql = this.sql;
-                dbmodelo.setVisible(true);
-                this.dispose();
-                break;    
+            DBModelo dbmodelo = new DBModelo(sql);
+            dbmodelo.sql = this.sql;
+            dbmodelo.setVisible(true);
+            this.dispose();
+            break;
             case 4:
-                DBBrand dbbrand = new DBBrand(sql);
-                dbbrand.sql = this.sql;
-                dbbrand.setVisible(true);
-                this.dispose();
-                break;
-            case 5: 
-                DBAccesorio dbaccesorio = new DBAccesorio(sql);
-                dbaccesorio.sql = this.sql;
-                dbaccesorio.setVisible(true);
-                this.dispose();     
-                break;
+            DBBrand dbbrand = new DBBrand(sql);
+            dbbrand.sql = this.sql;
+            dbbrand.setVisible(true);
+            this.dispose();
+            break;
+            case 5:
+            DBAccesorio dbaccesorio = new DBAccesorio(sql);
+            dbaccesorio.sql = this.sql;
+            dbaccesorio.setVisible(true);
+            this.dispose();
+            break;
             case 6:
-                DBFactura dbfactura = new DBFactura(sql);
-                dbfactura.sql = this.sql;
-                dbfactura.setVisible(true);
-                this.dispose();   
-                break;
+            DBFactura dbfactura = new DBFactura(sql);
+            dbfactura.sql = this.sql;
+            dbfactura.setVisible(true);
+            this.dispose();
+            break;
             case 7:
-                DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
-                dbaccesoriosuplidor.sql = this.sql;
-                dbaccesoriosuplidor.setVisible(true);
-                this.dispose(); 
-                break;
+            DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
+            dbaccesoriosuplidor.sql = this.sql;
+            dbaccesoriosuplidor.setVisible(true);
+            this.dispose();
+            break;
             case 8:
-                DBDispositivoSuplidor dbdispositivossuplidor = new DBDispositivoSuplidor(sql);
-                dbdispositivossuplidor.sql = this.sql;
-                dbdispositivossuplidor.setVisible(true);
-                this.dispose(); 
-                break;
+            DBDispositivoSuplidor dbdispositivossuplidor = new DBDispositivoSuplidor(sql);
+            dbdispositivossuplidor.sql = this.sql;
+            dbdispositivossuplidor.setVisible(true);
+            this.dispose();
+            break;
             case 9:
-                DBCliente dbcliente = new DBCliente(sql);
-                dbcliente.sql = this.sql;
-                dbcliente.setVisible(true);
-                this.dispose(); 
-                break;
+            DBCliente dbcliente = new DBCliente(sql);
+            dbcliente.sql = this.sql;
+            dbcliente.setVisible(true);
+            this.dispose();
+            break;
             default :
-                System.out.println("Hubo un error en la seleccion de tablas.");
-                break;    
+            System.out.println("Hubo un error en la seleccion de tablas.");
+            break;
         }
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_selectTableComboboxActionPerformed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -647,13 +679,12 @@ public class DBEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;
+    private javax.swing.JLabel empLabel;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton insert;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -661,6 +692,8 @@ public class DBEmpleado extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JLabel selectLabel;
+    private javax.swing.JComboBox<String> selectTableCombobox;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }

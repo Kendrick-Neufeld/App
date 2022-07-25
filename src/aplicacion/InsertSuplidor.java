@@ -89,7 +89,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supNombreTextField.setBackground(new java.awt.Color(194, 200, 203));
         supNombreTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supNombreTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        supNombreTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         calleLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         calleLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -99,7 +100,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supCalleTextField.setBackground(new java.awt.Color(194, 200, 203));
         supCalleTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supCalleTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        supCalleTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supCalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         cityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         cityLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -109,7 +111,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supSectorTextField.setBackground(new java.awt.Color(194, 200, 203));
         supSectorTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supSectorTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supSectorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        supSectorTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supSectorTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         sectorLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         sectorLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -119,7 +122,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supCiudadTextField.setBackground(new java.awt.Color(194, 200, 203));
         supCiudadTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supCiudadTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
+        supCiudadTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supCiudadTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, 25));
 
         countryLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         countryLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -129,7 +133,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supPaisTextField.setBackground(new java.awt.Color(194, 200, 203));
         supPaisTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supPaisTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, -1));
+        supPaisTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supPaisTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 130, 25));
 
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -139,7 +144,8 @@ public class InsertSuplidor extends javax.swing.JFrame {
         supNumTelefonoTextField.setBackground(new java.awt.Color(194, 200, 203));
         supNumTelefonoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supNumTelefonoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        supFormBG.add(supNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, -1));
+        supNumTelefonoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        supFormBG.add(supNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 130, 25));
 
         confirmButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         confirmButton.setForeground(new java.awt.Color(27, 47, 59));

@@ -66,7 +66,6 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         dispoSupFormBG.setBackground(new java.awt.Color(247, 247, 247));
@@ -110,7 +109,8 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         dispoIDTextField.setBackground(new java.awt.Color(194, 200, 203));
         dispoIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         dispoIDTextField.setForeground(new java.awt.Color(27, 47, 59));
-        dispoSupFormBG.add(dispoIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        dispoIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        dispoSupFormBG.add(dispoIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         supIDLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         supIDLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -120,7 +120,8 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         supIDTextField.setBackground(new java.awt.Color(194, 200, 203));
         supIDTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         supIDTextField.setForeground(new java.awt.Color(27, 47, 59));
-        dispoSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        supIDTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        dispoSupFormBG.add(supIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         quantityLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         quantityLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -130,7 +131,8 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         priceTextField.setBackground(new java.awt.Color(194, 200, 203));
         priceTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         priceTextField.setForeground(new java.awt.Color(27, 47, 59));
-        dispoSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        priceTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        dispoSupFormBG.add(priceTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         priceLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -140,7 +142,8 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
         quantityTextField.setBackground(new java.awt.Color(194, 200, 203));
         quantityTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         quantityTextField.setForeground(new java.awt.Color(27, 47, 59));
-        dispoSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
+        quantityTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        dispoSupFormBG.add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, 25));
 
         backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         backButton.setForeground(new java.awt.Color(27, 47, 59));

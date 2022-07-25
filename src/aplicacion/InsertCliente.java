@@ -127,7 +127,8 @@ public class InsertCliente extends javax.swing.JFrame {
         cliNombreTextField.setBackground(new java.awt.Color(194, 200, 203));
         cliNombreTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cliNombreTextField.setForeground(new java.awt.Color(27, 47, 59));
-        jPanel1.add(cliNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, -1));
+        cliNombreTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        jPanel1.add(cliNombreTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 25));
 
         apellidoLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         apellidoLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -137,7 +138,8 @@ public class InsertCliente extends javax.swing.JFrame {
         cliApellidoTextField.setBackground(new java.awt.Color(194, 200, 203));
         cliApellidoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cliApellidoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        jPanel1.add(cliApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, -1));
+        cliApellidoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        jPanel1.add(cliApellidoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 130, 25));
 
         numberLabel.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
         numberLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -147,7 +149,8 @@ public class InsertCliente extends javax.swing.JFrame {
         cliNumTelefonoTextField.setBackground(new java.awt.Color(194, 200, 203));
         cliNumTelefonoTextField.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         cliNumTelefonoTextField.setForeground(new java.awt.Color(27, 47, 59));
-        jPanel1.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, -1));
+        cliNumTelefonoTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        jPanel1.add(cliNumTelefonoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 130, 25));
 
         clientLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         clientLabel.setForeground(new java.awt.Color(27, 47, 59));
