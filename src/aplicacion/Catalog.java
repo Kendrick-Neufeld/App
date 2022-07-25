@@ -182,6 +182,11 @@ public class Catalog extends javax.swing.JFrame {
         viewAll.setText("All Items");
         viewAll.setBorder(null);
         viewAll.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        viewAll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewAllActionPerformed(evt);
+            }
+        });
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -384,6 +389,9 @@ public class Catalog extends javax.swing.JFrame {
 
     private void celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_celularesActionPerformed
 
     private void accesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosActionPerformed
@@ -419,6 +427,10 @@ public class Catalog extends javax.swing.JFrame {
         ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         accesorios.setIcon(image);
     }//GEN-LAST:event_accesoriosMouseEntered
+
+    private void viewAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAllActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewAllActionPerformed
 
     /**
      * @param args the command line arguments
