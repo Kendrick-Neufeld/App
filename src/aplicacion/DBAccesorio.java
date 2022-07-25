@@ -63,6 +63,7 @@ public class DBAccesorio extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         selectLabel = new javax.swing.JLabel();
         accLabel = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -364,6 +365,30 @@ public class DBAccesorio extends javax.swing.JFrame {
         accLabel.setText("Accesorio");
         jPanel1.add(accLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 140, 40));
 
+        backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(27, 47, 59));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+        });
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 410, 110, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -515,11 +540,7 @@ public class DBAccesorio extends javax.swing.JFrame {
                 dbbrand.setVisible(true);
                 this.dispose();
                 break;
-            case 5: 
-                DBAccesorio dbaccesorio = new DBAccesorio(sql);
-                dbaccesorio.sql = this.sql;
-                dbaccesorio.setVisible(true);
-                this.dispose();     
+            case 5:  
                 break;
             case 6:
                 DBFactura dbfactura = new DBFactura(sql);
@@ -550,6 +571,29 @@ public class DBAccesorio extends javax.swing.JFrame {
                 break;    
         }
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseEntered
+
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseExited
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMousePressed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        Database db = new Database();
+        db.sql = this.sql;
+        db.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -637,6 +681,7 @@ public class DBAccesorio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablas;
     private javax.swing.JLabel accLabel;
+    private javax.swing.JButton backButton;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;

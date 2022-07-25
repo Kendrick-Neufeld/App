@@ -64,6 +64,7 @@ public class DBFactura extends javax.swing.JFrame {
         facturaLabel = new javax.swing.JLabel();
         selectLabel = new javax.swing.JLabel();
         selectTableCombobox = new javax.swing.JComboBox<>();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -71,6 +72,7 @@ public class DBFactura extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1100, 500));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
@@ -299,7 +301,7 @@ public class DBFactura extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 920, Short.MAX_VALUE)
+                .addGap(0, 1020, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -309,7 +311,7 @@ public class DBFactura extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, -1));
 
         Tablas.setBackground(new java.awt.Color(194, 200, 203));
         Tablas.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -340,7 +342,7 @@ public class DBFactura extends javax.swing.JFrame {
         Tablas.setRowHeight(30);
         jScrollPane1.setViewportView(Tablas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 530, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 630, 340));
 
         facturaLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         facturaLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -350,7 +352,7 @@ public class DBFactura extends javax.swing.JFrame {
         selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         selectLabel.setForeground(new java.awt.Color(27, 47, 59));
         selectLabel.setText("Select Table");
-        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 110, 100, 30));
+        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 110, 100, 30));
 
         selectTableCombobox.setBackground(new java.awt.Color(194, 200, 203));
         selectTableCombobox.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -362,15 +364,37 @@ public class DBFactura extends javax.swing.JFrame {
                 selectTableComboboxActionPerformed(evt);
             }
         });
-        jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 150, 180, 40));
+        jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 150, 180, 40));
+
+        backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(27, 47, 59));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+        });
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 410, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1100, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,10 +546,6 @@ public class DBFactura extends javax.swing.JFrame {
             this.dispose();
             break;
             case 6:
-            DBFactura dbfactura = new DBFactura(sql);
-            dbfactura.sql = this.sql;
-            dbfactura.setVisible(true);
-            this.dispose();
             break;
             case 7:
             DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
@@ -550,6 +570,29 @@ public class DBFactura extends javax.swing.JFrame {
             break;
         }
     }//GEN-LAST:event_selectTableComboboxActionPerformed
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseEntered
+
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseExited
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMousePressed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        Database db = new Database();
+        db.sql = this.sql;
+        db.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -1649,6 +1692,7 @@ public class DBFactura extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablas;
+    private javax.swing.JButton backButton;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;

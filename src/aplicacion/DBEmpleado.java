@@ -82,6 +82,7 @@ public class DBEmpleado extends javax.swing.JFrame {
         empLabel = new javax.swing.JLabel();
         selectLabel = new javax.swing.JLabel();
         selectTableCombobox = new javax.swing.JComboBox<>();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -358,7 +359,7 @@ public class DBEmpleado extends javax.swing.JFrame {
         Tablas.setRowHeight(30);
         jScrollPane1.setViewportView(Tablas);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 940, 320));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 930, 340));
 
         empLabel.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         empLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -381,6 +382,30 @@ public class DBEmpleado extends javax.swing.JFrame {
             }
         });
         jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 150, 180, 40));
+
+        backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(27, 47, 59));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+        });
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1215, 410, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -510,10 +535,6 @@ public class DBEmpleado extends javax.swing.JFrame {
             this.dispose();
             break;
             case 1:
-            DBEmpleado dbempleado = new DBEmpleado(sql);
-            dbempleado.sql = this.sql;
-            dbempleado.setVisible(true);
-            this.dispose();
             break;
             case 2:
             DBSuplidor dbsuplidor = new DBSuplidor(sql);
@@ -568,6 +589,29 @@ public class DBEmpleado extends javax.swing.JFrame {
             break;
         }
     }//GEN-LAST:event_selectTableComboboxActionPerformed
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseEntered
+
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseExited
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMousePressed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        Database db = new Database();
+        db.sql = this.sql;
+        db.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -676,6 +720,7 @@ public class DBEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Tablas;
+    private javax.swing.JButton backButton;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;
