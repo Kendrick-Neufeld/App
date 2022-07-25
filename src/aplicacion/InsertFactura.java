@@ -488,7 +488,72 @@ public class InsertFactura extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         // TODO add your handling code here:
-        if(cliIdTextField.getText() != "" && itemsToPurchaseTextArea.getText() != ""){
+        Boolean esMayor = true;
+        int contador=0;
+        int cantidad = 0;
+        Statement stmt = null;
+        ResultSet name = null;
+        try {
+            stmt = sql.getConnection().createStatement();
+            } catch (SQLException ex) {
+            System.out.println(ex);;
+            }        
+        for(int i=0;i<Itemnumdisp;i++){
+            
+            String selectcantidad = "Select Cantidad from Dispositivo where DispoID = " + DispoComp[i];
+                try {
+                    name = stmt.executeQuery(selectcantidad);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    while(name.next()){
+                    cantidad = name.getInt(1);}
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            int temp=0; 
+            for(int b=0;b<DispoComp.length;b++){
+                if(DispoComp[i] == DispoComp[b]){
+                    temp++;
+                }
+            }
+            
+            if(temp > cantidad){
+                esMayor=false;
+            }
+            
+        }
+        
+        for(int i=0;i<ItemnumAcc;i++){
+            
+            String selectcantidad = "Select Cantidad from Accesorio where AccID = " + AccComp[i];
+                try {
+                    name = stmt.executeQuery(selectcantidad);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    while(name.next()){
+                    cantidad = name.getInt(1);}
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            int temp=0; 
+            for(int b=0;b<AccComp.length;b++){
+                if(AccComp[i] == AccComp[b]){
+                    temp++;
+                }
+            }
+            
+            if(temp > cantidad){
+                esMayor=false;
+            }
+            
+        }
+        
+        
+        if(cliIdTextField.getText() != "" && itemsToPurchaseTextArea.getText() != "" && esMayor){
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
             Date date = new Date();
             String currentdate = sdf.format(date);
@@ -502,7 +567,7 @@ public class InsertFactura extends javax.swing.JFrame {
             
             String noFactura = "";
             String selectFact = "Select NoFactura from Factura where Fcompra = '" + currentdate + "'";
-            Statement stmt = null;
+            stmt = null;
             ResultSet factura = null;
             try {
             stmt = sql.getConnection().createStatement();
@@ -548,14 +613,64 @@ public class InsertFactura extends javax.swing.JFrame {
                 }
                 
             }
+            if(Itemnumdisp > 0){
+            for(int i=0;i<Itemnumdisp;i++){
+                cantidad = 0;
+                String selectcantidad = "Select Cantidad from Dispositivo where DispoID = " + DispoComp[i];
+                try {
+                    name = stmt.executeQuery(selectcantidad);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    while(name.next()){
+                    cantidad = name.getInt(1);}
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                cantidad = cantidad - 1;
+                String update = "Update Dispositivo set Cantidad = " + cantidad + " where DispoID = " + DispoComp[i];
+                try {
+                    sql.executeQuery(update);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }}
+            if(ItemnumAcc > 0){
+            for(int i=0;i<ItemnumAcc;i++){
+                cantidad = 0;
+                String selectcantidad = "Select Cantidad from Accesorio where AccID = " + AccComp[i];
+                try {
+                    name = stmt.executeQuery(selectcantidad);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    while(name.next()){
+                    cantidad = name.getInt(1);}
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                cantidad = cantidad - 1;
+                String update = "Update Accesorio set Cantidad = " + cantidad + " where AccID = " + AccComp[i];
+                try {
+                    sql.executeQuery(update);
+                } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }}
+            
             cliIdTextField.setText("");
             ItemnumAcc = 0;
             Itemnumdisp = 0;
             itemsToPurchaseTextArea.setText("");
             JOptionPane.showMessageDialog(null, "Data succesfully added");
         }
-        else{
+        else if(esMayor){
             JOptionPane.showMessageDialog(null, "Please Insert Data First");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Device or Accesory bought has exceeded Inventory");
         }
     }//GEN-LAST:event_confirmButtonActionPerformed
 
