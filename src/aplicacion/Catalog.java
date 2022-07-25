@@ -41,6 +41,12 @@ public class Catalog extends javax.swing.JFrame {
         addItem = new javax.swing.JButton();
         celulares = new javax.swing.JButton();
         accesorios = new javax.swing.JButton();
+        itemPanel = new javax.swing.JPanel();
+        availableLabel = new javax.swing.JLabel();
+        imageLabel = new javax.swing.JLabel();
+        itemTitleLabel = new javax.swing.JLabel();
+        priceLabel = new javax.swing.JLabel();
+        dispSupLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -311,6 +317,35 @@ public class Catalog extends javax.swing.JFrame {
 
         jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
+        itemPanel.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        availableLabel.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        availableLabel.setForeground(new java.awt.Color(89, 182, 50));
+        availableLabel.setText("Disponible");
+        itemPanel.add(availableLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        imageLabel.setText("Image");
+        itemPanel.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        itemTitleLabel.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        itemTitleLabel.setForeground(new java.awt.Color(27, 47, 59));
+        itemTitleLabel.setText("Apple iPhone 11");
+        itemPanel.add(itemTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        priceLabel.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        priceLabel.setForeground(new java.awt.Color(27, 47, 59));
+        priceLabel.setText("$25,000 DOP");
+        itemPanel.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 320, 110));
+
+        dispSupLabel.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        dispSupLabel.setForeground(new java.awt.Color(27, 47, 59));
+        dispSupLabel.setText("Todos");
+        jPanel1.add(dispSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 230, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -470,16 +505,52 @@ public class Catalog extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accesorios;
     private javax.swing.JButton addItem;
+    private javax.swing.JLabel availableLabel;
+    private javax.swing.JLabel availableLabel1;
+    private javax.swing.JLabel availableLabel2;
+    private javax.swing.JLabel availableLabel3;
+    private javax.swing.JLabel availableLabel4;
+    private javax.swing.JLabel availableLabel5;
+    private javax.swing.JLabel availableLabel6;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton celulares;
+    private javax.swing.JLabel dispSupLabel;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JLabel imageLabel;
+    private javax.swing.JLabel imageLabel1;
+    private javax.swing.JLabel imageLabel2;
+    private javax.swing.JLabel imageLabel3;
+    private javax.swing.JLabel imageLabel4;
+    private javax.swing.JLabel imageLabel5;
+    private javax.swing.JLabel imageLabel6;
+    private javax.swing.JPanel itemPanel;
+    private javax.swing.JPanel itemPanel1;
+    private javax.swing.JPanel itemPanel2;
+    private javax.swing.JPanel itemPanel3;
+    private javax.swing.JPanel itemPanel4;
+    private javax.swing.JPanel itemPanel5;
+    private javax.swing.JPanel itemPanel6;
+    private javax.swing.JLabel itemTitleLabel;
+    private javax.swing.JLabel itemTitleLabel1;
+    private javax.swing.JLabel itemTitleLabel2;
+    private javax.swing.JLabel itemTitleLabel3;
+    private javax.swing.JLabel itemTitleLabel4;
+    private javax.swing.JLabel itemTitleLabel5;
+    private javax.swing.JLabel itemTitleLabel6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
+    private javax.swing.JLabel priceLabel;
+    private javax.swing.JLabel priceLabel1;
+    private javax.swing.JLabel priceLabel2;
+    private javax.swing.JLabel priceLabel3;
+    private javax.swing.JLabel priceLabel4;
+    private javax.swing.JLabel priceLabel5;
+    private javax.swing.JLabel priceLabel6;
     private javax.swing.JPanel redStripe;
     private javax.swing.JButton viewAll;
     private javax.swing.JPanel windowActions;
