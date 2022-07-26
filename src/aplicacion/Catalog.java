@@ -2,6 +2,8 @@ package aplicacion;
 
 import java.awt.Color;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 
 public class Catalog extends javax.swing.JFrame {
@@ -10,11 +12,24 @@ public class Catalog extends javax.swing.JFrame {
      * Creates new form Catalog
      */
     public Statement sql;
+    int CatalogPage;
+    int CatalogPageAmt;
+    int[] AllDevices; 
     int xMouse, yMouse;
     
     public Catalog() {
         initComponents();
         setLocationRelativeTo(null);
+        CatalogPage = 0;
+    }
+    
+    public Catalog(Statement sql) {
+        initComponents();
+        setLocationRelativeTo(null);
+        this.sql = sql;
+        CatalogPage = 0;
+        getAllDevices();
+        DisplayDevices();
     }
 
     /**
@@ -42,11 +57,39 @@ public class Catalog extends javax.swing.JFrame {
         celulares = new javax.swing.JButton();
         accesorios = new javax.swing.JButton();
         itemPanel = new javax.swing.JPanel();
-        availableLabel = new javax.swing.JLabel();
-        imageLabel = new javax.swing.JLabel();
-        itemTitleLabel = new javax.swing.JLabel();
-        priceLabel = new javax.swing.JLabel();
+        ItemAvailable3 = new javax.swing.JLabel();
+        image3 = new javax.swing.JLabel();
+        ItemName3 = new javax.swing.JLabel();
+        ItemPrice3 = new javax.swing.JLabel();
         dispSupLabel = new javax.swing.JLabel();
+        BackButton = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        itemPanel1 = new javax.swing.JPanel();
+        ItemAvailable2 = new javax.swing.JLabel();
+        image2 = new javax.swing.JLabel();
+        ItemName2 = new javax.swing.JLabel();
+        ItemPrice2 = new javax.swing.JLabel();
+        itemPanel2 = new javax.swing.JPanel();
+        ItemAvailable5 = new javax.swing.JLabel();
+        image5 = new javax.swing.JLabel();
+        ItemName5 = new javax.swing.JLabel();
+        ItemPrice5 = new javax.swing.JLabel();
+        itemPanel3 = new javax.swing.JPanel();
+        ItemAvailable4 = new javax.swing.JLabel();
+        image4 = new javax.swing.JLabel();
+        ItemName4 = new javax.swing.JLabel();
+        ItemPrice4 = new javax.swing.JLabel();
+        itemPanel4 = new javax.swing.JPanel();
+        ItemAvailable6 = new javax.swing.JLabel();
+        image6 = new javax.swing.JLabel();
+        ItemName6 = new javax.swing.JLabel();
+        ItemPrice6 = new javax.swing.JLabel();
+        itemPanel5 = new javax.swing.JPanel();
+        ItemAvailable1 = new javax.swing.JLabel();
+        image1 = new javax.swing.JLabel();
+        ItemName1 = new javax.swing.JLabel();
+        ItemPrice1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -321,30 +364,169 @@ public class Catalog extends javax.swing.JFrame {
         itemPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         itemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        availableLabel.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        availableLabel.setForeground(new java.awt.Color(89, 182, 50));
-        availableLabel.setText("Disponible");
-        itemPanel.add(availableLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+        ItemAvailable3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable3.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable3.setText("Disponible");
+        itemPanel.add(ItemAvailable3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
-        imageLabel.setText("Image");
-        itemPanel.add(imageLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+        image3.setText("Image");
+        itemPanel.add(image3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
 
-        itemTitleLabel.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        itemTitleLabel.setForeground(new java.awt.Color(27, 47, 59));
-        itemTitleLabel.setText("Apple iPhone 11");
-        itemPanel.add(itemTitleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+        ItemName3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName3.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName3.setText("Apple iPhone 11");
+        itemPanel.add(ItemName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
-        priceLabel.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
-        priceLabel.setForeground(new java.awt.Color(27, 47, 59));
-        priceLabel.setText("$25,000 DOP");
-        itemPanel.add(priceLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+        ItemPrice3.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice3.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice3.setText("$25,000 DOP");
+        itemPanel.add(ItemPrice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 320, 110));
+        jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 320, 110));
 
         dispSupLabel.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         dispSupLabel.setForeground(new java.awt.Color(27, 47, 59));
         dispSupLabel.setText("Todos");
         jPanel1.add(dispSupLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 230, 40));
+
+        BackButton.setText("BackButton");
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
+
+        jLabel3.setText("1");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, -1, -1));
+
+        jLabel4.setText("NextButton");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, -1, -1));
+
+        itemPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ItemAvailable2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable2.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable2.setText("Disponible");
+        itemPanel1.add(ItemAvailable2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        image2.setText("Image");
+        itemPanel1.add(image2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        ItemName2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName2.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName2.setText("Apple iPhone 11");
+        itemPanel1.add(ItemName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        ItemPrice2.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice2.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice2.setText("$25,000 DOP");
+        itemPanel1.add(ItemPrice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 320, 110));
+
+        itemPanel2.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ItemAvailable5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable5.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable5.setText("Disponible");
+        itemPanel2.add(ItemAvailable5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        image5.setText("Image");
+        itemPanel2.add(image5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        ItemName5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName5.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName5.setText("Apple iPhone 11");
+        itemPanel2.add(ItemName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        ItemPrice5.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice5.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice5.setText("$25,000 DOP");
+        itemPanel2.add(ItemPrice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 320, 110));
+
+        itemPanel3.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ItemAvailable4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable4.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable4.setText("Disponible");
+        itemPanel3.add(ItemAvailable4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        image4.setText("Image");
+        itemPanel3.add(image4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        ItemName4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName4.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName4.setText("Apple iPhone 11");
+        itemPanel3.add(ItemName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        ItemPrice4.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice4.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice4.setText("$25,000 DOP");
+        itemPanel3.add(ItemPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 320, 110));
+
+        itemPanel4.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ItemAvailable6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable6.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable6.setText("Disponible");
+        itemPanel4.add(ItemAvailable6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        image6.setText("Image");
+        itemPanel4.add(image6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        ItemName6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName6.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName6.setText("Apple iPhone 11");
+        itemPanel4.add(ItemName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        ItemPrice6.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice6.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice6.setText("$25,000 DOP");
+        itemPanel4.add(ItemPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, 320, 110));
+
+        itemPanel5.setBackground(new java.awt.Color(247, 247, 247));
+        itemPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ItemAvailable1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemAvailable1.setForeground(new java.awt.Color(89, 182, 50));
+        ItemAvailable1.setText("Disponible");
+        itemPanel5.add(ItemAvailable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
+
+        image1.setText("Image");
+        itemPanel5.add(image1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 90));
+
+        ItemName1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        ItemName1.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName1.setText("Apple iPhone 11");
+        itemPanel5.add(ItemName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
+
+        ItemPrice1.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
+        ItemPrice1.setForeground(new java.awt.Color(27, 47, 59));
+        ItemPrice1.setText("$25,000 DOP");
+        itemPanel5.add(ItemPrice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        jPanel1.add(itemPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 320, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -467,6 +649,167 @@ public class Catalog extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_viewAllActionPerformed
 
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        // TODO add your handling code here:
+        if(CatalogPage != 0){
+        this.CatalogPage -= 6;
+        DisplayDevices();
+        }
+        
+    }//GEN-LAST:event_BackButtonMouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        
+        if(CatalogPage < AllDevices.length){
+            this.CatalogPage += 6;
+            DisplayDevices();
+        }
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    /**
+     *
+     */
+    public void DisplayDevices(){
+       String DeviceName = "";
+       int DevicePrice = 0;
+       int availability=0;
+       ResultSet Devicevalues = null;
+       for(int i=CatalogPage;i<=(6+CatalogPage);i++){
+           if(i < AllDevices.length){
+           String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad From Modelo e, Dispositivo s "
+                      + "Where e.ModID = (Select i.ModID from Dispositivo i "
+                      + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i];
+           try{
+           Devicevalues = sql.executeQuery(query);
+           }catch(SQLException ex){
+               System.out.println(ex);
+           }
+           try {
+        while(Devicevalues.next()){
+            DeviceName = Devicevalues.getString(1);
+            DevicePrice = Devicevalues.getInt(2);
+            availability = Devicevalues.getInt(3);
+        }
+        } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+   
+        if(i == CatalogPage){
+            ItemName1.setText(DeviceName);
+            ItemPrice1.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable1.setText("Disponible");
+                ItemAvailable1.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable1.setText("No Disponible");
+                ItemAvailable1.setForeground(Color.red);
+            }
+        }   
+        else if(i == CatalogPage+1){
+            ItemName2.setText(DeviceName);
+            ItemPrice2.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable2.setText("Disponible");
+                ItemAvailable2.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable2.setText("No Disponible");
+                ItemAvailable2.setForeground(Color.red);
+            }
+        }    
+        else if(i == CatalogPage+2){
+            ItemName3.setText(DeviceName);
+            ItemPrice3.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable3.setText("Disponible");
+                ItemAvailable3.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable3.setText("No Disponible");
+                ItemAvailable3.setForeground(Color.red);
+            }
+        }    
+        else if(i == CatalogPage+3){
+            ItemName4.setText(DeviceName);
+            ItemPrice4.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable4.setText("Disponible");
+                ItemAvailable4.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable4.setText("No Disponible");
+                ItemAvailable4.setForeground(Color.red);
+            }
+        } 
+        else if(i == CatalogPage+4){
+            ItemName5.setText(DeviceName);
+            ItemPrice5.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable5.setText("Disponible");
+                ItemAvailable5.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable5.setText("No Disponible");
+                ItemAvailable5.setForeground(Color.red);
+            }
+        } 
+        else if(i == CatalogPage+5){
+            ItemName6.setText(DeviceName);
+            ItemPrice6.setText(""+DevicePrice);
+            if(availability > 0){
+                ItemAvailable6.setText("Disponible");
+                ItemAvailable6.setForeground(new Color(89,182,50));
+            }
+            else{
+                ItemAvailable6.setText("No Disponible");
+                ItemAvailable6.setForeground(Color.red);
+            }
+        } 
+        
+           }
+       }               
+    }
+    
+    public void getAllDevices(){
+        ResultSet Devices = null;
+        int DevicesAmt=0;
+        String query = "select count(DispoID) from Dispositivo";
+        try{
+        Devices = sql.executeQuery(query);
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        try {
+        while(Devices.next()){
+            DevicesAmt = Devices.getInt(1);}
+        } catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.out.println(DevicesAmt);
+        AllDevices = new int[DevicesAmt];
+        this.CatalogPageAmt = CatalogPageAmt/6;
+        
+        
+        query = "select DispoID from Dispositivo";
+        try{
+        Devices = sql.executeQuery(query);
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        try {
+        for(int i=0;Devices.next();i++){
+            AllDevices[i] = Devices.getInt(1);}
+        }catch (SQLException ex) {
+                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -503,54 +846,52 @@ public class Catalog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BackButton;
+    private javax.swing.JLabel ItemAvailable1;
+    private javax.swing.JLabel ItemAvailable2;
+    private javax.swing.JLabel ItemAvailable3;
+    private javax.swing.JLabel ItemAvailable4;
+    private javax.swing.JLabel ItemAvailable5;
+    private javax.swing.JLabel ItemAvailable6;
+    private javax.swing.JLabel ItemName1;
+    private javax.swing.JLabel ItemName2;
+    private javax.swing.JLabel ItemName3;
+    private javax.swing.JLabel ItemName4;
+    private javax.swing.JLabel ItemName5;
+    private javax.swing.JLabel ItemName6;
+    private javax.swing.JLabel ItemPrice1;
+    private javax.swing.JLabel ItemPrice2;
+    private javax.swing.JLabel ItemPrice3;
+    private javax.swing.JLabel ItemPrice4;
+    private javax.swing.JLabel ItemPrice5;
+    private javax.swing.JLabel ItemPrice6;
     private javax.swing.JButton accesorios;
     private javax.swing.JButton addItem;
-    private javax.swing.JLabel availableLabel;
-    private javax.swing.JLabel availableLabel1;
-    private javax.swing.JLabel availableLabel2;
-    private javax.swing.JLabel availableLabel3;
-    private javax.swing.JLabel availableLabel4;
-    private javax.swing.JLabel availableLabel5;
-    private javax.swing.JLabel availableLabel6;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton celulares;
     private javax.swing.JLabel dispSupLabel;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
-    private javax.swing.JLabel imageLabel;
-    private javax.swing.JLabel imageLabel1;
-    private javax.swing.JLabel imageLabel2;
-    private javax.swing.JLabel imageLabel3;
-    private javax.swing.JLabel imageLabel4;
-    private javax.swing.JLabel imageLabel5;
-    private javax.swing.JLabel imageLabel6;
+    private javax.swing.JLabel image1;
+    private javax.swing.JLabel image2;
+    private javax.swing.JLabel image3;
+    private javax.swing.JLabel image4;
+    private javax.swing.JLabel image5;
+    private javax.swing.JLabel image6;
     private javax.swing.JPanel itemPanel;
     private javax.swing.JPanel itemPanel1;
     private javax.swing.JPanel itemPanel2;
     private javax.swing.JPanel itemPanel3;
     private javax.swing.JPanel itemPanel4;
     private javax.swing.JPanel itemPanel5;
-    private javax.swing.JPanel itemPanel6;
-    private javax.swing.JLabel itemTitleLabel;
-    private javax.swing.JLabel itemTitleLabel1;
-    private javax.swing.JLabel itemTitleLabel2;
-    private javax.swing.JLabel itemTitleLabel3;
-    private javax.swing.JLabel itemTitleLabel4;
-    private javax.swing.JLabel itemTitleLabel5;
-    private javax.swing.JLabel itemTitleLabel6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
-    private javax.swing.JLabel priceLabel;
-    private javax.swing.JLabel priceLabel1;
-    private javax.swing.JLabel priceLabel2;
-    private javax.swing.JLabel priceLabel3;
-    private javax.swing.JLabel priceLabel4;
-    private javax.swing.JLabel priceLabel5;
-    private javax.swing.JLabel priceLabel6;
     private javax.swing.JPanel redStripe;
     private javax.swing.JButton viewAll;
     private javax.swing.JPanel windowActions;

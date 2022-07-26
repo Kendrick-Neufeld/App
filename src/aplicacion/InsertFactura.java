@@ -693,7 +693,7 @@ public class InsertFactura extends javax.swing.JFrame {
             Itemnumdisp++;
             addItem =   "Select e.ModNombre, s.DispPrecio From Modelo e, Dispositivo s "
                       + "Where e.ModID = (Select i.ModID from Dispositivo i "
-                      + "Where i.DispoID = " + itemIdTextField.getText() + " )";
+                      + "Where i.DispoID = " + itemIdTextField.getText() + " ) " + "and s.DispoID = " + itemIdTextField.getText();
                     try {
             name = stmt.executeQuery(addItem);
         } catch (SQLException ex) {
