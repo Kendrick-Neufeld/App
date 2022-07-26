@@ -8,8 +8,8 @@ package aplicacion;
 import java.awt.Color;
 import java.sql.*;
 import java.util.Vector;
-import javax.swing.ImageIcon;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import javax.swing.table.*;
 
 /**
  *
@@ -64,9 +64,11 @@ public class DBSuplidor extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Tablas = new javax.swing.JTable();
         supLabel = new javax.swing.JLabel();
-        selectLabel = new javax.swing.JLabel();
+        searchLabel = new javax.swing.JLabel();
         selectTableCombobox = new javax.swing.JComboBox<>();
         backButton = new javax.swing.JButton();
+        searchBar = new javax.swing.JTextField();
+        selectLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -351,10 +353,11 @@ public class DBSuplidor extends javax.swing.JFrame {
         supLabel.setText("Suplidor");
         jPanel1.add(supLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 230, 40));
 
-        selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        selectLabel.setForeground(new java.awt.Color(27, 47, 59));
-        selectLabel.setText("Select Table");
-        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 110, 100, 30));
+        searchLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(27, 47, 59));
+        searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        searchLabel.setText("Search");
+        jPanel1.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 210, 60, 30));
 
         selectTableCombobox.setBackground(new java.awt.Color(194, 200, 203));
         selectTableCombobox.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -390,7 +393,23 @@ public class DBSuplidor extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 410, 110, 40));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1015, 410, 110, 40));
+
+        searchBar.setBackground(new java.awt.Color(194, 200, 203));
+        searchBar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        searchBar.setForeground(new java.awt.Color(27, 47, 59));
+        searchBar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        searchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchBarKeyPressed(evt);
+            }
+        });
+        jPanel1.add(searchBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 240, 180, 40));
+
+        selectLabel1.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        selectLabel1.setForeground(new java.awt.Color(27, 47, 59));
+        selectLabel1.setText("Select Table");
+        jPanel1.add(selectLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 110, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -524,6 +543,8 @@ public class DBSuplidor extends javax.swing.JFrame {
                 this.dispose();
                 break;
             case 2:
+                DBSuplidor dbsuplidor = new DBSuplidor(sql);
+                dbsuplidor.sql = this.sql;
                 break;
             case 3:
                 DBModelo dbmodelo = new DBModelo(sql);
@@ -595,6 +616,14 @@ public class DBSuplidor extends javax.swing.JFrame {
         db.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void searchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBarKeyPressed
+        DefaultTableModel table = (DefaultTableModel)Tablas.getModel();
+        String search = searchBar.getText();
+        TableRowSorter<DefaultTableModel> rows = new TableRowSorter<DefaultTableModel>(table);
+        Tablas.setRowSorter(rows);
+        rows.setRowFilter(RowFilter.regexFilter(search));
+    }//GEN-LAST:event_searchBarKeyPressed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -812,7 +841,9 @@ public class DBSuplidor extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
-    private javax.swing.JLabel selectLabel;
+    private javax.swing.JTextField searchBar;
+    private javax.swing.JLabel searchLabel;
+    private javax.swing.JLabel selectLabel1;
     private javax.swing.JComboBox<String> selectTableCombobox;
     private javax.swing.JLabel supLabel;
     private javax.swing.JPanel windowActions;

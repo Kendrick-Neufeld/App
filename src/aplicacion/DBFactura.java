@@ -8,8 +8,8 @@ package aplicacion;
 import java.awt.Color;
 import java.sql.*;
 import java.util.Vector;
-import javax.swing.ImageIcon;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import javax.swing.table.*;
 
 /**
  *
@@ -65,6 +65,8 @@ public class DBFactura extends javax.swing.JFrame {
         selectLabel = new javax.swing.JLabel();
         selectTableCombobox = new javax.swing.JComboBox<>();
         backButton = new javax.swing.JButton();
+        searchLabel = new javax.swing.JLabel();
+        searchBar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -390,6 +392,23 @@ public class DBFactura extends javax.swing.JFrame {
         });
         jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 410, 110, 40));
 
+        searchLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(27, 47, 59));
+        searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        searchLabel.setText("Search");
+        jPanel1.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 210, 60, 30));
+
+        searchBar.setBackground(new java.awt.Color(194, 200, 203));
+        searchBar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        searchBar.setForeground(new java.awt.Color(27, 47, 59));
+        searchBar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        searchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchBarKeyPressed(evt);
+            }
+        });
+        jPanel1.add(searchBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 240, 180, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -546,6 +565,8 @@ public class DBFactura extends javax.swing.JFrame {
             this.dispose();
             break;
             case 6:
+                DBFactura dbfactura = new DBFactura(sql);
+                dbfactura.sql = this.sql;
             break;
             case 7:
             DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
@@ -593,6 +614,14 @@ public class DBFactura extends javax.swing.JFrame {
         db.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void searchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBarKeyPressed
+        DefaultTableModel table = (DefaultTableModel)Tablas.getModel();
+        String search = searchBar.getText();
+        TableRowSorter<DefaultTableModel> rows = new TableRowSorter<DefaultTableModel>(table);
+        Tablas.setRowSorter(rows);
+        rows.setRowFilter(RowFilter.regexFilter(search));
+    }//GEN-LAST:event_searchBarKeyPressed
 
     public void CargarArticulo(){
         ResultSet res = null;
@@ -1709,6 +1738,8 @@ public class DBFactura extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JTextField searchBar;
+    private javax.swing.JLabel searchLabel;
     private javax.swing.JLabel selectLabel;
     private javax.swing.JComboBox<String> selectTableCombobox;
     private javax.swing.JPanel windowActions;
