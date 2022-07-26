@@ -797,7 +797,7 @@ public class InsertFactura extends javax.swing.JFrame {
     }//GEN-LAST:event_catalogMouseExited
 
     private void catalogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_catalogActionPerformed
-        Catalog cat = new Catalog();
+        Catalog cat = new Catalog(sql);
         cat.sql = this.sql;
         cat.setVisible(true);
         this.dispose();
