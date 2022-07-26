@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 public class Catalog extends javax.swing.JFrame {
 
@@ -18,13 +19,13 @@ public class Catalog extends javax.swing.JFrame {
     int[] AllAcc;
     boolean AccDevices;
     int xMouse, yMouse;
-    
+
     public Catalog() {
         initComponents();
         setLocationRelativeTo(null);
         CatalogPage = 0;
     }
-    
+
     public Catalog(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
@@ -58,15 +59,17 @@ public class Catalog extends javax.swing.JFrame {
         menu = new javax.swing.JButton();
         celulares = new javax.swing.JButton();
         accesorios = new javax.swing.JButton();
+        PageNum = new javax.swing.JLabel();
+        backButtonPanel = new javax.swing.JPanel();
+        BackButton = new javax.swing.JLabel();
+        nextButtonPanel = new javax.swing.JPanel();
+        NextButton = new javax.swing.JLabel();
         itemPanel = new javax.swing.JPanel();
         ItemAvailable3 = new javax.swing.JLabel();
         image3 = new javax.swing.JLabel();
         ItemName3 = new javax.swing.JLabel();
         ItemPrice3 = new javax.swing.JLabel();
         ItemTitle = new javax.swing.JLabel();
-        BackButton = new javax.swing.JLabel();
-        PageNum = new javax.swing.JLabel();
-        NextButton = new javax.swing.JLabel();
         itemPanel1 = new javax.swing.JPanel();
         ItemAvailable2 = new javax.swing.JLabel();
         image2 = new javax.swing.JLabel();
@@ -209,6 +212,7 @@ public class Catalog extends javax.swing.JFrame {
         jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+        blueStripe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         redStripe.setBackground(new java.awt.Color(211, 22, 34));
 
@@ -223,9 +227,12 @@ public class Catalog extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
+        blueStripe.add(redStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 64, -1, -1));
+
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
         jLabel1.setText("Catalog");
+        blueStripe.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 29, -1, -1));
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -246,6 +253,7 @@ public class Catalog extends javax.swing.JFrame {
                 menuActionPerformed(evt);
             }
         });
+        blueStripe.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 170, 50));
 
         celulares.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         celulares.setForeground(new java.awt.Color(247, 247, 247));
@@ -266,6 +274,7 @@ public class Catalog extends javax.swing.JFrame {
                 celularesActionPerformed(evt);
             }
         });
+        blueStripe.add(celulares, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 141, 170, 50));
 
         accesorios.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         accesorios.setForeground(new java.awt.Color(247, 247, 247));
@@ -286,41 +295,87 @@ public class Catalog extends javax.swing.JFrame {
                 accesoriosActionPerformed(evt);
             }
         });
+        blueStripe.add(accesorios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 170, 50));
 
-        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
-        blueStripe.setLayout(blueStripeLayout);
-        blueStripeLayout.setHorizontalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(celulares, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(accesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+        PageNum.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        PageNum.setForeground(new java.awt.Color(247, 247, 247));
+        PageNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PageNum.setText("1");
+        PageNum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        PageNum.setPreferredSize(new java.awt.Dimension(25, 25));
+        blueStripe.add(PageNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 50, 40));
+
+        backButtonPanel.setBackground(new java.awt.Color(27, 47, 59));
+        backButtonPanel.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        BackButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        BackButton.setForeground(new java.awt.Color(247, 247, 247));
+        BackButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BackButton.setText("<");
+        BackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BackButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BackButtonMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout backButtonPanelLayout = new javax.swing.GroupLayout(backButtonPanel);
+        backButtonPanel.setLayout(backButtonPanelLayout);
+        backButtonPanelLayout.setHorizontalGroup(
+            backButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backButtonPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        blueStripeLayout.setVerticalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(celulares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accesorios, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+        backButtonPanelLayout.setVerticalGroup(
+            backButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        blueStripe.add(backButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 50, 40));
+
+        nextButtonPanel.setBackground(new java.awt.Color(27, 47, 59));
+        nextButtonPanel.setPreferredSize(new java.awt.Dimension(50, 50));
+
+        NextButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        NextButton.setForeground(new java.awt.Color(247, 247, 247));
+        NextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        NextButton.setText(">");
+        NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        NextButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NextButtonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                NextButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                NextButtonMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout nextButtonPanelLayout = new javax.swing.GroupLayout(nextButtonPanel);
+        nextButtonPanel.setLayout(nextButtonPanelLayout);
+        nextButtonPanelLayout.setHorizontalGroup(
+            nextButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nextButtonPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NextButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        nextButtonPanelLayout.setVerticalGroup(
+            nextButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(NextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        blueStripe.add(nextButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 50, 40));
 
         jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
@@ -330,7 +385,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable3.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable3.setText("Disponible");
         itemPanel.add(ItemAvailable3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -338,39 +392,18 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName3.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName3.setText("Apple iPhone 11");
         itemPanel.add(ItemName3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice3.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice3.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice3.setText("$25,000 DOP");
         itemPanel.add(ItemPrice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 320, 110));
+        jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 320, 110));
 
         ItemTitle.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         ItemTitle.setForeground(new java.awt.Color(27, 47, 59));
         ItemTitle.setText("Devices");
         jPanel1.add(ItemTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 230, 40));
-
-        BackButton.setText("BackButton");
-        BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackButtonMouseClicked(evt);
-            }
-        });
-        jPanel1.add(BackButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
-
-        PageNum.setText("1");
-        jPanel1.add(PageNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, -1, -1));
-
-        NextButton.setText("NextButton");
-        NextButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                NextButtonMouseClicked(evt);
-            }
-        });
-        jPanel1.add(NextButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, -1, -1));
 
         itemPanel1.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -378,7 +411,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable2.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable2.setText("Disponible");
         itemPanel1.add(ItemAvailable2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -386,15 +418,13 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName2.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName2.setText("Apple iPhone 11");
         itemPanel1.add(ItemName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice2.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice2.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice2.setText("$25,000 DOP");
         itemPanel1.add(ItemPrice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 320, 110));
+        jPanel1.add(itemPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 320, 110));
 
         itemPanel2.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -402,7 +432,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable5.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable5.setText("Disponible");
         itemPanel2.add(ItemAvailable5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -410,15 +439,13 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName5.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName5.setText("Apple iPhone 11");
         itemPanel2.add(ItemName5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice5.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice5.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice5.setText("$25,000 DOP");
         itemPanel2.add(ItemPrice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 350, 320, 110));
+        jPanel1.add(itemPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 320, 110));
 
         itemPanel3.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -426,7 +453,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable4.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable4.setText("Disponible");
         itemPanel3.add(ItemAvailable4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -434,15 +460,13 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName4.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName4.setText("Apple iPhone 11");
         itemPanel3.add(ItemName4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice4.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice4.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice4.setText("$25,000 DOP");
         itemPanel3.add(ItemPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 230, 320, 110));
+        jPanel1.add(itemPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 320, 110));
 
         itemPanel4.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -450,7 +474,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable6.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable6.setText("Disponible");
         itemPanel4.add(ItemAvailable6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image6.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -458,15 +481,13 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName6.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName6.setText("Apple iPhone 11");
         itemPanel4.add(ItemName6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice6.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice6.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice6.setText("$25,000 DOP");
         itemPanel4.add(ItemPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 350, 320, 110));
+        jPanel1.add(itemPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 320, 110));
 
         itemPanel5.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -474,7 +495,6 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemAvailable1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemAvailable1.setForeground(new java.awt.Color(89, 182, 50));
-        ItemAvailable1.setText("Disponible");
         itemPanel5.add(ItemAvailable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 200, 40));
 
         image1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -482,15 +502,13 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName1.setForeground(new java.awt.Color(27, 47, 59));
-        ItemName1.setText("Apple iPhone 11");
         itemPanel5.add(ItemName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice1.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice1.setForeground(new java.awt.Color(27, 47, 59));
-        ItemPrice1.setText("$25,000 DOP");
         itemPanel5.add(ItemPrice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
-        jPanel1.add(itemPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 320, 110));
+        jPanel1.add(itemPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 320, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -515,11 +533,11 @@ public class Catalog extends javax.swing.JFrame {
     }//GEN-LAST:event_minimizeLabelMouseClicked
 
     private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
-        minimizeButton.setBackground(new Color(146,147,149));
+        minimizeButton.setBackground(new Color(146, 147, 149));
     }//GEN-LAST:event_minimizeLabelMouseEntered
 
     private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
-        minimizeButton.setBackground(new Color(194,200,203));
+        minimizeButton.setBackground(new Color(194, 200, 203));
     }//GEN-LAST:event_minimizeLabelMouseExited
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
@@ -527,13 +545,13 @@ public class Catalog extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
-        exitButton.setBackground(new Color(211,22,34));
-        exitLabel.setForeground(new Color(247,247,247));
+        exitButton.setBackground(new Color(211, 22, 34));
+        exitLabel.setForeground(new Color(247, 247, 247));
     }//GEN-LAST:event_exitLabelMouseEntered
 
     private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
-        exitButton.setBackground(new Color(194,200,203));
-        exitLabel.setForeground(new Color(27,47,59));
+        exitButton.setBackground(new Color(194, 200, 203));
+        exitLabel.setForeground(new Color(27, 47, 59));
     }//GEN-LAST:event_exitLabelMouseExited
 
     private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
@@ -600,503 +618,469 @@ public class Catalog extends javax.swing.JFrame {
         accesorios.setIcon(image);
     }//GEN-LAST:event_accesoriosMouseEntered
 
-    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
-        // TODO add your handling code here:
-      if(AccDevices){  
-        if(CatalogPage != 0){
-        this.CatalogPage -= 6;
-        DisplayDevices();
-        int num = Integer.parseInt(PageNum.getText());
-      num--;
-      PageNum.setText(""+num);
+    private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
+        if (AccDevices) {
+            if (CatalogPage < AllDevices.length) {
+                this.CatalogPage += 6;
+                DisplayDevices();
+                int num = Integer.parseInt(PageNum.getText());
+                num++;
+                PageNum.setText("" + num);
+            }
+        } else {
+            if (CatalogPage < AllAcc.length) {
+                this.CatalogPage += 6;
+                DisplayAccesorios();
+                int num = Integer.parseInt(PageNum.getText());
+                num++;
+                PageNum.setText("" + num);
+            }
         }
-      }else{
-          if(CatalogPage != 0){
-        this.CatalogPage -= 6;
-        DisplayAccesorios();
-        int num = Integer.parseInt(PageNum.getText());
-      num--;
-      PageNum.setText(""+num);
-      }} 
+    }//GEN-LAST:event_NextButtonMouseClicked
+
+    private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
+        if (AccDevices) {
+            if (CatalogPage != 0) {
+                this.CatalogPage -= 6;
+                DisplayDevices();
+                int num = Integer.parseInt(PageNum.getText());
+                num--;
+                PageNum.setText("" + num);
+            }
+        } else {
+            if (CatalogPage != 0) {
+                this.CatalogPage -= 6;
+                DisplayAccesorios();
+                int num = Integer.parseInt(PageNum.getText());
+                num--;
+                PageNum.setText("" + num);
+            }
+        }
     }//GEN-LAST:event_BackButtonMouseClicked
 
-    private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
-        // TODO add your handling code here:
-        if(AccDevices){  
-        if(CatalogPage < AllDevices.length){
-            this.CatalogPage += 6;
-            DisplayDevices();
-            int num = Integer.parseInt(PageNum.getText());
-            num++;
-            PageNum.setText(""+num);
-        }
-      }else{
-          if(CatalogPage < AllAcc.length){
-            this.CatalogPage += 6;
-            DisplayAccesorios();
-            int num = Integer.parseInt(PageNum.getText());
-            num++;
-            PageNum.setText(""+num);
-        }
-      } 
-    }//GEN-LAST:event_NextButtonMouseClicked
+    private void NextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseEntered
+        NextButton.setForeground(new Color(194, 200, 203));
+        nextButtonPanel.setBackground(new Color(25, 42, 52));
+    }//GEN-LAST:event_NextButtonMouseEntered
+
+    private void NextButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseExited
+        NextButton.setForeground(new Color(247, 247, 247));
+        nextButtonPanel.setBackground(new Color(27, 47, 59));
+    }//GEN-LAST:event_NextButtonMouseExited
+
+    private void BackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseEntered
+        BackButton.setForeground(new Color(194, 200, 203));
+        backButtonPanel.setBackground(new Color(25, 42, 52));
+    }//GEN-LAST:event_BackButtonMouseEntered
+
+    private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
+        BackButton.setForeground(new Color(247, 247, 247));
+        backButtonPanel.setBackground(new Color(27, 47, 59));
+    }//GEN-LAST:event_BackButtonMouseExited
 
     /**
      *
      */
-    public void DisplayDevices(){
-       String DeviceName = "";
-       int DevicePrice = 0;
-       int availability=0;
-       ResultSet Devicevalues = null;
-       for(int i=CatalogPage;i<=(6+CatalogPage);i++){
-           if(i < AllDevices.length){
-           String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad From Modelo e, Dispositivo s "
-                      + "Where e.ModID = (Select i.ModID from Dispositivo i "
-                      + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i];
-           try{
-           Devicevalues = sql.executeQuery(query);
-           }catch(SQLException ex){
-               System.out.println(ex);
-           }
-           try {
-        while(Devicevalues.next()){
-            DeviceName = Devicevalues.getString(1);
-            DevicePrice = Devicevalues.getInt(2);
-            availability = Devicevalues.getInt(3);
-        }
-        } catch (SQLException ex) {
+    public void DisplayDevices() {
+        String DeviceName = "";
+        int DevicePrice = 0;
+        int availability = 0;
+        ResultSet Devicevalues = null;
+        for (int i = CatalogPage; i <= (6 + CatalogPage); i++) {
+            if (i < AllDevices.length) {
+                String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad From Modelo e, Dispositivo s "
+                        + "Where e.ModID = (Select i.ModID from Dispositivo i "
+                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i];
+                try {
+                    Devicevalues = sql.executeQuery(query);
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+                try {
+                    while (Devicevalues.next()) {
+                        DeviceName = Devicevalues.getString(1);
+                        DevicePrice = Devicevalues.getInt(2);
+                        availability = Devicevalues.getInt(3);
+                    }
+                } catch (SQLException ex) {
                     Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                if (i == CatalogPage) {
+                    ItemName1.setText(DeviceName);
+                    ItemPrice1.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable1.setText("Disponible");
+                        ItemAvailable1.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable1.setText("No Disponible");
+                        ItemAvailable1.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image1, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                } else if (i == CatalogPage + 1) {
+                    ItemName2.setText(DeviceName);
+                    ItemPrice2.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable2.setText("Disponible");
+                        ItemAvailable2.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable2.setText("No Disponible");
+                        ItemAvailable2.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image2, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                } else if (i == CatalogPage + 2) {
+                    ItemName3.setText(DeviceName);
+                    ItemPrice3.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable3.setText("Disponible");
+                        ItemAvailable3.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable3.setText("No Disponible");
+                        ItemAvailable3.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image3, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                } else if (i == CatalogPage + 3) {
+                    ItemName4.setText(DeviceName);
+                    ItemPrice4.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable4.setText("Disponible");
+                        ItemAvailable4.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable4.setText("No Disponible");
+                        ItemAvailable4.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image4, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                } else if (i == CatalogPage + 4) {
+                    ItemName5.setText(DeviceName);
+                    ItemPrice5.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable5.setText("Disponible");
+                        ItemAvailable5.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable5.setText("No Disponible");
+                        ItemAvailable5.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image5, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                } else if (i == CatalogPage + 5) {
+                    ItemName6.setText(DeviceName);
+                    ItemPrice6.setText("$" + DevicePrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable6.setText("Disponible");
+                        ItemAvailable6.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable6.setText("No Disponible");
+                        ItemAvailable6.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image6, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                }
+
+            } else {
+                if (i == CatalogPage) {
+                    ItemName1.setText("");
+                    ItemPrice1.setText("");
+                    if (availability > 0) {
+                        ItemAvailable1.setText("");
+                        ItemAvailable1.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable1.setText("");
+                        ItemAvailable1.setForeground(Color.red);
+                    }
+                    image1.setIcon(null);
+                } else if (i == CatalogPage + 1) {
+                    ItemName2.setText("");
+                    ItemPrice2.setText("");
+                    if (availability > 0) {
+                        ItemAvailable2.setText("");
+                        ItemAvailable2.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable2.setText("");
+                        ItemAvailable2.setForeground(Color.red);
+                    }
+                    image2.setIcon(null);
+                } else if (i == CatalogPage + 2) {
+                    ItemName3.setText("");
+                    ItemPrice3.setText("");
+                    if (availability > 0) {
+                        ItemAvailable3.setText("");
+                        ItemAvailable3.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable3.setText("");
+                        ItemAvailable3.setForeground(Color.red);
+                    }
+                    image3.setIcon(null);
+                } else if (i == CatalogPage + 3) {
+                    ItemName4.setText("");
+                    ItemPrice4.setText("");
+                    if (availability > 0) {
+                        ItemAvailable4.setText("");
+                        ItemAvailable4.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable4.setText("");
+                        ItemAvailable4.setForeground(Color.red);
+                    }
+                    image4.setIcon(null);
+                } else if (i == CatalogPage + 4) {
+                    ItemName5.setText("");
+                    ItemPrice5.setText("");
+                    if (availability > 0) {
+                        ItemAvailable5.setText("");
+                        ItemAvailable5.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable5.setText("");
+                        ItemAvailable5.setForeground(Color.red);
+                    }
+                    image5.setIcon(null);
+                } else if (i == CatalogPage + 5) {
+                    ItemName6.setText("");
+                    ItemPrice6.setText("");
+                    if (availability > 0) {
+                        ItemAvailable6.setText("");
+                        ItemAvailable6.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable6.setText("");
+                        ItemAvailable6.setForeground(Color.red);
+                    }
+                    image6.setIcon(null);
+                }
+
+            }
+
         }
-        
-   
-        if(i == CatalogPage){
-            ItemName1.setText(DeviceName);
-            ItemPrice1.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable1.setText("Disponible");
-                ItemAvailable1.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable1.setText("No Disponible");
-                ItemAvailable1.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image1, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        }   
-        else if(i == CatalogPage+1){
-            ItemName2.setText(DeviceName);
-            ItemPrice2.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable2.setText("Disponible");
-                ItemAvailable2.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable2.setText("No Disponible");
-                ItemAvailable2.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image2, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        }    
-        else if(i == CatalogPage+2){
-            ItemName3.setText(DeviceName);
-            ItemPrice3.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable3.setText("Disponible");
-                ItemAvailable3.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable3.setText("No Disponible");
-                ItemAvailable3.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image3, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        }    
-        else if(i == CatalogPage+3){
-            ItemName4.setText(DeviceName);
-            ItemPrice4.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable4.setText("Disponible");
-                ItemAvailable4.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable4.setText("No Disponible");
-                ItemAvailable4.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image4, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        } 
-        else if(i == CatalogPage+4){
-            ItemName5.setText(DeviceName);
-            ItemPrice5.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable5.setText("Disponible");
-                ItemAvailable5.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable5.setText("No Disponible");
-                ItemAvailable5.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image5, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        } 
-        else if(i == CatalogPage+5){
-            ItemName6.setText(DeviceName);
-            ItemPrice6.setText("$"+DevicePrice + " DOP");
-            if(availability > 0){
-                ItemAvailable6.setText("Disponible");
-                ItemAvailable6.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable6.setText("No Disponible");
-                ItemAvailable6.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image6, "src/aplicacion/Imagenes/"+DeviceName+".png" );
-        } 
-        
-        }else{
-             if(i == CatalogPage){
-            ItemName1.setText("");
-            ItemPrice1.setText("");
-            if(availability > 0){
-                ItemAvailable1.setText("");
-                ItemAvailable1.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable1.setText("");
-                ItemAvailable1.setForeground(Color.red);
-            }
-            image1.setIcon(null);
-        }   
-        else if(i == CatalogPage+1){
-            ItemName2.setText("");
-            ItemPrice2.setText("");
-            if(availability > 0){
-                ItemAvailable2.setText("");
-                ItemAvailable2.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable2.setText("");
-                ItemAvailable2.setForeground(Color.red);
-            }
-            image2.setIcon(null);
-        }    
-        else if(i == CatalogPage+2){
-            ItemName3.setText("");
-            ItemPrice3.setText("");
-            if(availability > 0){
-                ItemAvailable3.setText("");
-                ItemAvailable3.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable3.setText("");
-                ItemAvailable3.setForeground(Color.red);
-            }
-            image3.setIcon(null);
-        }    
-        else if(i == CatalogPage+3){
-            ItemName4.setText("");
-            ItemPrice4.setText("");
-            if(availability > 0){
-                ItemAvailable4.setText("");
-                ItemAvailable4.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable4.setText("");
-                ItemAvailable4.setForeground(Color.red);
-            }
-            image4.setIcon(null);
-        } 
-        else if(i == CatalogPage+4){
-            ItemName5.setText("");
-            ItemPrice5.setText("");
-            if(availability > 0){
-                ItemAvailable5.setText("");
-                ItemAvailable5.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable5.setText("");
-                ItemAvailable5.setForeground(Color.red);
-            }
-            image5.setIcon(null);          
-        } 
-        else if(i == CatalogPage+5){
-            ItemName6.setText("");
-            ItemPrice6.setText("");
-            if(availability > 0){
-                ItemAvailable6.setText("");
-                ItemAvailable6.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable6.setText("");
-                ItemAvailable6.setForeground(Color.red);
-            }
-            image6.setIcon(null);
-        } 
-               
-               
-               
-           }
-           
-       }               
     }
-    
-    public void DisplayAccesorios(){
-       String AccName = "";
-       int AccPrice = 0;
-       int availability=0;
-       ResultSet Devicevalues = null;
-       for(int i=CatalogPage;i<=(6+CatalogPage);i++){
-           if(i < AllAcc.length){
-           String query = "select AccNombre,AccPrecio,Cantidad from Accesorio where AccID = " + AllAcc[i];
-           try{
-           Devicevalues = sql.executeQuery(query);
-           }catch(SQLException ex){
-               System.out.println(ex);
-           }
-           try {
-        while(Devicevalues.next()){
-            AccName = Devicevalues.getString(1);
-            AccPrice = Devicevalues.getInt(2);
-            availability = Devicevalues.getInt(3);
-        }
-        } catch (SQLException ex) {
+
+    public void DisplayAccesorios() {
+        String AccName = "";
+        int AccPrice = 0;
+        int availability = 0;
+        ResultSet Devicevalues = null;
+        for (int i = CatalogPage; i <= (6 + CatalogPage); i++) {
+            if (i < AllAcc.length) {
+                String query = "select AccNombre,AccPrecio,Cantidad from Accesorio where AccID = " + AllAcc[i];
+                try {
+                    Devicevalues = sql.executeQuery(query);
+                } catch (SQLException ex) {
+                    System.out.println(ex);
+                }
+                try {
+                    while (Devicevalues.next()) {
+                        AccName = Devicevalues.getString(1);
+                        AccPrice = Devicevalues.getInt(2);
+                        availability = Devicevalues.getInt(3);
+                    }
+                } catch (SQLException ex) {
                     Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                if (i == CatalogPage) {
+                    ItemName1.setText(AccName);
+                    ItemPrice1.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable1.setText("Disponible");
+                        ItemAvailable1.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable1.setText("No Disponible");
+                        ItemAvailable1.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image1, "src/aplicacion/Imagenes/" + AccName + ".png");
+                } else if (i == CatalogPage + 1) {
+                    ItemName2.setText(AccName);
+                    ItemPrice2.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable2.setText("Disponible");
+                        ItemAvailable2.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable2.setText("No Disponible");
+                        ItemAvailable2.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image2, "src/aplicacion/Imagenes/" + AccName + ".png");
+                } else if (i == CatalogPage + 2) {
+                    ItemName3.setText(AccName);
+                    ItemPrice3.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable3.setText("Disponible");
+                        ItemAvailable3.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable3.setText("No Disponible");
+                        ItemAvailable3.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image3, "src/aplicacion/Imagenes/" + AccName + ".png");
+                } else if (i == CatalogPage + 3) {
+                    ItemName4.setText(AccName);
+                    ItemPrice4.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable4.setText("Disponible");
+                        ItemAvailable4.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable4.setText("No Disponible");
+                        ItemAvailable4.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image4, "src/aplicacion/Imagenes/" + AccName + ".png");
+                } else if (i == CatalogPage + 4) {
+                    ItemName5.setText(AccName);
+                    ItemPrice5.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable5.setText("Disponible");
+                        ItemAvailable5.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable5.setText("No Disponible");
+                        ItemAvailable5.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image5, "src/aplicacion/Imagenes/" + AccName + ".png");
+                } else if (i == CatalogPage + 5) {
+                    ItemName6.setText(AccName);
+                    ItemPrice6.setText("$" + AccPrice + " DOP");
+                    if (availability > 0) {
+                        ItemAvailable6.setText("Disponible");
+                        ItemAvailable6.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable6.setText("No Disponible");
+                        ItemAvailable6.setForeground(Color.red);
+                    }
+                    rsscalelabel.RSScaleLabel.setScaleLabel(image6, "src/aplicacion/Imagenes/" + AccName + ".png");
+                }
+
+            } else {
+                if (i == CatalogPage) {
+                    ItemName1.setText("");
+                    ItemPrice1.setText("");
+                    if (availability > 0) {
+                        ItemAvailable1.setText("");
+                        ItemAvailable1.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable1.setText("");
+                        ItemAvailable1.setForeground(Color.red);
+                    }
+                    image1.setIcon(null);
+                } else if (i == CatalogPage + 1) {
+                    ItemName2.setText("");
+                    ItemPrice2.setText("");
+                    if (availability > 0) {
+                        ItemAvailable2.setText("");
+                        ItemAvailable2.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable2.setText("");
+                        ItemAvailable2.setForeground(Color.red);
+                    }
+                    image2.setIcon(null);
+                } else if (i == CatalogPage + 2) {
+                    ItemName3.setText("");
+                    ItemPrice3.setText("");
+                    if (availability > 0) {
+                        ItemAvailable3.setText("");
+                        ItemAvailable3.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable3.setText("");
+                        ItemAvailable3.setForeground(Color.red);
+                    }
+                    image3.setIcon(null);
+                } else if (i == CatalogPage + 3) {
+                    ItemName4.setText("");
+                    ItemPrice4.setText("");
+                    if (availability > 0) {
+                        ItemAvailable4.setText("");
+                        ItemAvailable4.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable4.setText("");
+                        ItemAvailable4.setForeground(Color.red);
+                    }
+                    image4.setIcon(null);
+                } else if (i == CatalogPage + 4) {
+                    ItemName5.setText("");
+                    ItemPrice5.setText("");
+                    if (availability > 0) {
+                        ItemAvailable5.setText("");
+                        ItemAvailable5.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable5.setText("");
+                        ItemAvailable5.setForeground(Color.red);
+                    }
+                    image5.setIcon(null);
+                } else if (i == CatalogPage + 5) {
+                    ItemName6.setText("");
+                    ItemPrice6.setText("");
+                    if (availability > 0) {
+                        ItemAvailable6.setText("");
+                        ItemAvailable6.setForeground(new Color(89, 182, 50));
+                    } else {
+                        ItemAvailable6.setText("");
+                        ItemAvailable6.setForeground(Color.red);
+                    }
+                    image6.setIcon(null);
+                }
+
+            }
+
         }
-        
-   
-        if(i == CatalogPage){
-            ItemName1.setText(AccName);
-            ItemPrice1.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable1.setText("Disponible");
-                ItemAvailable1.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable1.setText("No Disponible");
-                ItemAvailable1.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image1, "src/aplicacion/Imagenes/"+AccName+".png" );
-        }   
-        else if(i == CatalogPage+1){
-            ItemName2.setText(AccName);
-            ItemPrice2.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable2.setText("Disponible");
-                ItemAvailable2.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable2.setText("No Disponible");
-                ItemAvailable2.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image2, "src/aplicacion/Imagenes/"+AccName+".png" );
-        }    
-        else if(i == CatalogPage+2){
-            ItemName3.setText(AccName);
-            ItemPrice3.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable3.setText("Disponible");
-                ItemAvailable3.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable3.setText("No Disponible");
-                ItemAvailable3.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image3, "src/aplicacion/Imagenes/"+AccName+".png" );
-        }    
-        else if(i == CatalogPage+3){
-            ItemName4.setText(AccName);
-            ItemPrice4.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable4.setText("Disponible");
-                ItemAvailable4.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable4.setText("No Disponible");
-                ItemAvailable4.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image4, "src/aplicacion/Imagenes/"+AccName+".png" );
-        } 
-        else if(i == CatalogPage+4){
-            ItemName5.setText(AccName);
-            ItemPrice5.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable5.setText("Disponible");
-                ItemAvailable5.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable5.setText("No Disponible");
-                ItemAvailable5.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image5, "src/aplicacion/Imagenes/"+AccName+".png" );
-        } 
-        else if(i == CatalogPage+5){
-            ItemName6.setText(AccName);
-            ItemPrice6.setText("$"+AccPrice + " DOP");
-            if(availability > 0){
-                ItemAvailable6.setText("Disponible");
-                ItemAvailable6.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable6.setText("No Disponible");
-                ItemAvailable6.setForeground(Color.red);
-            }
-            rsscalelabel.RSScaleLabel.setScaleLabel(image6, "src/aplicacion/Imagenes/"+AccName+".png" );
-        } 
-        
-        }else{
-             if(i == CatalogPage){
-            ItemName1.setText("");
-            ItemPrice1.setText("");
-            if(availability > 0){
-                ItemAvailable1.setText("");
-                ItemAvailable1.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable1.setText("");
-                ItemAvailable1.setForeground(Color.red);
-            }
-            image1.setIcon(null);
-        }   
-        else if(i == CatalogPage+1){
-            ItemName2.setText("");
-            ItemPrice2.setText("");
-            if(availability > 0){
-                ItemAvailable2.setText("");
-                ItemAvailable2.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable2.setText("");
-                ItemAvailable2.setForeground(Color.red);
-            }
-            image2.setIcon(null);
-        }    
-        else if(i == CatalogPage+2){
-            ItemName3.setText("");
-            ItemPrice3.setText("");
-            if(availability > 0){
-                ItemAvailable3.setText("");
-                ItemAvailable3.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable3.setText("");
-                ItemAvailable3.setForeground(Color.red);
-            }
-            image3.setIcon(null);
-        }    
-        else if(i == CatalogPage+3){
-            ItemName4.setText("");
-            ItemPrice4.setText("");
-            if(availability > 0){
-                ItemAvailable4.setText("");
-                ItemAvailable4.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable4.setText("");
-                ItemAvailable4.setForeground(Color.red);
-            }
-            image4.setIcon(null);
-        } 
-        else if(i == CatalogPage+4){
-            ItemName5.setText("");
-            ItemPrice5.setText("");
-            if(availability > 0){
-                ItemAvailable5.setText("");
-                ItemAvailable5.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable5.setText("");
-                ItemAvailable5.setForeground(Color.red);
-            }
-            image5.setIcon(null);          
-        } 
-        else if(i == CatalogPage+5){
-            ItemName6.setText("");
-            ItemPrice6.setText("");
-            if(availability > 0){
-                ItemAvailable6.setText("");
-                ItemAvailable6.setForeground(new Color(89,182,50));
-            }
-            else{
-                ItemAvailable6.setText("");
-                ItemAvailable6.setForeground(Color.red);
-            }
-            image6.setIcon(null);
-        } 
-               
-               
-               
-           }
-           
-       } 
     }
-    
-     public void getAllAcc(){
+
+    public void getAllAcc() {
         ResultSet Devices = null;
-        int AccAmt=0;
+        int AccAmt = 0;
         String query = "select count(AccID) from Accesorio";
-        try{
-        Devices = sql.executeQuery(query);
-        } catch(SQLException ex){
+        try {
+            Devices = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
         try {
-        while(Devices.next()){
-            AccAmt = Devices.getInt(1);}
+            while (Devices.next()) {
+                AccAmt = Devices.getInt(1);
+            }
         } catch (SQLException ex) {
-                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println(AccAmt);
         AllAcc = new int[AccAmt];
 
-
         query = "select AccID from Accesorio";
-        try{
-        Devices = sql.executeQuery(query);
-        } catch(SQLException ex){
+        try {
+            Devices = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
         try {
-        for(int i=0;Devices.next();i++){
-            AllAcc[i] = Devices.getInt(1);}
-        }catch (SQLException ex) {
-                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+            for (int i = 0; Devices.next(); i++) {
+                AllAcc[i] = Devices.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-     
-     
-     public void getAllDevices(){
+
+    public void getAllDevices() {
         ResultSet Devices = null;
-        int DevicesAmt=0;
+        int DevicesAmt = 0;
         String query = "select count(DispoID) from Dispositivo";
-        try{
-        Devices = sql.executeQuery(query);
-        } catch(SQLException ex){
+        try {
+            Devices = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
         try {
-        while(Devices.next()){
-            DevicesAmt = Devices.getInt(1);}
+            while (Devices.next()) {
+                DevicesAmt = Devices.getInt(1);
+            }
         } catch (SQLException ex) {
-                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println(DevicesAmt);
         AllDevices = new int[DevicesAmt];
 
-
         query = "select DispoID from Dispositivo";
-        try{
-        Devices = sql.executeQuery(query);
-        } catch(SQLException ex){
+        try {
+            Devices = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
         try {
-        for(int i=0;Devices.next();i++){
-            AllDevices[i] = Devices.getInt(1);}
-        }catch (SQLException ex) {
-                    Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
+            for (int i = 0; Devices.next(); i++) {
+                AllDevices[i] = Devices.getInt(1);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
         }
-    } 
-    
-    
-    
-    
-    
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1156,6 +1140,7 @@ public class Catalog extends javax.swing.JFrame {
     private javax.swing.JLabel NextButton;
     private javax.swing.JLabel PageNum;
     private javax.swing.JButton accesorios;
+    private javax.swing.JPanel backButtonPanel;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton celulares;
     private javax.swing.JPanel exitButton;
@@ -1178,6 +1163,7 @@ public class Catalog extends javax.swing.JFrame {
     private javax.swing.JButton menu;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
+    private javax.swing.JPanel nextButtonPanel;
     private javax.swing.JPanel redStripe;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
