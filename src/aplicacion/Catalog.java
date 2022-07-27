@@ -288,7 +288,7 @@ public class Catalog extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
         jLabel1.setText("Catalog");
-        blueStripe.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 29, -1, -1));
+        blueStripe.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(43, 29, 90, -1));
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -834,7 +834,7 @@ public class Catalog extends javax.swing.JFrame {
         CatalogPage = 0;
         DisplayAccesorios();
         AccDevices = false;
-        ItemTitle.setText("Accesorios");
+        ItemTitle.setText("Accessories");
         PageNum.setText("" + 1);
     }//GEN-LAST:event_accesoriosActionPerformed
 

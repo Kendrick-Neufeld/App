@@ -394,7 +394,7 @@ public class DBCliente extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 410, 110, 40));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 400, 110, 40));
 
         searchBar.setBackground(new java.awt.Color(194, 200, 203));
         searchBar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -435,7 +435,7 @@ public class DBCliente extends javax.swing.JFrame {
                 enterButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, 110, 40));
+        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 300, 110, 40));
 
         deleteButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -459,7 +459,7 @@ public class DBCliente extends javax.swing.JFrame {
                 deleteButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 350, 110, 40));
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 350, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

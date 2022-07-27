@@ -196,7 +196,7 @@ public class MainMenu extends javax.swing.JFrame {
                 logOutButtonActionPerformed(evt);
             }
         });
-        blueStripe.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 170, 50));
+        blueStripe.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 170, 50));
 
         mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
@@ -326,7 +326,7 @@ public class MainMenu extends javax.swing.JFrame {
         contactoLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel2.setForeground(new java.awt.Color(27, 47, 59));
         contactoLabel2.setText("TEL.: (809)740-0211");
-        mainMenuBG.add(contactoLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 335, 120, -1));
+        mainMenuBG.add(contactoLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 120, -1));
 
         contactoLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel3.setForeground(new java.awt.Color(27, 47, 59));
@@ -335,18 +335,18 @@ public class MainMenu extends javax.swing.JFrame {
 
         contactoLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel4.setForeground(new java.awt.Color(27, 47, 59));
-        contactoLabel4.setText("WS: (829)610-1987");
-        mainMenuBG.add(contactoLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 160, -1));
+        contactoLabel4.setText("WhatsApp: +1(829)610-1987");
+        mainMenuBG.add(contactoLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 335, 190, -1));
 
         contactoLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel5.setForeground(new java.awt.Color(27, 47, 59));
         contactoLabel5.setText("Santo Domingo, D.N.");
-        mainMenuBG.add(contactoLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 160, -1));
+        mainMenuBG.add(contactoLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 200, -1));
 
         contactoLabel6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel6.setForeground(new java.awt.Color(27, 47, 59));
         contactoLabel6.setText("Av. Independencia");
-        mainMenuBG.add(contactoLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 335, 160, -1));
+        mainMenuBG.add(contactoLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 335, 200, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

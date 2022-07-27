@@ -396,7 +396,7 @@ public class DBFactura extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 410, 110, 40));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 400, 110, 40));
 
         searchLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         searchLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -437,7 +437,7 @@ public class DBFactura extends javax.swing.JFrame {
                 enterButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 290, 110, 40));
+        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 300, 110, 40));
 
         deleteButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -461,7 +461,7 @@ public class DBFactura extends javax.swing.JFrame {
                 deleteButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 350, 110, 40));
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(915, 350, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

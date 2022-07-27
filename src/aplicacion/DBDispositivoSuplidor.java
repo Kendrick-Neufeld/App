@@ -397,7 +397,7 @@ public class DBDispositivoSuplidor extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, 110, 40));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 400, 110, 40));
 
         searchLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         searchLabel.setForeground(new java.awt.Color(27, 47, 59));
@@ -438,7 +438,7 @@ public class DBDispositivoSuplidor extends javax.swing.JFrame {
                 enterButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, 110, 40));
+        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 300, 110, 40));
 
         deleteButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         deleteButton.setForeground(new java.awt.Color(27, 47, 59));
@@ -462,7 +462,7 @@ public class DBDispositivoSuplidor extends javax.swing.JFrame {
                 deleteButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 340, 110, 40));
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 350, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
