@@ -22,19 +22,19 @@ public class DBFactura extends javax.swing.JFrame {
      */
     public Statement sql;
     int xMouse, yMouse;
-    
+
     public DBFactura() {
         initComponents();
         setLocationRelativeTo(null);
     }
-    
+
     public DBFactura(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
-        
+
         Aplicacion appLogo = new Aplicacion();
         this.setIconImage(appLogo.logo.getImage());
-        
+
         this.sql = sql;
         CargarArticulo();
     }
@@ -508,12 +508,12 @@ public class DBFactura extends javax.swing.JFrame {
 
     private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
         // TODO add your handling code here:
-        try{
+        try {
             TableSelect selectTable = new TableSelect();
             selectTable.sql = this.sql;
             selectTable.setVisible(true);
             this.dispose();
-        } catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }//GEN-LAST:event_insertActionPerformed
@@ -530,11 +530,11 @@ public class DBFactura extends javax.swing.JFrame {
     }//GEN-LAST:event_minimizeLabelMouseClicked
 
     private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
-        minimizeButton.setBackground(new Color(146,147,149));
+        minimizeButton.setBackground(new Color(146, 147, 149));
     }//GEN-LAST:event_minimizeLabelMouseEntered
 
     private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
-        minimizeButton.setBackground(new Color(194,200,203));
+        minimizeButton.setBackground(new Color(194, 200, 203));
     }//GEN-LAST:event_minimizeLabelMouseExited
 
     private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
@@ -542,13 +542,13 @@ public class DBFactura extends javax.swing.JFrame {
     }//GEN-LAST:event_exitLabelMouseClicked
 
     private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
-        exitButton.setBackground(new Color(211,22,34));
-        exitLabel.setForeground(new Color(247,247,247));
+        exitButton.setBackground(new Color(211, 22, 34));
+        exitLabel.setForeground(new Color(247, 247, 247));
     }//GEN-LAST:event_exitLabelMouseEntered
 
     private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
-        exitButton.setBackground(new Color(194,200,203));
-        exitLabel.setForeground(new Color(27,47,59));
+        exitButton.setBackground(new Color(194, 200, 203));
+        exitLabel.setForeground(new Color(27, 47, 59));
     }//GEN-LAST:event_exitLabelMouseExited
 
     private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
@@ -581,68 +581,68 @@ public class DBFactura extends javax.swing.JFrame {
 
     private void selectTableComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTableComboboxActionPerformed
         // TODO add your handling code here:
-        switch(selectTableCombobox.getSelectedIndex()){
+        switch (selectTableCombobox.getSelectedIndex()) {
             case 0:
-            DBDevice dbdevice = new DBDevice(sql);
-            dbdevice.sql = this.sql;
-            dbdevice.setVisible(true);
-            this.dispose();
-            break;
+                DBDevice dbdevice = new DBDevice(sql);
+                dbdevice.sql = this.sql;
+                dbdevice.setVisible(true);
+                this.dispose();
+                break;
             case 1:
-            DBEmpleado dbempleado = new DBEmpleado(sql);
-            dbempleado.sql = this.sql;
-            dbempleado.setVisible(true);
-            this.dispose();
-            break;
+                DBEmpleado dbempleado = new DBEmpleado(sql);
+                dbempleado.sql = this.sql;
+                dbempleado.setVisible(true);
+                this.dispose();
+                break;
             case 2:
-            DBSuplidor dbsuplidor = new DBSuplidor(sql);
-            dbsuplidor.sql = this.sql;
-            dbsuplidor.setVisible(true);
-            this.dispose();
-            break;
+                DBSuplidor dbsuplidor = new DBSuplidor(sql);
+                dbsuplidor.sql = this.sql;
+                dbsuplidor.setVisible(true);
+                this.dispose();
+                break;
             case 3:
-            DBModelo dbmodelo = new DBModelo(sql);
-            dbmodelo.sql = this.sql;
-            dbmodelo.setVisible(true);
-            this.dispose();
-            break;
+                DBModelo dbmodelo = new DBModelo(sql);
+                dbmodelo.sql = this.sql;
+                dbmodelo.setVisible(true);
+                this.dispose();
+                break;
             case 4:
-            DBBrand dbbrand = new DBBrand(sql);
-            dbbrand.sql = this.sql;
-            dbbrand.setVisible(true);
-            this.dispose();
-            break;
+                DBBrand dbbrand = new DBBrand(sql);
+                dbbrand.sql = this.sql;
+                dbbrand.setVisible(true);
+                this.dispose();
+                break;
             case 5:
-            DBAccesorio dbaccesorio = new DBAccesorio(sql);
-            dbaccesorio.sql = this.sql;
-            dbaccesorio.setVisible(true);
-            this.dispose();
-            break;
+                DBAccesorio dbaccesorio = new DBAccesorio(sql);
+                dbaccesorio.sql = this.sql;
+                dbaccesorio.setVisible(true);
+                this.dispose();
+                break;
             case 6:
                 DBFactura dbfactura = new DBFactura(sql);
                 dbfactura.sql = this.sql;
-            break;
+                break;
             case 7:
-            DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
-            dbaccesoriosuplidor.sql = this.sql;
-            dbaccesoriosuplidor.setVisible(true);
-            this.dispose();
-            break;
+                DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
+                dbaccesoriosuplidor.sql = this.sql;
+                dbaccesoriosuplidor.setVisible(true);
+                this.dispose();
+                break;
             case 8:
-            DBDispositivoSuplidor dbdispositivossuplidor = new DBDispositivoSuplidor(sql);
-            dbdispositivossuplidor.sql = this.sql;
-            dbdispositivossuplidor.setVisible(true);
-            this.dispose();
-            break;
+                DBDispositivoSuplidor dbdispositivossuplidor = new DBDispositivoSuplidor(sql);
+                dbdispositivossuplidor.sql = this.sql;
+                dbdispositivossuplidor.setVisible(true);
+                this.dispose();
+                break;
             case 9:
-            DBCliente dbcliente = new DBCliente(sql);
-            dbcliente.sql = this.sql;
-            dbcliente.setVisible(true);
-            this.dispose();
-            break;
-            default :
-            System.out.println("Hubo un error en la seleccion de tablas.");
-            break;
+                DBCliente dbcliente = new DBCliente(sql);
+                dbcliente.sql = this.sql;
+                dbcliente.setVisible(true);
+                this.dispose();
+                break;
+            default:
+                System.out.println("Hubo un error en la seleccion de tablas.");
+                break;
         }
     }//GEN-LAST:event_selectTableComboboxActionPerformed
 
@@ -704,59 +704,56 @@ public class DBFactura extends javax.swing.JFrame {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
-        if(searchBar.getText().compareTo("") != 0){
+        if (searchBar.getText().compareTo("") != 0) {
             deleteSelectedItem(searchBar.getText());
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
 
-    public void deleteSelectedItem(String ID){
-        
-        String query = "Delete from Factura Where NoFactura = "+ID; 
-        try{
-        sql.executeQuery(query);
-        } catch(SQLException ex){
+    public void deleteSelectedItem(String ID) {
+
+        String query = "Delete from Factura Where NoFactura = " + ID;
+        try {
+            sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        query = "Delete from Factura_dispositivo Where NoFactura = "+ID; 
-        try{
-        sql.executeQuery(query);
-        } catch(SQLException ex){
+        query = "Delete from Factura_dispositivo Where NoFactura = " + ID;
+        try {
+            sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        query = "Delete from Factura_accesorio Where NoFactura = "+ID; 
-        try{
-        sql.executeQuery(query);
-        } catch(SQLException ex){
+        query = "Delete from Factura_accesorio Where NoFactura = " + ID;
+        try {
+            sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        
+
     }
-    
-    public void getItems(){
-        if(searchBar.getText().compareTo("") != 0){
-        CargarArticuloBuscado(searchBar.getText());
-        }
-        else{
+
+    public void getItems() {
+        if (searchBar.getText().compareTo("") != 0) {
+            CargarArticuloBuscado(searchBar.getText());
+        } else {
             CargarArticulo();
         }
     }
-    
-    
-    
-    public void CargarArticulo(){
+
+    public void CargarArticulo() {
         ResultSet res = null;
         DefaultTableModel modelo = (DefaultTableModel) Tablas.getModel();
         modelo.setRowCount(0);
         String query = "execute FacturaJoin";
-        try{
-        res = sql.executeQuery(query);
-        } catch(SQLException ex){
+        try {
+            res = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        
-        try{
-           
-            while(res.next()){
+
+        try {
+
+            while (res.next()) {
                 Vector v = new Vector();
                 v.add(res.getInt(1));
                 v.add(res.getString(2));
@@ -765,34 +762,33 @@ public class DBFactura extends javax.swing.JFrame {
                 v.add(res.getInt(7));
                 modelo.addRow(v);
                 Tablas.setModel(modelo);
-            }  
-            
-        } catch(SQLException ex){
+            }
+
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        
-        
+
     }
-    
-    public void CargarArticuloBuscado(String ID){
+
+    public void CargarArticuloBuscado(String ID) {
         ResultSet res = null;
         DefaultTableModel modelo = (DefaultTableModel) Tablas.getModel();
         modelo.setRowCount(0);
-        String query = "SELECT *\n" +
-        "FROM Factura left JOIN Factura_accesorio \n" +
-        "ON Factura.NoFactura=Factura_accesorio.NoFactura\n" +
-        "left JOIN Factura_dispositivo\n" +
-        "ON Factura.NoFactura=Factura_dispositivo.NoFactura"
-                + " Where Factura.NoFactura = "+ID;
-        try{
-        res = sql.executeQuery(query);
-        } catch(SQLException ex){
+        String query = "SELECT *\n"
+                + "FROM Factura left JOIN Factura_accesorio \n"
+                + "ON Factura.NoFactura=Factura_accesorio.NoFactura\n"
+                + "left JOIN Factura_dispositivo\n"
+                + "ON Factura.NoFactura=Factura_dispositivo.NoFactura"
+                + " Where Factura.NoFactura = " + ID;
+        try {
+            res = sql.executeQuery(query);
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        
-        try{
-           
-            while(res.next()){
+
+        try {
+
+            while (res.next()) {
                 Vector v = new Vector();
                 v.add(res.getInt(1));
                 v.add(res.getString(2));
@@ -801,16 +797,14 @@ public class DBFactura extends javax.swing.JFrame {
                 v.add(res.getInt(7));
                 modelo.addRow(v);
                 Tablas.setModel(modelo);
-            }  
-            
-        } catch(SQLException ex){
+            }
+
+        } catch (SQLException ex) {
             System.out.println(ex);
         }
-        
-        
+
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */

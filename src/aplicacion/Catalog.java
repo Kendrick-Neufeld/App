@@ -1155,12 +1155,7 @@ public class Catalog extends javax.swing.JFrame {
         ResultSet Devicevalues = null;
         for (int i = CatalogPage; i <= (6 + CatalogPage); i++) {
             if (i < AllDevices.length) {
-                String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad, b.MarcaNombre, e.ModTamaño, "
-                        + "e.ModColor, e.ModCapacidad From Modelo e, Dispositivo s, Marca b "
-                        + "Where e.ModID = (Select i.ModID from Dispositivo i "
-                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i]
-                        + " and b.MarcaID = (Select k.MarcaID from Marca k where k.MarcaID = (select j.MarcaID from "
-                        + "Modelo j where j.ModID = (Select l.ModID from Dispositivo l where l.DispoID = " + AllDevices[i] + " )))";
+                String query = "execute getAllDeviceInfo @DispoID =" + AllDevices[i];
                 try {
                     Devicevalues = sql.executeQuery(query);
                 } catch (SQLException ex) {
