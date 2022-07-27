@@ -51,14 +51,22 @@ public class MainMenu extends javax.swing.JFrame {
         menu = new javax.swing.JButton();
         insert = new javax.swing.JButton();
         dbase = new javax.swing.JButton();
+        logOutButton = new javax.swing.JButton();
         headerPanel = new javax.swing.JPanel();
         windowActions = new javax.swing.JPanel();
         minimizeButton = new javax.swing.JPanel();
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
-        logOutButton = new javax.swing.JButton();
         logoLabel = new javax.swing.JLabel();
+        ubicacionLabel = new javax.swing.JLabel();
+        contactoLabel = new javax.swing.JLabel();
+        contactoLabel1 = new javax.swing.JLabel();
+        contactoLabel2 = new javax.swing.JLabel();
+        contactoLabel3 = new javax.swing.JLabel();
+        contactoLabel4 = new javax.swing.JLabel();
+        contactoLabel5 = new javax.swing.JLabel();
+        contactoLabel6 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
 
@@ -76,6 +84,7 @@ public class MainMenu extends javax.swing.JFrame {
         mainMenuBG.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
+        blueStripe.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         redStripe.setBackground(new java.awt.Color(211, 22, 34));
 
@@ -90,9 +99,12 @@ public class MainMenu extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
+        blueStripe.add(redStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 64, -1, -1));
+
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(247, 247, 247));
         jLabel1.setText("Home");
+        blueStripe.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 29, 72, -1));
 
         catalog.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         catalog.setForeground(new java.awt.Color(247, 247, 247));
@@ -113,6 +125,7 @@ public class MainMenu extends javax.swing.JFrame {
                 catalogActionPerformed(evt);
             }
         });
+        blueStripe.add(catalog, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 141, 170, 50));
 
         menu.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         menu.setForeground(new java.awt.Color(247, 247, 247));
@@ -120,6 +133,7 @@ public class MainMenu extends javax.swing.JFrame {
         menu.setText("Menu");
         menu.setBorder(null);
         menu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        blueStripe.add(menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 85, 170, 50));
 
         insert.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         insert.setForeground(new java.awt.Color(247, 247, 247));
@@ -140,6 +154,7 @@ public class MainMenu extends javax.swing.JFrame {
                 insertActionPerformed(evt);
             }
         });
+        blueStripe.add(insert, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 170, 50));
 
         dbase.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         dbase.setForeground(new java.awt.Color(247, 247, 247));
@@ -160,44 +175,28 @@ public class MainMenu extends javax.swing.JFrame {
                 dbaseActionPerformed(evt);
             }
         });
+        blueStripe.add(dbase, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 253, 170, 50));
 
-        javax.swing.GroupLayout blueStripeLayout = new javax.swing.GroupLayout(blueStripe);
-        blueStripe.setLayout(blueStripeLayout);
-        blueStripeLayout.setHorizontalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dbase, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, blueStripeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45))
-        );
-        blueStripeLayout.setVerticalGroup(
-            blueStripeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(blueStripeLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(redStripe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(catalog, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dbase, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(267, Short.MAX_VALUE))
-        );
+        logOutButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        logOutButton.setForeground(new java.awt.Color(247, 247, 247));
+        logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor7.png"))); // NOI18N
+        logOutButton.setText("Logout");
+        logOutButton.setBorder(null);
+        logOutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logOutButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logOutButtonMouseExited(evt);
+            }
+        });
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
+        blueStripe.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 170, 50));
 
         mainMenuBG.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
@@ -307,28 +306,47 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         mainMenuBG.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
-
-        logOutButton.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        logOutButton.setForeground(new java.awt.Color(27, 47, 59));
-        logOutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
-        logOutButton.setText("Logout");
-        logOutButton.setBorder(null);
-        logOutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        logOutButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                logOutButtonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                logOutButtonMouseExited(evt);
-            }
-        });
-        logOutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logOutButtonActionPerformed(evt);
-            }
-        });
-        mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 170, 50));
         mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 100, 360, 190));
+
+        ubicacionLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        ubicacionLabel.setForeground(new java.awt.Color(27, 47, 59));
+        ubicacionLabel.setText("Local:");
+        mainMenuBG.add(ubicacionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 60, 20));
+
+        contactoLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        contactoLabel.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel.setText("Contacto:");
+        mainMenuBG.add(contactoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 120, -1));
+
+        contactoLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel1.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel1.setText("IG: oscarcomunicaciones");
+        mainMenuBG.add(contactoLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, 200, -1));
+
+        contactoLabel2.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel2.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel2.setText("TEL.: (809)740-0211");
+        mainMenuBG.add(contactoLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 335, 120, -1));
+
+        contactoLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel3.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel3.setText("esq. Luperón, Plaza Luperón #39");
+        mainMenuBG.add(contactoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 180, -1));
+
+        contactoLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel4.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel4.setText("WS: (829)610-1987");
+        mainMenuBG.add(contactoLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 160, -1));
+
+        contactoLabel5.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel5.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel5.setText("Santo Domingo, D.N.");
+        mainMenuBG.add(contactoLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 160, -1));
+
+        contactoLabel6.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        contactoLabel6.setForeground(new java.awt.Color(27, 47, 59));
+        contactoLabel6.setText("Av. Independencia");
+        mainMenuBG.add(contactoLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 335, 160, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -433,12 +451,12 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_dbaseActionPerformed
 
     private void logOutButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
         logOutButton.setIcon(image);
     }//GEN-LAST:event_logOutButtonMouseEntered
 
     private void logOutButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutButtonMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
         logOutButton.setIcon(image);
     }//GEN-LAST:event_logOutButtonMouseExited
 
@@ -496,6 +514,13 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
+    private javax.swing.JLabel contactoLabel;
+    private javax.swing.JLabel contactoLabel1;
+    private javax.swing.JLabel contactoLabel2;
+    private javax.swing.JLabel contactoLabel3;
+    private javax.swing.JLabel contactoLabel4;
+    private javax.swing.JLabel contactoLabel5;
+    private javax.swing.JLabel contactoLabel6;
     private javax.swing.JButton dbase;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
@@ -512,6 +537,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JLabel ubicacionLabel;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }
