@@ -51,8 +51,12 @@ public class Database extends javax.swing.JFrame {
         minimizeLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JPanel();
         exitLabel = new javax.swing.JLabel();
-        selectLabel = new javax.swing.JLabel();
         selectTableCombobox = new javax.swing.JComboBox<>();
+        selectLabel = new javax.swing.JLabel();
+        selectTableCombobox1 = new javax.swing.JComboBox<>();
+        searchBar = new javax.swing.JTextField();
+        searchLabel = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -60,6 +64,7 @@ public class Database extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1300, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         blueStripe.setBackground(new java.awt.Color(27, 47, 59));
@@ -288,7 +293,7 @@ public class Database extends javax.swing.JFrame {
         headerPanelLayout.setHorizontalGroup(
             headerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPanelLayout.createSequentialGroup()
-                .addGap(0, 660, Short.MAX_VALUE)
+                .addGap(0, 1220, Short.MAX_VALUE)
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         headerPanelLayout.setVerticalGroup(
@@ -298,12 +303,7 @@ public class Database extends javax.swing.JFrame {
                 .addComponent(windowActions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
-
-        selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
-        selectLabel.setForeground(new java.awt.Color(27, 47, 59));
-        selectLabel.setText("Select Table");
-        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 280, 100, 30));
+        jPanel1.add(headerPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1300, -1));
 
         selectTableCombobox.setBackground(new java.awt.Color(194, 200, 203));
         selectTableCombobox.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -316,14 +316,72 @@ public class Database extends javax.swing.JFrame {
                 selectTableComboboxActionPerformed(evt);
             }
         });
-        jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 270, 50));
+        jPanel1.add(selectTableCombobox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 320, 270, 50));
+
+        selectLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        selectLabel.setForeground(new java.awt.Color(27, 47, 59));
+        selectLabel.setText("Select Table");
+        jPanel1.add(selectLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 110, 100, 30));
+
+        selectTableCombobox1.setBackground(new java.awt.Color(194, 200, 203));
+        selectTableCombobox1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        selectTableCombobox1.setForeground(new java.awt.Color(27, 47, 59));
+        selectTableCombobox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Device", "Employee", "Supplier", "Model", "Brand", "Accessory", "Receipt", "Accessory Supply", "Device Supply", "Client" }));
+        selectTableCombobox1.setSelectedIndex(1);
+        selectTableCombobox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectTableCombobox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(selectTableCombobox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 150, 180, 40));
+
+        searchBar.setBackground(new java.awt.Color(194, 200, 203));
+        searchBar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
+        searchBar.setForeground(new java.awt.Color(27, 47, 59));
+        searchBar.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 1));
+        searchBar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchBarKeyPressed(evt);
+            }
+        });
+        jPanel1.add(searchBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 240, 180, 40));
+
+        searchLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(27, 47, 59));
+        searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        searchLabel.setText("Search");
+        jPanel1.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 210, 60, 30));
+
+        backButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        backButton.setForeground(new java.awt.Color(27, 47, 59));
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        backButton.setText("Back");
+        backButton.setBorder(null);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                backButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                backButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backButtonMousePressed(evt);
+            }
+        });
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 410, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 740, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -505,6 +563,104 @@ public class Database extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_selectTableComboboxActionPerformed
 
+    private void selectTableCombobox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectTableCombobox1ActionPerformed
+        // TODO add your handling code here:
+        switch(selectTableCombobox.getSelectedIndex()){
+            case 0:
+            DBDevice dbdevice = new DBDevice(sql);
+            dbdevice.sql = this.sql;
+            dbdevice.setVisible(true);
+            this.dispose();
+            break;
+            case 1:
+            DBEmpleado dbempleado = new DBEmpleado(sql);
+            dbempleado.sql = this.sql;
+            break;
+            case 2:
+            DBSuplidor dbsuplidor = new DBSuplidor(sql);
+            dbsuplidor.sql = this.sql;
+            dbsuplidor.setVisible(true);
+            this.dispose();
+            break;
+            case 3:
+            DBModelo dbmodelo = new DBModelo(sql);
+            dbmodelo.sql = this.sql;
+            dbmodelo.setVisible(true);
+            this.dispose();
+            break;
+            case 4:
+            DBBrand dbbrand = new DBBrand(sql);
+            dbbrand.sql = this.sql;
+            dbbrand.setVisible(true);
+            this.dispose();
+            break;
+            case 5:
+            DBAccesorio dbaccesorio = new DBAccesorio(sql);
+            dbaccesorio.sql = this.sql;
+            dbaccesorio.setVisible(true);
+            this.dispose();
+            break;
+            case 6:
+            DBFactura dbfactura = new DBFactura(sql);
+            dbfactura.sql = this.sql;
+            dbfactura.setVisible(true);
+            this.dispose();
+            break;
+            case 7:
+            DBAccesorioSuplidor dbaccesoriosuplidor = new DBAccesorioSuplidor(sql);
+            dbaccesoriosuplidor.sql = this.sql;
+            dbaccesoriosuplidor.setVisible(true);
+            this.dispose();
+            break;
+            case 8:
+            DBDispositivoSuplidor dbdispositivossuplidor = new DBDispositivoSuplidor(sql);
+            dbdispositivossuplidor.sql = this.sql;
+            dbdispositivossuplidor.setVisible(true);
+            this.dispose();
+            break;
+            case 9:
+            DBCliente dbcliente = new DBCliente(sql);
+            dbcliente.sql = this.sql;
+            dbcliente.setVisible(true);
+            this.dispose();
+            break;
+            default :
+            System.out.println("Hubo un error en la seleccion de tablas.");
+            break;
+        }
+    }//GEN-LAST:event_selectTableCombobox1ActionPerformed
+
+    private void searchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBarKeyPressed
+        /*DefaultTableModel table = (DefaultTableModel)Tablas.getModel();
+        String search = searchBar.getText();
+        TableRowSorter<DefaultTableModel> rows = new TableRowSorter<DefaultTableModel>(table);
+        Tablas.setRowSorter(rows);
+        rows.setRowFilter(RowFilter.regexFilter(search));*/
+    }//GEN-LAST:event_searchBarKeyPressed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        MainMenu mm = new MainMenu();
+        mm.sql = this.sql;
+        mm.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void backButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMousePressed
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMousePressed
+
+    private void backButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor1.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseExited
+
+    private void backButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backButtonMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor2.png");
+        backButton.setIcon(image);
+    }//GEN-LAST:event_backButtonMouseEntered
+
     /**
      * @param args the command line arguments
      */
@@ -541,6 +697,7 @@ public class Database extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backButton;
     private javax.swing.JPanel blueStripe;
     private javax.swing.JButton catalog;
     private javax.swing.JButton dbase;
@@ -554,8 +711,11 @@ public class Database extends javax.swing.JFrame {
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;
     private javax.swing.JPanel redStripe;
+    private javax.swing.JTextField searchBar;
+    private javax.swing.JLabel searchLabel;
     private javax.swing.JLabel selectLabel;
     private javax.swing.JComboBox<String> selectTableCombobox;
+    private javax.swing.JComboBox<String> selectTableCombobox1;
     private javax.swing.JPanel windowActions;
     // End of variables declaration//GEN-END:variables
 }
