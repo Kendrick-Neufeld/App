@@ -24,6 +24,10 @@ public class MainMenu extends javax.swing.JFrame {
     public MainMenu() {
         initComponents();
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         setLocationRelativeTo(null);
     }
 
@@ -65,7 +69,6 @@ public class MainMenu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         mainMenuBG.setBackground(new java.awt.Color(247, 247, 247));
@@ -325,7 +328,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         mainMenuBG.add(logOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 170, 50));
-        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(265, 100, 380, 200));
+        mainMenuBG.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 100, 360, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

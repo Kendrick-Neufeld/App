@@ -31,6 +31,10 @@ public class DBAccesorioSuplidor extends javax.swing.JFrame {
     public DBAccesorioSuplidor(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         this.sql = sql;
         CargarArticulo();
     }

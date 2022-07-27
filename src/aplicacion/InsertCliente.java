@@ -27,6 +27,9 @@ public class InsertCliente extends javax.swing.JFrame {
     public InsertCliente() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

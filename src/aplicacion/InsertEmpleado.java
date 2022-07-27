@@ -26,6 +26,10 @@ public class InsertEmpleado extends javax.swing.JFrame {
     public InsertEmpleado() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
     }
 
     /**

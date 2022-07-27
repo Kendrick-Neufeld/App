@@ -48,6 +48,9 @@ public class DBEmpleado extends javax.swing.JFrame {
         Tablas.getColumnModel().getColumn(9).setPreferredWidth(100);
         Tablas.getColumnModel().getColumn(9).setMaxWidth(100);
         
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         this.sql = sql;
         CargarArticulo();
     }

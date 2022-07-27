@@ -41,6 +41,9 @@ public class InsertFactura extends javax.swing.JFrame {
         ItemnumAcc = 0;
         DispoComp = new int[60];
         AccComp = new int[60];
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

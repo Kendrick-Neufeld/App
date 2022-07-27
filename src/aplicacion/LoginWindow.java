@@ -18,7 +18,6 @@ import javax.swing.*;
  * @author Usuario
  */
 public class LoginWindow extends javax.swing.JFrame {
-    
     public Statement sql;
     int xMouse, yMouse;
     /**
@@ -31,6 +30,10 @@ public class LoginWindow extends javax.swing.JFrame {
         rsscalelabel.RSScaleLabel.setScaleLabel(userIcon, "src/aplicacion/Imagenes/user.png" );
         rsscalelabel.RSScaleLabel.setScaleLabel(pwIcon, "src/aplicacion/Imagenes/pw.png" );
         logoLabel.requestFocusInWindow();     
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         setLocationRelativeTo(null);
     }
 
@@ -47,8 +50,6 @@ public class LoginWindow extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         passwordTextField = new javax.swing.JPasswordField();
         userTextField = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
         logoLabel = new javax.swing.JLabel();
         connectButton = new javax.swing.JButton();
         pwIcon = new javax.swing.JLabel();
@@ -65,7 +66,6 @@ public class LoginWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(740, 500));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(247, 247, 247));
@@ -76,20 +76,20 @@ public class LoginWindow extends javax.swing.JFrame {
         passwordTextField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         passwordTextField.setForeground(new java.awt.Color(146, 147, 149));
         passwordTextField.setText("•••••••••");
-        passwordTextField.setBorder(null);
+        passwordTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         passwordTextField.setEchoChar('\u25cf');
         passwordTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 passwordTextFieldMousePressed(evt);
             }
         });
-        jPanel1.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, 250, 50));
+        jPanel1.add(passwordTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 260, 50));
 
         userTextField.setBackground(new java.awt.Color(194, 200, 203));
         userTextField.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         userTextField.setForeground(new java.awt.Color(146, 147, 149));
         userTextField.setText("Username");
-        userTextField.setBorder(null);
+        userTextField.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 10, 1, 1));
         userTextField.setVerifyInputWhenFocusTarget(false);
         userTextField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -101,37 +101,7 @@ public class LoginWindow extends javax.swing.JFrame {
                 userTextFieldActionPerformed(evt);
             }
         });
-        jPanel1.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 250, 50));
-
-        jPanel3.setBackground(new java.awt.Color(194, 200, 203));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 260, 50));
-
-        jPanel4.setBackground(new java.awt.Color(194, 200, 203));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 260, 50));
+        jPanel1.add(userTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 260, 50));
         jPanel1.add(logoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, 280, 140));
 
         connectButton.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -153,9 +123,9 @@ public class LoginWindow extends javax.swing.JFrame {
                 connectButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(connectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 350, 130, 60));
-        jPanel1.add(pwIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 75, 56));
-        jPanel1.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 75, 56));
+        jPanel1.add(connectButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 350, 130, 60));
+        jPanel1.add(pwIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 280, 75, 60));
+        jPanel1.add(userIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 210, 75, 56));
 
         redStripe.setBackground(new java.awt.Color(211, 22, 34));
 
@@ -462,8 +432,6 @@ public class LoginWindow extends javax.swing.JFrame {
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel logoLabel;
     private javax.swing.JPanel minimizeButton;
     private javax.swing.JLabel minimizeLabel;

@@ -24,6 +24,8 @@ public class Database extends javax.swing.JFrame {
     public Database() {
         initComponents();
         setLocationRelativeTo(null);
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

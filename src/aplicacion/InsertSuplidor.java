@@ -25,6 +25,9 @@ public class InsertSuplidor extends javax.swing.JFrame {
     public InsertSuplidor() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

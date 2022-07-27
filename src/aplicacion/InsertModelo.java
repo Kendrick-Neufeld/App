@@ -25,6 +25,9 @@ public class InsertModelo extends javax.swing.JFrame {
     public InsertModelo() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

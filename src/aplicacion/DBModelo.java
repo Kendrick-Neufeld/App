@@ -33,6 +33,10 @@ public class DBModelo extends javax.swing.JFrame {
     public DBModelo(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         this.sql = sql;
         CargarArticulo();
     }

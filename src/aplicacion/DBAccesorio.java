@@ -31,6 +31,10 @@ public class DBAccesorio extends javax.swing.JFrame {
     public DBAccesorio(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         this.sql = sql;
         CargarArticulo();
     }

@@ -26,6 +26,9 @@ public class InsertDispSuplidor extends javax.swing.JFrame {
     public InsertDispSuplidor() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

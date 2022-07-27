@@ -32,6 +32,10 @@ public class DBDevice extends javax.swing.JFrame {
     public DBDevice(Statement sql) {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         this.sql = sql;
         CargarArticulo();
     }

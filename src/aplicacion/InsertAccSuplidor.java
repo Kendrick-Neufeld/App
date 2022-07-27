@@ -26,6 +26,9 @@ public class InsertAccSuplidor extends javax.swing.JFrame {
     public InsertAccSuplidor() {
         initComponents();   
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

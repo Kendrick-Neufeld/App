@@ -26,6 +26,8 @@ public class TableSelect extends javax.swing.JFrame {
         initComponents();
         rsscalelabel.RSScaleLabel.setScaleLabel(logoLabel, "src/aplicacion/Imagenes/Logo #1.png" );
         setLocationRelativeTo(null);
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

@@ -35,6 +35,9 @@ public class Catalog extends javax.swing.JFrame {
         getAllAcc();
         getAllDevices();
         DisplayDevices();
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**
@@ -303,15 +306,15 @@ public class Catalog extends javax.swing.JFrame {
         PageNum.setText("1");
         PageNum.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         PageNum.setPreferredSize(new java.awt.Dimension(25, 25));
-        blueStripe.add(PageNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 50, 40));
+        blueStripe.add(PageNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, 50, 40));
 
         backButtonPanel.setBackground(new java.awt.Color(27, 47, 59));
         backButtonPanel.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        BackButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        BackButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         BackButton.setForeground(new java.awt.Color(247, 247, 247));
         BackButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BackButton.setText("<");
+        BackButton.setText("Back");
         BackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         BackButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -329,25 +332,22 @@ public class Catalog extends javax.swing.JFrame {
         backButtonPanel.setLayout(backButtonPanelLayout);
         backButtonPanelLayout.setHorizontalGroup(
             backButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backButtonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(BackButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         backButtonPanelLayout.setVerticalGroup(
             backButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(BackButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        blueStripe.add(backButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 50, 40));
+        blueStripe.add(backButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 410, 50, 40));
 
         nextButtonPanel.setBackground(new java.awt.Color(27, 47, 59));
         nextButtonPanel.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        NextButton.setFont(new java.awt.Font("Roboto Black", 0, 24)); // NOI18N
+        NextButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         NextButton.setForeground(new java.awt.Color(247, 247, 247));
         NextButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NextButton.setText(">");
+        NextButton.setText("Next");
         NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         NextButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -365,17 +365,14 @@ public class Catalog extends javax.swing.JFrame {
         nextButtonPanel.setLayout(nextButtonPanelLayout);
         nextButtonPanelLayout.setHorizontalGroup(
             nextButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(nextButtonPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NextButton, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(NextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         nextButtonPanelLayout.setVerticalGroup(
             nextButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(NextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        blueStripe.add(nextButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 50, 40));
+        blueStripe.add(nextButtonPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(108, 410, 50, 40));
 
         jPanel1.add(blueStripe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 570));
 
@@ -579,7 +576,7 @@ public class Catalog extends javax.swing.JFrame {
         MainMenu mainMenu = new MainMenu();
         mainMenu.setVisible(true);
         mainMenu.sql = this.sql;
-        this.dispose();
+        dispose();
     }//GEN-LAST:event_menuActionPerformed
 
     private void celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesActionPerformed
@@ -588,6 +585,7 @@ public class Catalog extends javax.swing.JFrame {
         DisplayDevices();
         AccDevices = true;
         ItemTitle.setText("Devices");
+        PageNum.setText("" + 1);
     }//GEN-LAST:event_celularesActionPerformed
 
     private void accesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosActionPerformed
@@ -596,6 +594,8 @@ public class Catalog extends javax.swing.JFrame {
         DisplayAccesorios();
         AccDevices = false;
         ItemTitle.setText("Accesorios");
+        PageNum.setText("" + 1);
+        
     }//GEN-LAST:event_accesoriosActionPerformed
 
     private void celularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseEntered
@@ -842,9 +842,7 @@ public class Catalog extends javax.swing.JFrame {
                     }
                     image6.setIcon(null);
                 }
-
             }
-
         }
     }
 

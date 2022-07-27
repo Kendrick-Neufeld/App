@@ -28,6 +28,9 @@ public class InsertAccesorio extends javax.swing.JFrame {
     public InsertAccesorio() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

@@ -28,6 +28,9 @@ public class InsertMarca extends javax.swing.JFrame {
     public InsertMarca() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
     }
 
     /**

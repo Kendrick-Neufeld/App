@@ -34,6 +34,10 @@ public class DBSuplidor extends javax.swing.JFrame {
         Tablas.getColumnModel().getColumn(0).setPreferredWidth(40);
         Tablas.getColumnModel().getColumn(0).setMaxWidth(40);
         this.sql = sql;
+        
+        Aplicacion appLogo = new Aplicacion();
+        this.setIconImage(appLogo.logo.getImage());
+        
         CargarArticulo();
     }
 
