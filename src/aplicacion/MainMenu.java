@@ -310,12 +310,12 @@ public class MainMenu extends javax.swing.JFrame {
 
         ubicacionLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         ubicacionLabel.setForeground(new java.awt.Color(27, 47, 59));
-        ubicacionLabel.setText("Local:");
+        ubicacionLabel.setText("Local");
         mainMenuBG.add(ubicacionLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 60, 20));
 
         contactoLabel.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         contactoLabel.setForeground(new java.awt.Color(27, 47, 59));
-        contactoLabel.setText("Contacto:");
+        contactoLabel.setText("Contacto");
         mainMenuBG.add(contactoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 300, 120, -1));
 
         contactoLabel1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -331,7 +331,7 @@ public class MainMenu extends javax.swing.JFrame {
         contactoLabel3.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel3.setForeground(new java.awt.Color(27, 47, 59));
         contactoLabel3.setText("esq. Luperón, Plaza Luperón #39");
-        mainMenuBG.add(contactoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 180, -1));
+        mainMenuBG.add(contactoLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, 200, -1));
 
         contactoLabel4.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         contactoLabel4.setForeground(new java.awt.Color(27, 47, 59));

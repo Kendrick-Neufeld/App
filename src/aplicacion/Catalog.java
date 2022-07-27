@@ -24,7 +24,7 @@ public class Catalog extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         CatalogPage = 0;
-        
+
     }
 
     public Catalog(Statement sql) {
@@ -36,13 +36,13 @@ public class Catalog extends javax.swing.JFrame {
         getAllAcc();
         getAllDevices();
         DisplayDevices();
-        
+
         Aplicacion appLogo = new Aplicacion();
         this.setIconImage(appLogo.logo.getImage());
         setLablesInvisible();
     }
 
-    public void setLablesInvisible(){
+    public void setLablesInvisible() {
         Color1.setVisible(false);
         Marca1.setVisible(false);
         Tamaño1.setVisible(false);
@@ -68,8 +68,7 @@ public class Catalog extends javax.swing.JFrame {
         Tamaño6.setVisible(false);
         Capacidad6.setVisible(false);
     }
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -460,17 +459,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice3.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel.add(ItemPrice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color3.setForeground(new java.awt.Color(27, 47, 59));
         Color3.setText("jLabel4");
-        itemPanel.add(Color3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel.add(Color3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 80, 20));
 
+        Marca3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca3.setForeground(new java.awt.Color(27, 47, 59));
         Marca3.setText("jLabel1");
-        itemPanel.add(Marca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel.add(Marca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad3.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad3.setText("jLabel3");
-        itemPanel.add(Capacidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel.add(Capacidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño3.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño3.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño3.setText("jLabel2");
-        itemPanel.add(Tamaño3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel.add(Tamaño3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 80, 20));
 
         jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 320, 110));
 
@@ -509,17 +516,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice2.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel1.add(ItemPrice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color2.setForeground(new java.awt.Color(27, 47, 59));
         Color2.setText("jLabel4");
-        itemPanel1.add(Color2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel1.add(Color2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 80, 20));
 
+        Marca2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca2.setForeground(new java.awt.Color(27, 47, 59));
         Marca2.setText("jLabel1");
-        itemPanel1.add(Marca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel1.add(Marca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad2.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad2.setText("jLabel3");
-        itemPanel1.add(Capacidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel1.add(Capacidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño2.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño2.setText("jLabel2");
-        itemPanel1.add(Tamaño2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel1.add(Tamaño2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 75, 80, 20));
 
         jPanel1.add(itemPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 320, 110));
 
@@ -553,17 +568,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice5.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel2.add(ItemPrice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color5.setForeground(new java.awt.Color(27, 47, 59));
         Color5.setText("jLabel4");
-        itemPanel2.add(Color5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel2.add(Color5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 80, 20));
 
+        Marca5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca5.setForeground(new java.awt.Color(27, 47, 59));
         Marca5.setText("jLabel1");
-        itemPanel2.add(Marca5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel2.add(Marca5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad5.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad5.setText("jLabel3");
-        itemPanel2.add(Capacidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel2.add(Capacidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño5.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño5.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño5.setText("jLabel2");
-        itemPanel2.add(Tamaño5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel2.add(Tamaño5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 80, 20));
 
         jPanel1.add(itemPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 320, 110));
 
@@ -597,17 +620,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice4.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel3.add(ItemPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color4.setForeground(new java.awt.Color(27, 47, 59));
         Color4.setText("jLabel4");
-        itemPanel3.add(Color4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel3.add(Color4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 80, 20));
 
+        Marca4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca4.setForeground(new java.awt.Color(27, 47, 59));
         Marca4.setText("jLabel1");
-        itemPanel3.add(Marca4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel3.add(Marca4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad4.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad4.setText("jLabel3");
-        itemPanel3.add(Capacidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel3.add(Capacidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño4.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño4.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño4.setText("jLabel2");
-        itemPanel3.add(Tamaño4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel3.add(Tamaño4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 80, 20));
 
         jPanel1.add(itemPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 320, 110));
 
@@ -641,17 +672,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice6.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel4.add(ItemPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color6.setForeground(new java.awt.Color(27, 47, 59));
         Color6.setText("jLabel4");
-        itemPanel4.add(Color6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel4.add(Color6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, 80, 20));
 
+        Marca6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca6.setForeground(new java.awt.Color(27, 47, 59));
         Marca6.setText("jLabel1");
-        itemPanel4.add(Marca6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel4.add(Marca6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad6.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad6.setText("jLabel3");
-        itemPanel4.add(Capacidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel4.add(Capacidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño6.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño6.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño6.setText("jLabel2");
-        itemPanel4.add(Tamaño6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel4.add(Tamaño6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 80, 20));
 
         jPanel1.add(itemPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 320, 110));
 
@@ -690,17 +729,25 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice1.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel5.add(ItemPrice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Color1.setForeground(new java.awt.Color(27, 47, 59));
         Color1.setText("jLabel4");
-        itemPanel5.add(Color1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+        itemPanel5.add(Color1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 75, 80, 20));
 
+        Marca1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Marca1.setForeground(new java.awt.Color(27, 47, 59));
         Marca1.setText("jLabel1");
-        itemPanel5.add(Marca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+        itemPanel5.add(Marca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 80, 20));
 
+        Capacidad1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Capacidad1.setForeground(new java.awt.Color(27, 47, 59));
         Capacidad1.setText("jLabel3");
-        itemPanel5.add(Capacidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        itemPanel5.add(Capacidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 80, 20));
 
+        Tamaño1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        Tamaño1.setForeground(new java.awt.Color(27, 47, 59));
         Tamaño1.setText("jLabel2");
-        itemPanel5.add(Tamaño1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+        itemPanel5.add(Tamaño1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 75, 80, 20));
 
         jPanel1.add(itemPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 320, 110));
 
@@ -880,200 +927,218 @@ public class Catalog extends javax.swing.JFrame {
 
     private void itemPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color1.setVisible(true);
-        Marca1.setVisible(true);
-        Tamaño1.setVisible(true);
-        Capacidad1.setVisible(true);
-        ItemPrice1.setVisible(false);
-        ItemAvailable1.setVisible(false);}
+        if (AccDevices) {
+            Color1.setVisible(true);
+            Marca1.setVisible(true);
+            Tamaño1.setVisible(true);
+            Capacidad1.setVisible(true);
+            ItemPrice1.setVisible(false);
+            ItemAvailable1.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel5MouseClicked
 
     private void itemPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color1.setVisible(false);
-        Marca1.setVisible(false);
-        Tamaño1.setVisible(false);
-        Capacidad1.setVisible(false);
-        ItemPrice1.setVisible(true);
-        ItemAvailable1.setVisible(true);}
+        if (AccDevices) {
+            Color1.setVisible(false);
+            Marca1.setVisible(false);
+            Tamaño1.setVisible(false);
+            Capacidad1.setVisible(false);
+            ItemPrice1.setVisible(true);
+            ItemAvailable1.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanel5MouseExited
 
     private void itemPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color2.setVisible(true);
-        Marca2.setVisible(true);
-        Tamaño2.setVisible(true);
-        Capacidad2.setVisible(true);
-        ItemPrice2.setVisible(false);
-        ItemAvailable2.setVisible(false);}
+        if (AccDevices) {
+            Color2.setVisible(true);
+            Marca2.setVisible(true);
+            Tamaño2.setVisible(true);
+            Capacidad2.setVisible(true);
+            ItemPrice2.setVisible(false);
+            ItemAvailable2.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel1MouseClicked
 
     private void itemPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color2.setVisible(false);
-        Marca2.setVisible(false);
-        Tamaño2.setVisible(false);
-        Capacidad2.setVisible(false);
-        ItemPrice2.setVisible(true);
-        ItemAvailable2.setVisible(true);}
+        if (AccDevices) {
+            Color2.setVisible(false);
+            Marca2.setVisible(false);
+            Tamaño2.setVisible(false);
+            Capacidad2.setVisible(false);
+            ItemPrice2.setVisible(true);
+            ItemAvailable2.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanel1MouseExited
 
     private void itemPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color3.setVisible(true);
-        Marca3.setVisible(true);
-        Tamaño3.setVisible(true);
-        Capacidad3.setVisible(true);
-        ItemPrice3.setVisible(false);
-        ItemAvailable3.setVisible(false);}
+        if (AccDevices) {
+            Color3.setVisible(true);
+            Marca3.setVisible(true);
+            Tamaño3.setVisible(true);
+            Capacidad3.setVisible(true);
+            ItemPrice3.setVisible(false);
+            ItemAvailable3.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanelMouseClicked
 
     private void itemPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color3.setVisible(false);
-        Marca3.setVisible(false);
-        Tamaño3.setVisible(false);
-        Capacidad3.setVisible(false);
-        ItemPrice3.setVisible(true);
-        ItemAvailable3.setVisible(true);}
+        if (AccDevices) {
+            Color3.setVisible(false);
+            Marca3.setVisible(false);
+            Tamaño3.setVisible(false);
+            Capacidad3.setVisible(false);
+            ItemPrice3.setVisible(true);
+            ItemAvailable3.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanelMouseExited
 
     private void itemPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color4.setVisible(true);
-        Marca4.setVisible(true);
-        Tamaño4.setVisible(true);
-        Capacidad4.setVisible(true);
-        ItemPrice4.setVisible(false);
-        ItemAvailable4.setVisible(false);}
+        if (AccDevices) {
+            Color4.setVisible(true);
+            Marca4.setVisible(true);
+            Tamaño4.setVisible(true);
+            Capacidad4.setVisible(true);
+            ItemPrice4.setVisible(false);
+            ItemAvailable4.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel3MouseClicked
 
     private void itemPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color4.setVisible(false);
-        Marca4.setVisible(false);
-        Tamaño4.setVisible(false);
-        Capacidad4.setVisible(false);
-        ItemPrice4.setVisible(true);
-        ItemAvailable4.setVisible(true);}
+        if (AccDevices) {
+            Color4.setVisible(false);
+            Marca4.setVisible(false);
+            Tamaño4.setVisible(false);
+            Capacidad4.setVisible(false);
+            ItemPrice4.setVisible(true);
+            ItemAvailable4.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanel3MouseExited
 
     private void itemPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color5.setVisible(true);
-        Marca5.setVisible(true);
-        Tamaño5.setVisible(true);
-        Capacidad5.setVisible(true);
-        ItemPrice5.setVisible(false);
-        ItemAvailable5.setVisible(false);}
+        if (AccDevices) {
+            Color5.setVisible(true);
+            Marca5.setVisible(true);
+            Tamaño5.setVisible(true);
+            Capacidad5.setVisible(true);
+            ItemPrice5.setVisible(false);
+            ItemAvailable5.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel2MouseClicked
 
     private void itemPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color5.setVisible(false);
-        Marca5.setVisible(false);
-        Tamaño5.setVisible(false);
-        Capacidad5.setVisible(false);
-        ItemPrice5.setVisible(true);
-        ItemAvailable5.setVisible(true);}
+        if (AccDevices) {
+            Color5.setVisible(false);
+            Marca5.setVisible(false);
+            Tamaño5.setVisible(false);
+            Capacidad5.setVisible(false);
+            ItemPrice5.setVisible(true);
+            ItemAvailable5.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanel2MouseExited
 
     private void itemPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseClicked
         // TODO add your handling code here:
-        if(AccDevices){
-        Color6.setVisible(true);
-        Marca6.setVisible(true);
-        Tamaño6.setVisible(true);
-        Capacidad6.setVisible(true);
-        ItemPrice6.setVisible(false);
-        ItemAvailable6.setVisible(false);}
+        if (AccDevices) {
+            Color6.setVisible(true);
+            Marca6.setVisible(true);
+            Tamaño6.setVisible(true);
+            Capacidad6.setVisible(true);
+            ItemPrice6.setVisible(false);
+            ItemAvailable6.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel4MouseClicked
 
     private void itemPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseExited
         // TODO add your handling code here:
-        if(AccDevices){
-        Color6.setVisible(false);
-        Marca6.setVisible(false);
-        Tamaño6.setVisible(false);
-        Capacidad6.setVisible(false);
-        ItemPrice6.setVisible(true);
-        ItemAvailable6.setVisible(true);}
+        if (AccDevices) {
+            Color6.setVisible(false);
+            Marca6.setVisible(false);
+            Tamaño6.setVisible(false);
+            Capacidad6.setVisible(false);
+            ItemPrice6.setVisible(true);
+            ItemAvailable6.setVisible(true);
+        }
     }//GEN-LAST:event_itemPanel4MouseExited
 
     private void itemPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color1.setVisible(true);
-        Marca1.setVisible(true);
-        Tamaño1.setVisible(true);
-        Capacidad1.setVisible(true);
-        ItemPrice1.setVisible(false);
-        ItemAvailable1.setVisible(false);}
+        if (AccDevices) {
+            Color1.setVisible(true);
+            Marca1.setVisible(true);
+            Tamaño1.setVisible(true);
+            Capacidad1.setVisible(true);
+            ItemPrice1.setVisible(false);
+            ItemAvailable1.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel5MouseEntered
 
     private void itemPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color2.setVisible(true);
-        Marca2.setVisible(true);
-        Tamaño2.setVisible(true);
-        Capacidad2.setVisible(true);
-        ItemPrice2.setVisible(false);
-        ItemAvailable2.setVisible(false);}
+        if (AccDevices) {
+            Color2.setVisible(true);
+            Marca2.setVisible(true);
+            Tamaño2.setVisible(true);
+            Capacidad2.setVisible(true);
+            ItemPrice2.setVisible(false);
+            ItemAvailable2.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel1MouseEntered
 
     private void itemPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color3.setVisible(true);
-        Marca3.setVisible(true);
-        Tamaño3.setVisible(true);
-        Capacidad3.setVisible(true);
-        ItemPrice3.setVisible(false);
-        ItemAvailable3.setVisible(false);}
+        if (AccDevices) {
+            Color3.setVisible(true);
+            Marca3.setVisible(true);
+            Tamaño3.setVisible(true);
+            Capacidad3.setVisible(true);
+            ItemPrice3.setVisible(false);
+            ItemAvailable3.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanelMouseEntered
 
     private void itemPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color4.setVisible(true);
-        Marca4.setVisible(true);
-        Tamaño4.setVisible(true);
-        Capacidad4.setVisible(true);
-        ItemPrice4.setVisible(false);
-        ItemAvailable4.setVisible(false);}
+        if (AccDevices) {
+            Color4.setVisible(true);
+            Marca4.setVisible(true);
+            Tamaño4.setVisible(true);
+            Capacidad4.setVisible(true);
+            ItemPrice4.setVisible(false);
+            ItemAvailable4.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel3MouseEntered
 
     private void itemPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color5.setVisible(true);
-        Marca5.setVisible(true);
-        Tamaño5.setVisible(true);
-        Capacidad5.setVisible(true);
-        ItemPrice5.setVisible(false);
-        ItemAvailable5.setVisible(false);}
+        if (AccDevices) {
+            Color5.setVisible(true);
+            Marca5.setVisible(true);
+            Tamaño5.setVisible(true);
+            Capacidad5.setVisible(true);
+            ItemPrice5.setVisible(false);
+            ItemAvailable5.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel2MouseEntered
 
     private void itemPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseEntered
         // TODO add your handling code here:
-        if(AccDevices){
-        Color6.setVisible(true);
-        Marca6.setVisible(true);
-        Tamaño6.setVisible(true);
-        Capacidad6.setVisible(true);
-        ItemPrice6.setVisible(false);
-        ItemAvailable6.setVisible(false);}
+        if (AccDevices) {
+            Color6.setVisible(true);
+            Marca6.setVisible(true);
+            Tamaño6.setVisible(true);
+            Capacidad6.setVisible(true);
+            ItemPrice6.setVisible(false);
+            ItemAvailable6.setVisible(false);
+        }
     }//GEN-LAST:event_itemPanel4MouseEntered
 
     /**
@@ -1093,9 +1158,9 @@ public class Catalog extends javax.swing.JFrame {
                 String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad, b.MarcaNombre, e.ModTamaño, "
                         + "e.ModColor, e.ModCapacidad From Modelo e, Dispositivo s, Marca b "
                         + "Where e.ModID = (Select i.ModID from Dispositivo i "
-                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i]+
-                        " and b.MarcaID = (Select k.MarcaID from Marca k where k.MarcaID = (select j.MarcaID from "
-                        + "Modelo j where j.ModID = (Select l.ModID from Dispositivo l where l.DispoID = "+AllDevices[i]+" )))";
+                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i]
+                        + " and b.MarcaID = (Select k.MarcaID from Marca k where k.MarcaID = (select j.MarcaID from "
+                        + "Modelo j where j.ModID = (Select l.ModID from Dispositivo l where l.DispoID = " + AllDevices[i] + " )))";
                 try {
                     Devicevalues = sql.executeQuery(query);
                 } catch (SQLException ex) {
