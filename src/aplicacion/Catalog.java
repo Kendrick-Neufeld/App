@@ -24,6 +24,7 @@ public class Catalog extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         CatalogPage = 0;
+        
     }
 
     public Catalog(Statement sql) {
@@ -38,8 +39,37 @@ public class Catalog extends javax.swing.JFrame {
         
         Aplicacion appLogo = new Aplicacion();
         this.setIconImage(appLogo.logo.getImage());
+        setLablesInvisible();
     }
 
+    public void setLablesInvisible(){
+        Color1.setVisible(false);
+        Marca1.setVisible(false);
+        Tamaño1.setVisible(false);
+        Capacidad1.setVisible(false);
+        Color2.setVisible(false);
+        Marca2.setVisible(false);
+        Tamaño2.setVisible(false);
+        Capacidad2.setVisible(false);
+        Color3.setVisible(false);
+        Marca3.setVisible(false);
+        Tamaño3.setVisible(false);
+        Capacidad3.setVisible(false);
+        Color4.setVisible(false);
+        Marca4.setVisible(false);
+        Tamaño4.setVisible(false);
+        Capacidad4.setVisible(false);
+        Color5.setVisible(false);
+        Marca5.setVisible(false);
+        Tamaño5.setVisible(false);
+        Capacidad5.setVisible(false);
+        Color6.setVisible(false);
+        Marca6.setVisible(false);
+        Tamaño6.setVisible(false);
+        Capacidad6.setVisible(false);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,32 +102,56 @@ public class Catalog extends javax.swing.JFrame {
         image3 = new javax.swing.JLabel();
         ItemName3 = new javax.swing.JLabel();
         ItemPrice3 = new javax.swing.JLabel();
+        Color3 = new javax.swing.JLabel();
+        Marca3 = new javax.swing.JLabel();
+        Capacidad3 = new javax.swing.JLabel();
+        Tamaño3 = new javax.swing.JLabel();
         ItemTitle = new javax.swing.JLabel();
         itemPanel1 = new javax.swing.JPanel();
         ItemAvailable2 = new javax.swing.JLabel();
         image2 = new javax.swing.JLabel();
         ItemName2 = new javax.swing.JLabel();
         ItemPrice2 = new javax.swing.JLabel();
+        Color2 = new javax.swing.JLabel();
+        Marca2 = new javax.swing.JLabel();
+        Capacidad2 = new javax.swing.JLabel();
+        Tamaño2 = new javax.swing.JLabel();
         itemPanel2 = new javax.swing.JPanel();
         ItemAvailable5 = new javax.swing.JLabel();
         image5 = new javax.swing.JLabel();
         ItemName5 = new javax.swing.JLabel();
         ItemPrice5 = new javax.swing.JLabel();
+        Color5 = new javax.swing.JLabel();
+        Marca5 = new javax.swing.JLabel();
+        Capacidad5 = new javax.swing.JLabel();
+        Tamaño5 = new javax.swing.JLabel();
         itemPanel3 = new javax.swing.JPanel();
         ItemAvailable4 = new javax.swing.JLabel();
         image4 = new javax.swing.JLabel();
         ItemName4 = new javax.swing.JLabel();
         ItemPrice4 = new javax.swing.JLabel();
+        Color4 = new javax.swing.JLabel();
+        Marca4 = new javax.swing.JLabel();
+        Capacidad4 = new javax.swing.JLabel();
+        Tamaño4 = new javax.swing.JLabel();
         itemPanel4 = new javax.swing.JPanel();
         ItemAvailable6 = new javax.swing.JLabel();
         image6 = new javax.swing.JLabel();
         ItemName6 = new javax.swing.JLabel();
         ItemPrice6 = new javax.swing.JLabel();
+        Color6 = new javax.swing.JLabel();
+        Marca6 = new javax.swing.JLabel();
+        Capacidad6 = new javax.swing.JLabel();
+        Tamaño6 = new javax.swing.JLabel();
         itemPanel5 = new javax.swing.JPanel();
         ItemAvailable1 = new javax.swing.JLabel();
         image1 = new javax.swing.JLabel();
         ItemName1 = new javax.swing.JLabel();
         ItemPrice1 = new javax.swing.JLabel();
+        Color1 = new javax.swing.JLabel();
+        Marca1 = new javax.swing.JLabel();
+        Capacidad1 = new javax.swing.JLabel();
+        Tamaño1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -378,6 +432,17 @@ public class Catalog extends javax.swing.JFrame {
 
         itemPanel.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanelMouseExited(evt);
+            }
+        });
         itemPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable3.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -395,6 +460,18 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice3.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel.add(ItemPrice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color3.setText("jLabel4");
+        itemPanel.add(Color3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca3.setText("jLabel1");
+        itemPanel.add(Marca3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad3.setText("jLabel3");
+        itemPanel.add(Capacidad3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño3.setText("jLabel2");
+        itemPanel.add(Tamaño3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
         jPanel1.add(itemPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 250, 320, 110));
 
         ItemTitle.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
@@ -404,6 +481,17 @@ public class Catalog extends javax.swing.JFrame {
 
         itemPanel1.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanel1MouseExited(evt);
+            }
+        });
         itemPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable2.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -421,10 +509,33 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice2.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel1.add(ItemPrice2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color2.setText("jLabel4");
+        itemPanel1.add(Color2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca2.setText("jLabel1");
+        itemPanel1.add(Marca2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad2.setText("jLabel3");
+        itemPanel1.add(Capacidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño2.setText("jLabel2");
+        itemPanel1.add(Tamaño2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
         jPanel1.add(itemPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 130, 320, 110));
 
         itemPanel2.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanel2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanel2MouseExited(evt);
+            }
+        });
         itemPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable5.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -442,10 +553,33 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice5.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel2.add(ItemPrice5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color5.setText("jLabel4");
+        itemPanel2.add(Color5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca5.setText("jLabel1");
+        itemPanel2.add(Marca5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad5.setText("jLabel3");
+        itemPanel2.add(Capacidad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño5.setText("jLabel2");
+        itemPanel2.add(Tamaño5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
         jPanel1.add(itemPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 320, 110));
 
         itemPanel3.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanel3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanel3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanel3MouseExited(evt);
+            }
+        });
         itemPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable4.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -463,10 +597,33 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice4.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel3.add(ItemPrice4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color4.setText("jLabel4");
+        itemPanel3.add(Color4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca4.setText("jLabel1");
+        itemPanel3.add(Marca4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad4.setText("jLabel3");
+        itemPanel3.add(Capacidad4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño4.setText("jLabel2");
+        itemPanel3.add(Tamaño4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
         jPanel1.add(itemPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 250, 320, 110));
 
         itemPanel4.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanel4MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanel4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanel4MouseExited(evt);
+            }
+        });
         itemPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable6.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -484,10 +641,33 @@ public class Catalog extends javax.swing.JFrame {
         ItemPrice6.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel4.add(ItemPrice6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
 
+        Color6.setText("jLabel4");
+        itemPanel4.add(Color6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca6.setText("jLabel1");
+        itemPanel4.add(Marca6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad6.setText("jLabel3");
+        itemPanel4.add(Capacidad6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño6.setText("jLabel2");
+        itemPanel4.add(Tamaño6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
+
         jPanel1.add(itemPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 320, 110));
 
         itemPanel5.setBackground(new java.awt.Color(247, 247, 247));
         itemPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        itemPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                itemPanel5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                itemPanel5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                itemPanel5MouseExited(evt);
+            }
+        });
         itemPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ItemAvailable1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
@@ -499,11 +679,28 @@ public class Catalog extends javax.swing.JFrame {
 
         ItemName1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
         ItemName1.setForeground(new java.awt.Color(27, 47, 59));
+        ItemName1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ItemName1MouseClicked(evt);
+            }
+        });
         itemPanel5.add(ItemName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 200, 40));
 
         ItemPrice1.setFont(new java.awt.Font("Roboto", 0, 20)); // NOI18N
         ItemPrice1.setForeground(new java.awt.Color(27, 47, 59));
         itemPanel5.add(ItemPrice1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 200, 30));
+
+        Color1.setText("jLabel4");
+        itemPanel5.add(Color1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 40, -1));
+
+        Marca1.setText("jLabel1");
+        itemPanel5.add(Marca1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
+
+        Capacidad1.setText("jLabel3");
+        itemPanel5.add(Capacidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+
+        Tamaño1.setText("jLabel2");
+        itemPanel5.add(Tamaño1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, -1, -1));
 
         jPanel1.add(itemPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 320, 110));
 
@@ -525,98 +722,15 @@ public class Catalog extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
-        this.setExtendedState(TableSelect.ICONIFIED);
-    }//GEN-LAST:event_minimizeLabelMouseClicked
+    private void NextButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseExited
+        NextButton.setForeground(new Color(247, 247, 247));
+        nextButtonPanel.setBackground(new Color(27, 47, 59));
+    }//GEN-LAST:event_NextButtonMouseExited
 
-    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
-        minimizeButton.setBackground(new Color(146, 147, 149));
-    }//GEN-LAST:event_minimizeLabelMouseEntered
-
-    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
-        minimizeButton.setBackground(new Color(194, 200, 203));
-    }//GEN-LAST:event_minimizeLabelMouseExited
-
-    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_exitLabelMouseClicked
-
-    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
-        exitButton.setBackground(new Color(211, 22, 34));
-        exitLabel.setForeground(new Color(247, 247, 247));
-    }//GEN-LAST:event_exitLabelMouseEntered
-
-    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
-        exitButton.setBackground(new Color(194, 200, 203));
-        exitLabel.setForeground(new Color(27, 47, 59));
-    }//GEN-LAST:event_exitLabelMouseExited
-
-    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
-        int x = evt.getXOnScreen();
-        int y = evt.getYOnScreen();
-        this.setLocation(x - xMouse, y - yMouse);
-    }//GEN-LAST:event_headerPanelMouseDragged
-
-    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
-        xMouse = evt.getX();
-        yMouse = evt.getY();
-    }//GEN-LAST:event_headerPanelMousePressed
-
-    private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        menu.setIcon(image);
-    }//GEN-LAST:event_menuMouseEntered
-
-    private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        menu.setIcon(image);
-    }//GEN-LAST:event_menuMouseExited
-
-    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
-        MainMenu mainMenu = new MainMenu();
-        mainMenu.setVisible(true);
-        mainMenu.sql = this.sql;
-        dispose();
-    }//GEN-LAST:event_menuActionPerformed
-
-    private void celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesActionPerformed
-        // TODO add your handling code here:
-        CatalogPage = 0;
-        DisplayDevices();
-        AccDevices = true;
-        ItemTitle.setText("Devices");
-        PageNum.setText("" + 1);
-    }//GEN-LAST:event_celularesActionPerformed
-
-    private void accesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosActionPerformed
-        // TODO add your handling code here:
-        CatalogPage = 0;
-        DisplayAccesorios();
-        AccDevices = false;
-        ItemTitle.setText("Accesorios");
-        PageNum.setText("" + 1);
-        
-    }//GEN-LAST:event_accesoriosActionPerformed
-
-    private void celularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        celulares.setIcon(image);
-    }//GEN-LAST:event_celularesMouseEntered
-
-    private void celularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        celulares.setIcon(image);
-    }//GEN-LAST:event_celularesMouseExited
-
-    private void accesoriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseExited
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
-        accesorios.setIcon(image);
-    }//GEN-LAST:event_accesoriosMouseExited
-
-    private void accesoriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseEntered
-        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
-        accesorios.setIcon(image);
-    }//GEN-LAST:event_accesoriosMouseEntered
+    private void NextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseEntered
+        NextButton.setForeground(new Color(194, 200, 203));
+        nextButtonPanel.setBackground(new Color(25, 42, 52));
+    }//GEN-LAST:event_NextButtonMouseEntered
 
     private void NextButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseClicked
         if (AccDevices) {
@@ -638,6 +752,16 @@ public class Catalog extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_NextButtonMouseClicked
 
+    private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
+        BackButton.setForeground(new Color(247, 247, 247));
+        backButtonPanel.setBackground(new Color(27, 47, 59));
+    }//GEN-LAST:event_BackButtonMouseExited
+
+    private void BackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseEntered
+        BackButton.setForeground(new Color(194, 200, 203));
+        backButtonPanel.setBackground(new Color(25, 42, 52));
+    }//GEN-LAST:event_BackButtonMouseEntered
+
     private void BackButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseClicked
         if (AccDevices) {
             if (CatalogPage != 0) {
@@ -658,25 +782,299 @@ public class Catalog extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BackButtonMouseClicked
 
-    private void NextButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseEntered
-        NextButton.setForeground(new Color(194, 200, 203));
-        nextButtonPanel.setBackground(new Color(25, 42, 52));
-    }//GEN-LAST:event_NextButtonMouseEntered
+    private void accesoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accesoriosActionPerformed
+        // TODO add your handling code here:
+        CatalogPage = 0;
+        DisplayAccesorios();
+        AccDevices = false;
+        ItemTitle.setText("Accesorios");
+        PageNum.setText("" + 1);
+    }//GEN-LAST:event_accesoriosActionPerformed
 
-    private void NextButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextButtonMouseExited
-        NextButton.setForeground(new Color(247, 247, 247));
-        nextButtonPanel.setBackground(new Color(27, 47, 59));
-    }//GEN-LAST:event_NextButtonMouseExited
+    private void accesoriosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        accesorios.setIcon(image);
+    }//GEN-LAST:event_accesoriosMouseExited
 
-    private void BackButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseEntered
-        BackButton.setForeground(new Color(194, 200, 203));
-        backButtonPanel.setBackground(new Color(25, 42, 52));
-    }//GEN-LAST:event_BackButtonMouseEntered
+    private void accesoriosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accesoriosMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        accesorios.setIcon(image);
+    }//GEN-LAST:event_accesoriosMouseEntered
 
-    private void BackButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackButtonMouseExited
-        BackButton.setForeground(new Color(247, 247, 247));
-        backButtonPanel.setBackground(new Color(27, 47, 59));
-    }//GEN-LAST:event_BackButtonMouseExited
+    private void celularesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celularesActionPerformed
+        // TODO add your handling code here:
+        CatalogPage = 0;
+        DisplayDevices();
+        AccDevices = true;
+        ItemTitle.setText("Devices");
+        PageNum.setText("" + 1);
+    }//GEN-LAST:event_celularesActionPerformed
+
+    private void celularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        celulares.setIcon(image);
+    }//GEN-LAST:event_celularesMouseExited
+
+    private void celularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_celularesMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        celulares.setIcon(image);
+    }//GEN-LAST:event_celularesMouseEntered
+
+    private void menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuActionPerformed
+        MainMenu mainMenu = new MainMenu();
+        mainMenu.setVisible(true);
+        mainMenu.sql = this.sql;
+        dispose();
+    }//GEN-LAST:event_menuActionPerformed
+
+    private void menuMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseExited
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor7.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseExited
+
+    private void menuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseEntered
+        ImageIcon image = new ImageIcon("src/aplicacion/Imagenes/buttonColor6.png");
+        menu.setIcon(image);
+    }//GEN-LAST:event_menuMouseEntered
+
+    private void headerPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMousePressed
+        xMouse = evt.getX();
+        yMouse = evt.getY();
+    }//GEN-LAST:event_headerPanelMousePressed
+
+    private void headerPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_headerPanelMouseDragged
+        int x = evt.getXOnScreen();
+        int y = evt.getYOnScreen();
+        this.setLocation(x - xMouse, y - yMouse);
+    }//GEN-LAST:event_headerPanelMouseDragged
+
+    private void exitLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseExited
+        exitButton.setBackground(new Color(194, 200, 203));
+        exitLabel.setForeground(new Color(27, 47, 59));
+    }//GEN-LAST:event_exitLabelMouseExited
+
+    private void exitLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseEntered
+        exitButton.setBackground(new Color(211, 22, 34));
+        exitLabel.setForeground(new Color(247, 247, 247));
+    }//GEN-LAST:event_exitLabelMouseEntered
+
+    private void exitLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitLabelMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_exitLabelMouseClicked
+
+    private void minimizeLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseExited
+        minimizeButton.setBackground(new Color(194, 200, 203));
+    }//GEN-LAST:event_minimizeLabelMouseExited
+
+    private void minimizeLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseEntered
+        minimizeButton.setBackground(new Color(146, 147, 149));
+    }//GEN-LAST:event_minimizeLabelMouseEntered
+
+    private void minimizeLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeLabelMouseClicked
+        this.setExtendedState(TableSelect.ICONIFIED);
+    }//GEN-LAST:event_minimizeLabelMouseClicked
+
+    private void ItemName1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ItemName1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ItemName1MouseClicked
+
+    private void itemPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color1.setVisible(true);
+        Marca1.setVisible(true);
+        Tamaño1.setVisible(true);
+        Capacidad1.setVisible(true);
+        ItemPrice1.setVisible(false);
+        ItemAvailable1.setVisible(false);}
+    }//GEN-LAST:event_itemPanel5MouseClicked
+
+    private void itemPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color1.setVisible(false);
+        Marca1.setVisible(false);
+        Tamaño1.setVisible(false);
+        Capacidad1.setVisible(false);
+        ItemPrice1.setVisible(true);
+        ItemAvailable1.setVisible(true);}
+    }//GEN-LAST:event_itemPanel5MouseExited
+
+    private void itemPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color2.setVisible(true);
+        Marca2.setVisible(true);
+        Tamaño2.setVisible(true);
+        Capacidad2.setVisible(true);
+        ItemPrice2.setVisible(false);
+        ItemAvailable2.setVisible(false);}
+    }//GEN-LAST:event_itemPanel1MouseClicked
+
+    private void itemPanel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color2.setVisible(false);
+        Marca2.setVisible(false);
+        Tamaño2.setVisible(false);
+        Capacidad2.setVisible(false);
+        ItemPrice2.setVisible(true);
+        ItemAvailable2.setVisible(true);}
+    }//GEN-LAST:event_itemPanel1MouseExited
+
+    private void itemPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color3.setVisible(true);
+        Marca3.setVisible(true);
+        Tamaño3.setVisible(true);
+        Capacidad3.setVisible(true);
+        ItemPrice3.setVisible(false);
+        ItemAvailable3.setVisible(false);}
+    }//GEN-LAST:event_itemPanelMouseClicked
+
+    private void itemPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color3.setVisible(false);
+        Marca3.setVisible(false);
+        Tamaño3.setVisible(false);
+        Capacidad3.setVisible(false);
+        ItemPrice3.setVisible(true);
+        ItemAvailable3.setVisible(true);}
+    }//GEN-LAST:event_itemPanelMouseExited
+
+    private void itemPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color4.setVisible(true);
+        Marca4.setVisible(true);
+        Tamaño4.setVisible(true);
+        Capacidad4.setVisible(true);
+        ItemPrice4.setVisible(false);
+        ItemAvailable4.setVisible(false);}
+    }//GEN-LAST:event_itemPanel3MouseClicked
+
+    private void itemPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color4.setVisible(false);
+        Marca4.setVisible(false);
+        Tamaño4.setVisible(false);
+        Capacidad4.setVisible(false);
+        ItemPrice4.setVisible(true);
+        ItemAvailable4.setVisible(true);}
+    }//GEN-LAST:event_itemPanel3MouseExited
+
+    private void itemPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color5.setVisible(true);
+        Marca5.setVisible(true);
+        Tamaño5.setVisible(true);
+        Capacidad5.setVisible(true);
+        ItemPrice5.setVisible(false);
+        ItemAvailable5.setVisible(false);}
+    }//GEN-LAST:event_itemPanel2MouseClicked
+
+    private void itemPanel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color5.setVisible(false);
+        Marca5.setVisible(false);
+        Tamaño5.setVisible(false);
+        Capacidad5.setVisible(false);
+        ItemPrice5.setVisible(true);
+        ItemAvailable5.setVisible(true);}
+    }//GEN-LAST:event_itemPanel2MouseExited
+
+    private void itemPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseClicked
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color6.setVisible(true);
+        Marca6.setVisible(true);
+        Tamaño6.setVisible(true);
+        Capacidad6.setVisible(true);
+        ItemPrice6.setVisible(false);
+        ItemAvailable6.setVisible(false);}
+    }//GEN-LAST:event_itemPanel4MouseClicked
+
+    private void itemPanel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseExited
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color6.setVisible(false);
+        Marca6.setVisible(false);
+        Tamaño6.setVisible(false);
+        Capacidad6.setVisible(false);
+        ItemPrice6.setVisible(true);
+        ItemAvailable6.setVisible(true);}
+    }//GEN-LAST:event_itemPanel4MouseExited
+
+    private void itemPanel5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel5MouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color1.setVisible(true);
+        Marca1.setVisible(true);
+        Tamaño1.setVisible(true);
+        Capacidad1.setVisible(true);
+        ItemPrice1.setVisible(false);
+        ItemAvailable1.setVisible(false);}
+    }//GEN-LAST:event_itemPanel5MouseEntered
+
+    private void itemPanel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel1MouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color2.setVisible(true);
+        Marca2.setVisible(true);
+        Tamaño2.setVisible(true);
+        Capacidad2.setVisible(true);
+        ItemPrice2.setVisible(false);
+        ItemAvailable2.setVisible(false);}
+    }//GEN-LAST:event_itemPanel1MouseEntered
+
+    private void itemPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanelMouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color3.setVisible(true);
+        Marca3.setVisible(true);
+        Tamaño3.setVisible(true);
+        Capacidad3.setVisible(true);
+        ItemPrice3.setVisible(false);
+        ItemAvailable3.setVisible(false);}
+    }//GEN-LAST:event_itemPanelMouseEntered
+
+    private void itemPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel3MouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color4.setVisible(true);
+        Marca4.setVisible(true);
+        Tamaño4.setVisible(true);
+        Capacidad4.setVisible(true);
+        ItemPrice4.setVisible(false);
+        ItemAvailable4.setVisible(false);}
+    }//GEN-LAST:event_itemPanel3MouseEntered
+
+    private void itemPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel2MouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color5.setVisible(true);
+        Marca5.setVisible(true);
+        Tamaño5.setVisible(true);
+        Capacidad5.setVisible(true);
+        ItemPrice5.setVisible(false);
+        ItemAvailable5.setVisible(false);}
+    }//GEN-LAST:event_itemPanel2MouseEntered
+
+    private void itemPanel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_itemPanel4MouseEntered
+        // TODO add your handling code here:
+        if(AccDevices){
+        Color6.setVisible(true);
+        Marca6.setVisible(true);
+        Tamaño6.setVisible(true);
+        Capacidad6.setVisible(true);
+        ItemPrice6.setVisible(false);
+        ItemAvailable6.setVisible(false);}
+    }//GEN-LAST:event_itemPanel4MouseEntered
 
     /**
      *
@@ -685,12 +1083,19 @@ public class Catalog extends javax.swing.JFrame {
         String DeviceName = "";
         int DevicePrice = 0;
         int availability = 0;
+        String Marca = "";
+        String Tamaño = "";
+        String color = "";
+        String Capacidad = "";
         ResultSet Devicevalues = null;
         for (int i = CatalogPage; i <= (6 + CatalogPage); i++) {
             if (i < AllDevices.length) {
-                String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad From Modelo e, Dispositivo s "
+                String query = "Select e.ModNombre, s.DispPrecio, s.Cantidad, b.MarcaNombre, e.ModTamaño, "
+                        + "e.ModColor, e.ModCapacidad From Modelo e, Dispositivo s, Marca b "
                         + "Where e.ModID = (Select i.ModID from Dispositivo i "
-                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i];
+                        + "Where i.DispoID = " + AllDevices[i] + " ) " + "and s.DispoID = " + AllDevices[i]+
+                        " and b.MarcaID = (Select k.MarcaID from Marca k where k.MarcaID = (select j.MarcaID from "
+                        + "Modelo j where j.ModID = (Select l.ModID from Dispositivo l where l.DispoID = "+AllDevices[i]+" )))";
                 try {
                     Devicevalues = sql.executeQuery(query);
                 } catch (SQLException ex) {
@@ -701,6 +1106,10 @@ public class Catalog extends javax.swing.JFrame {
                         DeviceName = Devicevalues.getString(1);
                         DevicePrice = Devicevalues.getInt(2);
                         availability = Devicevalues.getInt(3);
+                        Marca = Devicevalues.getString(4);
+                        Tamaño = Devicevalues.getString(5);
+                        color = Devicevalues.getString(6);
+                        Capacidad = Devicevalues.getString(7);
                     }
                 } catch (SQLException ex) {
                     Logger.getLogger(InsertDispositivo.class.getName()).log(Level.SEVERE, null, ex);
@@ -717,6 +1126,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable1.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image1, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca1.setText(Marca);
+                    Tamaño1.setText(Tamaño);
+                    Color1.setText(color);
+                    Capacidad1.setText(Capacidad);
                 } else if (i == CatalogPage + 1) {
                     ItemName2.setText(DeviceName);
                     ItemPrice2.setText("$" + DevicePrice + " DOP");
@@ -728,6 +1141,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable2.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image2, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca2.setText(Marca);
+                    Tamaño2.setText(Tamaño);
+                    Color2.setText(color);
+                    Capacidad2.setText(Capacidad);
                 } else if (i == CatalogPage + 2) {
                     ItemName3.setText(DeviceName);
                     ItemPrice3.setText("$" + DevicePrice + " DOP");
@@ -739,6 +1156,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable3.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image3, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca3.setText(Marca);
+                    Tamaño3.setText(Tamaño);
+                    Color3.setText(color);
+                    Capacidad3.setText(Capacidad);
                 } else if (i == CatalogPage + 3) {
                     ItemName4.setText(DeviceName);
                     ItemPrice4.setText("$" + DevicePrice + " DOP");
@@ -750,6 +1171,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable4.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image4, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca4.setText(Marca);
+                    Tamaño4.setText(Tamaño);
+                    Color4.setText(color);
+                    Capacidad4.setText(Capacidad);
                 } else if (i == CatalogPage + 4) {
                     ItemName5.setText(DeviceName);
                     ItemPrice5.setText("$" + DevicePrice + " DOP");
@@ -761,6 +1186,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable5.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image5, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca5.setText(Marca);
+                    Tamaño5.setText(Tamaño);
+                    Color5.setText(color);
+                    Capacidad5.setText(Capacidad);
                 } else if (i == CatalogPage + 5) {
                     ItemName6.setText(DeviceName);
                     ItemPrice6.setText("$" + DevicePrice + " DOP");
@@ -772,6 +1201,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable6.setForeground(Color.red);
                     }
                     rsscalelabel.RSScaleLabel.setScaleLabel(image6, "src/aplicacion/Imagenes/" + DeviceName + ".png");
+                    Marca6.setText(Marca);
+                    Tamaño6.setText(Tamaño);
+                    Color6.setText(color);
+                    Capacidad6.setText(Capacidad);
                 }
 
             } else {
@@ -786,6 +1219,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable1.setForeground(Color.red);
                     }
                     image1.setIcon(null);
+                    Marca1.setText("");
+                    Tamaño1.setText("");
+                    Color1.setText("");
+                    Capacidad1.setText("");
                 } else if (i == CatalogPage + 1) {
                     ItemName2.setText("");
                     ItemPrice2.setText("");
@@ -797,6 +1234,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable2.setForeground(Color.red);
                     }
                     image2.setIcon(null);
+                    Marca2.setText("");
+                    Tamaño2.setText("");
+                    Color2.setText("");
+                    Capacidad2.setText("");
                 } else if (i == CatalogPage + 2) {
                     ItemName3.setText("");
                     ItemPrice3.setText("");
@@ -808,6 +1249,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable3.setForeground(Color.red);
                     }
                     image3.setIcon(null);
+                    Marca3.setText("");
+                    Tamaño3.setText("");
+                    Color3.setText("");
+                    Capacidad3.setText("");
                 } else if (i == CatalogPage + 3) {
                     ItemName4.setText("");
                     ItemPrice4.setText("");
@@ -819,6 +1264,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable4.setForeground(Color.red);
                     }
                     image4.setIcon(null);
+                    Marca4.setText("");
+                    Tamaño4.setText("");
+                    Color4.setText("");
+                    Capacidad4.setText("");
                 } else if (i == CatalogPage + 4) {
                     ItemName5.setText("");
                     ItemPrice5.setText("");
@@ -830,6 +1279,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable5.setForeground(Color.red);
                     }
                     image5.setIcon(null);
+                    Marca5.setText("");
+                    Tamaño5.setText("");
+                    Color5.setText("");
+                    Capacidad5.setText("");
                 } else if (i == CatalogPage + 5) {
                     ItemName6.setText("");
                     ItemPrice6.setText("");
@@ -841,6 +1294,10 @@ public class Catalog extends javax.swing.JFrame {
                         ItemAvailable6.setForeground(Color.red);
                     }
                     image6.setIcon(null);
+                    Marca6.setText("");
+                    Tamaño6.setText("");
+                    Color6.setText("");
+                    Capacidad6.setText("");
                 }
             }
         }
@@ -1116,6 +1573,18 @@ public class Catalog extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BackButton;
+    private javax.swing.JLabel Capacidad1;
+    private javax.swing.JLabel Capacidad2;
+    private javax.swing.JLabel Capacidad3;
+    private javax.swing.JLabel Capacidad4;
+    private javax.swing.JLabel Capacidad5;
+    private javax.swing.JLabel Capacidad6;
+    private javax.swing.JLabel Color1;
+    private javax.swing.JLabel Color2;
+    private javax.swing.JLabel Color3;
+    private javax.swing.JLabel Color4;
+    private javax.swing.JLabel Color5;
+    private javax.swing.JLabel Color6;
     private javax.swing.JLabel ItemAvailable1;
     private javax.swing.JLabel ItemAvailable2;
     private javax.swing.JLabel ItemAvailable3;
@@ -1135,8 +1604,20 @@ public class Catalog extends javax.swing.JFrame {
     private javax.swing.JLabel ItemPrice5;
     private javax.swing.JLabel ItemPrice6;
     private javax.swing.JLabel ItemTitle;
+    private javax.swing.JLabel Marca1;
+    private javax.swing.JLabel Marca2;
+    private javax.swing.JLabel Marca3;
+    private javax.swing.JLabel Marca4;
+    private javax.swing.JLabel Marca5;
+    private javax.swing.JLabel Marca6;
     private javax.swing.JLabel NextButton;
     private javax.swing.JLabel PageNum;
+    private javax.swing.JLabel Tamaño1;
+    private javax.swing.JLabel Tamaño2;
+    private javax.swing.JLabel Tamaño3;
+    private javax.swing.JLabel Tamaño4;
+    private javax.swing.JLabel Tamaño5;
+    private javax.swing.JLabel Tamaño6;
     private javax.swing.JButton accesorios;
     private javax.swing.JPanel backButtonPanel;
     private javax.swing.JPanel blueStripe;

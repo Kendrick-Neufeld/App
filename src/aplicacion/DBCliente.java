@@ -71,6 +71,8 @@ public class DBCliente extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
         searchBar = new javax.swing.JTextField();
         searchLabel = new javax.swing.JLabel();
+        enterButton = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -392,7 +394,7 @@ public class DBCliente extends javax.swing.JFrame {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(815, 410, 110, 40));
+        jPanel1.add(backButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 410, 110, 40));
 
         searchBar.setBackground(new java.awt.Color(194, 200, 203));
         searchBar.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -410,6 +412,54 @@ public class DBCliente extends javax.swing.JFrame {
         searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         searchLabel.setText("Search");
         jPanel1.add(searchLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 210, 60, 30));
+
+        enterButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        enterButton.setForeground(new java.awt.Color(27, 47, 59));
+        enterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        enterButton.setText("Enter");
+        enterButton.setBorder(null);
+        enterButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        enterButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                enterButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                enterButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                enterButtonMousePressed(evt);
+            }
+        });
+        enterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enterButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(enterButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 290, 110, 40));
+
+        deleteButton.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(27, 47, 59));
+        deleteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/aplicacion/Imagenes/buttonColor1.png"))); // NOI18N
+        deleteButton.setText("Delete");
+        deleteButton.setBorder(null);
+        deleteButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deleteButtonMousePressed(evt);
+            }
+        });
+        deleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 350, 110, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -618,13 +668,66 @@ public class DBCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void searchBarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchBarKeyPressed
-        DefaultTableModel table = (DefaultTableModel)Tablas.getModel();
-        String search = searchBar.getText();
-        TableRowSorter<DefaultTableModel> rows = new TableRowSorter<DefaultTableModel>(table);
-        Tablas.setRowSorter(rows);
-        rows.setRowFilter(RowFilter.regexFilter(search));
+        getItems();
     }//GEN-LAST:event_searchBarKeyPressed
 
+    private void enterButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterButtonMouseEntered
+
+    private void enterButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterButtonMouseExited
+
+    private void enterButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enterButtonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enterButtonMousePressed
+
+    private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
+        // TODO add your handling code here:
+        getItems();
+    }//GEN-LAST:event_enterButtonActionPerformed
+
+    private void deleteButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseEntered
+
+    private void deleteButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMouseExited
+
+    private void deleteButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonMousePressed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        // TODO add your handling code here:
+        if(searchBar.getText().compareTo("") != 0){
+            deleteSelectedItem(searchBar.getText());
+        }
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    
+    
+    public void deleteSelectedItem(String nombre){
+        
+        String query = "Delete from Cliente where CliNombre = '"+nombre+"'";
+        try{
+        sql.executeQuery(query);
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+    }
+    
+    public void getItems(){
+        if(searchBar.getText().compareTo("") != 0){
+        CargarArticuloBuscado(searchBar.getText());
+        }
+        else{
+            CargarArticulo();
+        }
+    }
+    
     public void CargarArticulo(){
         ResultSet res = null;
         DefaultTableModel modelo = (DefaultTableModel) Tablas.getModel();
@@ -655,7 +758,35 @@ public class DBCliente extends javax.swing.JFrame {
         
     }
     
-    
+    public void CargarArticuloBuscado(String nombre){
+        ResultSet res = null;
+        DefaultTableModel modelo = (DefaultTableModel) Tablas.getModel();
+        modelo.setRowCount(0);
+        String query = "select * from Cliente where CliNombre = '"+nombre+"'";
+        try{
+        res = sql.executeQuery(query);
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        
+        try{
+           
+            while(res.next()){
+                Vector v = new Vector();
+                v.add(res.getInt(1));
+                v.add(res.getString(2));
+                v.add(res.getString(3));
+                v.add(res.getString(4));
+                modelo.addRow(v);
+                Tablas.setModel(modelo);
+            }  
+            
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        
+        
+    }
     
     
     /**
@@ -763,6 +894,8 @@ public class DBCliente extends javax.swing.JFrame {
     private javax.swing.JButton catalog;
     private javax.swing.JLabel clienteLabel;
     private javax.swing.JButton dbase;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JButton enterButton;
     private javax.swing.JPanel exitButton;
     private javax.swing.JLabel exitLabel;
     private javax.swing.JPanel headerPanel;

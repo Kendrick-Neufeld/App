@@ -444,7 +444,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_headerPanelMousePressed
 
     private void dbaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dbaseActionPerformed
-        Database dbView = new Database();
+        DBDevice dbView = new DBDevice(sql);
         dbView.sql = this.sql;
         dbView.setVisible(true);
         this.dispose();
